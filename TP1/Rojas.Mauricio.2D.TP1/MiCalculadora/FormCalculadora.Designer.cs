@@ -79,6 +79,7 @@
             this.btnConvertirABinario.TabIndex = 3;
             this.btnConvertirABinario.Text = "Convertir a Binario";
             this.btnConvertirABinario.UseVisualStyleBackColor = true;
+            this.btnConvertirABinario.Click += new System.EventHandler(this.btnConvertirABinario_Click);
             // 
             // btnConvertirADecimal
             // 
@@ -88,6 +89,7 @@
             this.btnConvertirADecimal.TabIndex = 4;
             this.btnConvertirADecimal.Text = "Convertir a Decimal";
             this.btnConvertirADecimal.UseVisualStyleBackColor = true;
+            this.btnConvertirADecimal.Click += new System.EventHandler(this.btnConvertirADecimal_Click);
             // 
             // lstOperaciones
             // 
@@ -105,6 +107,7 @@
             this.txtNumero1.Name = "txtNumero1";
             this.txtNumero1.Size = new System.Drawing.Size(155, 43);
             this.txtNumero1.TabIndex = 6;
+            this.txtNumero1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumero1_KeyPress);
             // 
             // txtNumero2
             // 
@@ -113,6 +116,7 @@
             this.txtNumero2.Name = "txtNumero2";
             this.txtNumero2.Size = new System.Drawing.Size(155, 43);
             this.txtNumero2.TabIndex = 7;
+            this.txtNumero2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumero2_KeyPress);
             // 
             // cmbOperador
             // 
@@ -128,12 +132,12 @@
             // 
             this.lblResultado.AutoSize = true;
             this.lblResultado.BackColor = System.Drawing.Color.Tan;
-            this.lblResultado.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblResultado.Location = new System.Drawing.Point(462, 43);
+            this.lblResultado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblResultado.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblResultado.Location = new System.Drawing.Point(384, 24);
             this.lblResultado.Name = "lblResultado";
-            this.lblResultado.Size = new System.Drawing.Size(39, 54);
+            this.lblResultado.Size = new System.Drawing.Size(2, 34);
             this.lblResultado.TabIndex = 9;
-            this.lblResultado.Text = "-";
             // 
             // FormCalculadora
             // 
@@ -157,6 +161,7 @@
             this.Name = "FormCalculadora";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Calculadora, Mauricio Rojas 2D";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormCalculadora_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -9,7 +9,7 @@ namespace Entidades
         /// <summary>
         /// Constructor por defecto sin parámetros
         /// </summary>
-        private Operando()
+        public Operando()
         {
             numero = 0;
         }
@@ -104,7 +104,7 @@ namespace Entidades
             }
             else
             {
-                return "Valor invalido";
+                return "Valor inválido";
             }
         }
 
