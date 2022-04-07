@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Entidades
 {
@@ -10,23 +6,32 @@ namespace Entidades
     {
         private double numero;
 
+        /// <summary>
+        /// Constructor por defecto sin parámetros
+        /// </summary>
         private Operando()
         {
             numero = 0;
         }
 
-
-        public Operando (double numero) : this()
+        /// <summary>
+        /// Constructor que recibe un double y lo asigna. Tiene una sobrecarga del const. sin param.
+        /// </summary>
+        /// <param name="numero">Parámetro double a asignar</param>
+        public Operando(double numero) : this()
         {
             this.numero = numero;
         }
 
-        public Operando (string strNumero) : this()
+        /// <summary>
+        /// Constructor que recibe un string y lo asigna a través de una propiedad. Tiene una sobrecarga del const. sin param.
+        /// </summary>
+        /// <param name="strNumero">Parámetro string a asignar</param>
+        public Operando(string strNumero) : this()
         {
             Numero = strNumero;
         }
 
-        //Metodos
 
         /// <summary>
         /// Valida que el parámetro pasado pueda convertirse en un entero
@@ -54,7 +59,7 @@ namespace Entidades
         }
 
         /// <summary>
-        ///Comprueba que el string pasado sea un numero binario, retorna false si no lo es, true si lo es
+        /// Comprueba que el string pasado sea un numero binario, retorna false si no lo es, true si lo es
         /// </summary>
         /// <param name="binario">Cadena a recorrer</param>
         /// <returns>True o False acorde a si es o no binario</returns>
@@ -72,7 +77,11 @@ namespace Entidades
             return false;
         }
 
-        // Convierte el numero binario a un decimal, retornara "Valor Invalido" en caso que el numero ingresado no sea binario
+        /// <summary>
+        /// Convierte el numero binario a un decimal 
+        /// </summary>
+        /// <param name="binario"></param>
+        /// <returns>Retornará el binario en formato string o "Valor Invalido" en caso que el numero ingresado no sea binario</returns>
         public string BinarioDecimal(string binario)
         {
             if (EsBinario(binario))
