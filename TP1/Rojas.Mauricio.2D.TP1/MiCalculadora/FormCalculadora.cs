@@ -15,13 +15,11 @@ namespace MiCalculadora
             this.cmbOperador.Items.Add("-");
             this.cmbOperador.Items.Add("*");
             this.cmbOperador.Items.Add("/");
-
-
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            Limpiar();
         }
 
         public void Limpiar()
@@ -44,22 +42,33 @@ namespace MiCalculadora
             {
                 MessageBox.Show("Faltan campos para realizar la operación");
             }
+            else if (this.cmbOperador.Text == "/" && this.txtNumero2.Text == "0")
+            {
+                MessageBox.Show("No se puede dividir por 0");
+            }
             else
             {
+
                 if (this.cmbOperador.Text == String.Empty)
                 {
                     this.cmbOperador.Text = "+";
                 }
+
+                double resultado = Operar(txtNumero1.Text, txtNumero2.Text, cmbOperador.Text);
+                string cadena = String.Format(this.txtNumero1.Text + this.cmbOperador.Text + this.txtNumero2.Text + '=');
+
+
                 if (this.cmbOperador.Text == "/")
                 {
-                    double auxResultado = Operar(txtNumero1.Text, txtNumero2.Text, cmbOperador.Text);
-                    this.lblResultado.Text = auxResultado.ToString("N2");
+                    this.lblResultado.Text = resultado.ToString("N2");
+                    this.lstOperaciones.Items.Add(cadena + resultado.ToString("N2"));
+                }
+                else
+                {
+                    this.lblResultado.Text = resultado.ToString();
+                    this.lstOperaciones.Items.Add(cadena + resultado.ToString());
 
                 }
-
-                //double resultado = Operar(txtNumero1.Text, txtNumero2.Text, cmbOperador.Text);
-                //this.lblResultado.Text = resultado.ToString();
-
             }
 
         }
@@ -78,6 +87,11 @@ namespace MiCalculadora
 
             return resultado;
 
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
