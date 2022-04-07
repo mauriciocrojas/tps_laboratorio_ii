@@ -10,13 +10,26 @@ namespace Entidades
 
         public static double Operar (Operando num1, Operando num2, char operador)
         {
-            char signo = ValidarOperador(operador);
 
-            if (signo == '+')
+            double resultado = 0;
+
+            switch (ValidarOperador(operador))
             {
-                return num1 + num2;
+                case '+':
+                    resultado = num1 + num2;
+                    break;
+                case '-':
+                    resultado = num1 - num2;
+                    break;
+                case '*':
+                    resultado = num1 * num2;
+                    break;
+                case '/':
+                    resultado = num1 / num2;
+                    break;
             }
-            
+
+            return resultado;
         }
 
         private static char ValidarOperador (char operador)
@@ -28,5 +41,7 @@ namespace Entidades
 
             return '+';
         }
+
+
     }
 }
