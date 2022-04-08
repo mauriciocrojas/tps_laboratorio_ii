@@ -46,6 +46,7 @@ namespace MiCalculadora
             }
             else if (this.cmbOperador.Text == "/" && this.txtNumero2.Text == "0")
             {
+                this.lblResultado.Text = Convert.ToString(double.MinValue);
                 MessageBox.Show("No se puede dividir por 0");
             }
             else
