@@ -1,5 +1,5 @@
-﻿using System.Text;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Text;
 
 namespace Entidades
 {
@@ -55,7 +55,7 @@ namespace Entidades
             listaUsuarios.Add(usuario5);
         }
 
-        public string MostrarDatos()
+        public static string MostrarDatos()
         {
             StringBuilder sb = new StringBuilder();
 

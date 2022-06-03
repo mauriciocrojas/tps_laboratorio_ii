@@ -1,4 +1,4 @@
-﻿namespace UTNBar
+﻿namespace PokedexApp
 {
     partial class Login
     {
@@ -99,21 +99,21 @@
             // 
             // btnCargarAdmin
             // 
-            this.btnCargarAdmin.Location = new System.Drawing.Point(335, 324);
+            this.btnCargarAdmin.Location = new System.Drawing.Point(307, 324);
             this.btnCargarAdmin.Name = "btnCargarAdmin";
-            this.btnCargarAdmin.Size = new System.Drawing.Size(112, 23);
+            this.btnCargarAdmin.Size = new System.Drawing.Size(140, 23);
             this.btnCargarAdmin.TabIndex = 7;
-            this.btnCargarAdmin.Text = "Cargar Admin";
+            this.btnCargarAdmin.Text = "Cargar Administrador";
             this.btnCargarAdmin.UseVisualStyleBackColor = true;
             this.btnCargarAdmin.Click += new System.EventHandler(this.btnCargarAdmin_Click);
             // 
             // btnCargarUsuario
             // 
-            this.btnCargarUsuario.Location = new System.Drawing.Point(335, 348);
+            this.btnCargarUsuario.Location = new System.Drawing.Point(307, 348);
             this.btnCargarUsuario.Name = "btnCargarUsuario";
-            this.btnCargarUsuario.Size = new System.Drawing.Size(112, 23);
+            this.btnCargarUsuario.Size = new System.Drawing.Size(140, 23);
             this.btnCargarUsuario.TabIndex = 8;
-            this.btnCargarUsuario.Text = "Cargar Usuario";
+            this.btnCargarUsuario.Text = "Cargar Usuario simple";
             this.btnCargarUsuario.UseVisualStyleBackColor = true;
             this.btnCargarUsuario.Click += new System.EventHandler(this.btnCargarUsu_Click);
             // 
@@ -164,7 +164,7 @@
             this.MinimizeBox = false;
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Login";
+            this.Text = "Pokedex Login";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Login_FormClosing);
             this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);

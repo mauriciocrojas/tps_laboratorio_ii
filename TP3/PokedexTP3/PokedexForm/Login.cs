@@ -2,7 +2,7 @@
 using System;
 using System.Windows.Forms;
 
-namespace UTNBar
+namespace PokedexApp
 {
     public partial class Login : Form
     {
@@ -25,14 +25,12 @@ namespace UTNBar
                 System.Media.SystemSounds.Hand.Play();
                 if (btnSeCargoEmp)
                 {
-                    Usuario usuario = CargarEmpleado();
-                    Acceso acceso = new Acceso(usuario);
+                    Acceso acceso = new Acceso("Usuario");
                     acceso.ShowDialog();
                 }
                 else if (btnSeCargoAdm)
                 {
-                    Usuario usuario = CargarAdministrador();
-                    Acceso acceso = new Acceso(usuario);
+                    Acceso acceso = new Acceso("Administrador");
                     acceso.ShowDialog();
                 }
             }
@@ -100,7 +98,8 @@ namespace UTNBar
                 MessageBox.Show("Campos vacios", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            else {
+            else
+            {
                 System.Media.SystemSounds.Exclamation.Play();
                 MessageBox.Show("Campos incorrectos", "Datos erroneos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return false;
