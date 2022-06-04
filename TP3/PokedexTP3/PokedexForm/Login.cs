@@ -6,7 +6,7 @@ namespace PokedexApp
 {
     public partial class Login : Form
     {
-        private bool btnSeCargoEmp = false;
+        private bool btnSeCargoUsuSimp = false;
         private bool btnSeCargoAdm = false;
 
         public Login()
@@ -23,7 +23,7 @@ namespace PokedexApp
             if (CheckearUsuario(this.txtUsuario.Text, this.txtClave.Text))
             {
                 System.Media.SystemSounds.Hand.Play();
-                if (btnSeCargoEmp)
+                if (btnSeCargoUsuSimp)
                 {
                     Acceso acceso = new Acceso("Usuario");
                     acceso.ShowDialog();
@@ -66,7 +66,7 @@ namespace PokedexApp
         private void btnCargarUsu_Click(object sender, EventArgs e)
         {
             CargarUsuario();
-            btnSeCargoEmp = true;
+            btnSeCargoUsuSimp = true;
             btnSeCargoAdm = false;
         }
 
@@ -77,7 +77,7 @@ namespace PokedexApp
         {
             CargarAdministrador();
             btnSeCargoAdm = true;
-            btnSeCargoEmp = false;
+            btnSeCargoUsuSimp = false;
         }
 
         /// <summary>
@@ -88,22 +88,40 @@ namespace PokedexApp
         /// <returns>Retorna true en caso correcto, sino false</returns>
         public bool CheckearUsuario(string usuario, string password)
         {
-            if ((usuario == "aperez" && password == "arielsito") || (usuario == "lmessi" && password == "copaamerica"))
+            bool flag = false;
+
+            try
             {
-                return true;
+                if ((usuario == "aperez" && password == "arielsito") || (usuario == "lmessi" && password == "copaamerica"))
+                {
+                    flag = true;
+                }
+                else if (String.IsNullOrEmpty(usuario) && String.IsNullOrEmpty(password))
+                {
+                    System.Media.SystemSounds.Exclamation.Play();
+                    //MessageBox.Show("Campos vacios", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    throw new CamposVaciosException("Alguno de los campos está vacío");
+                }
+                else
+                {
+                    System.Media.SystemSounds.Exclamation.Play();
+                    //MessageBox.Show("Campos incorrectos", "Datos erroneos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    throw new CamposErroneosException("Alguno de los campos es incorrecto");
+                }
             }
-            else if (String.IsNullOrEmpty(usuario) && String.IsNullOrEmpty(password))
+            catch (CamposVaciosException ex)
             {
-                System.Media.SystemSounds.Exclamation.Play();
-                MessageBox.Show("Campos vacios", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
+                MessageBox.Show(ex.Message);
             }
-            else
+            catch (CamposErroneosException ex)
             {
-                System.Media.SystemSounds.Exclamation.Play();
-                MessageBox.Show("Campos incorrectos", "Datos erroneos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return false;
+                MessageBox.Show(ex.Message);
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return flag;
         }
 
         /// <summary>
