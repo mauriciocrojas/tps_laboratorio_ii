@@ -25,12 +25,12 @@ namespace PokedexApp
                 System.Media.SystemSounds.Hand.Play();
                 if (btnSeCargoUsuSimp)
                 {
-                    Acceso acceso = new Acceso("Usuario");
+                    MenuPrincipal acceso = new MenuPrincipal("Usuario");
                     acceso.ShowDialog();
                 }
                 else if (btnSeCargoAdm)
                 {
-                    Acceso acceso = new Acceso("Administrador");
+                    MenuPrincipal acceso = new MenuPrincipal("Administrador");
                     acceso.ShowDialog();
                 }
             }

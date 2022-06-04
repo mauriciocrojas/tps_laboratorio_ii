@@ -4,23 +4,26 @@ using System.Windows.Forms;
 
 namespace PokedexApp
 {
-    public partial class Acceso : Form
+    public partial class MenuPrincipal : Form
     {
         public string tipoUsuario;
 
         /// <summary>
         /// Constructor que recibe un usuario para luego trabajar con él y otros atributos.
         /// </summary>
-        /// <param name="usuario">Usuario que definirá cómo se mostrarará el formulario de acceso</param>
-        public Acceso(string tipoUsuario)
+        /// <param name="tipoUsuario">Usuario que definirá cómo se mostrarará el formulario de acceso</param>
+        public MenuPrincipal(string tipoUsuario)
         {
             InitializeComponent();
-
             this.tipoUsuario = tipoUsuario;
         }
 
         private void Acceso_Load(object sender, EventArgs e)
         {
+            foreach (Pokemon pokemon in Pokemon.listaPokemon)
+            {
+                lstPokemon.Items.Add(pokemon.nombre);
+            }
 
             if (tipoUsuario == "Administrador")
             {
@@ -98,6 +101,16 @@ namespace PokedexApp
             this.Hide();
         }
 
-
+        private void lstPokemon_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            foreach (Pokemon pokemon in Pokemon.listaPokemon)
+            {
+                if (pokemon.nombre == lstPokemon.SelectedItem.ToString())
+                {
+                    string cadena = pokemon.MostrarDato();
+                    rchPokemon.Text = cadena;
+                }
+            }
+        }
     }
 }

@@ -47,7 +47,6 @@ namespace Entidades
             Usuario usuario4 = new Usuario("Denver", "Hetok", "dhetok", "denverland");
             Usuario usuario5 = new Usuario("Emul", "Asion", "easion", "emular");
 
-
             listaUsuarios.Add(usuario1);
             listaUsuarios.Add(usuario2);
             listaUsuarios.Add(usuario3);
@@ -59,7 +58,6 @@ namespace Entidades
         {
             StringBuilder sb = new StringBuilder();
 
-
             foreach (Usuario usuario in listaUsuarios)
             {
                 sb.AppendLine($"{usuario.MostrarDato()}");
@@ -67,7 +65,6 @@ namespace Entidades
 
             return sb.ToString();
         }
-
 
     }
 }
