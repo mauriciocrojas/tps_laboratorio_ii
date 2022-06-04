@@ -101,16 +101,19 @@ namespace PokedexApp
             this.Hide();
         }
 
+        /// <summary>
+        /// Al  seleccionar un item de la lista, mandará la descripción de mismo al RichTextBox.
+        /// </summary>
         private void lstPokemon_SelectedIndexChanged(object sender, EventArgs e)
         {
             foreach (Pokemon pokemon in Pokemon.listaPokemon)
             {
                 if (pokemon.nombre == lstPokemon.SelectedItem.ToString())
                 {
-                    string cadena = pokemon.MostrarDato();
-                    rchPokemon.Text = cadena;
+                    rchPokemon.Text = pokemon.MostrarDato();
                 }
             }
         }
+
     }
 }
