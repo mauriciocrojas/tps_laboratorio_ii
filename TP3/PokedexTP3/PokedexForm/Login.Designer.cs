@@ -166,7 +166,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pokedex Login";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Login_FormClosing);
-            this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

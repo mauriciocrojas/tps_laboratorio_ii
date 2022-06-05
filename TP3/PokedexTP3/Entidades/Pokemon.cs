@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Text;
 
 namespace Entidades
@@ -7,7 +8,7 @@ namespace Entidades
     {
         public string nombre;
         public string tipo;
-        public int id;
+        public string id;
         public string ataquePrincipal;
         public static List<Pokemon> listaPokemon = new List<Pokemon>();
 
@@ -17,7 +18,7 @@ namespace Entidades
             HardcodearPokemon();
         }
 
-        public Pokemon(string nombre, string tipo, int id, string ataquePrincipal)
+        public Pokemon(string nombre, string tipo, string id, string ataquePrincipal)
         {
             this.nombre = nombre;
             this.tipo = tipo;
@@ -27,15 +28,15 @@ namespace Entidades
 
         public static void HardcodearPokemon()
         {
-            Pokemon Bulbasaur = new Pokemon("Bulbasaur", "Planta-Veneno", 001, "Hoja afilada");
-            Pokemon Ivysaur = new Pokemon("Ivysaur", "Planta-Veneno", 002, "Síntesis");
-            Pokemon Venusaur = new Pokemon("Venusaur", "Planta-Veneno", 003, "Rayo solar");
-            Pokemon Charmander = new Pokemon("Charmander", "Fuego", 004, "Lanzallamas");
-            Pokemon Charmeleon = new Pokemon("Charmeleon", "Fuego", 005, "Giro fuego");
-            Pokemon Charizard = new Pokemon("Charizard", "Fuego-Volador", 006, "Furia dragón");
-            Pokemon Squirtle = new Pokemon("Squirtle", "Agua", 007, "Pistola de agua");
-            Pokemon Wartortle = new Pokemon("Wartortle", "Agua", 008, "Cabezazo");
-            Pokemon Blastoise = new Pokemon("Blastoise", "Agua", 009, "Hidrobomba");
+            Pokemon Bulbasaur = new Pokemon("Bulbasaur", "Planta-Veneno", "001", "Hoja afilada");
+            Pokemon Ivysaur = new Pokemon("Ivysaur", "Planta-Veneno", "002", "Síntesis");
+            Pokemon Venusaur = new Pokemon("Venusaur", "Planta-Veneno", "003", "Rayo solar");
+            Pokemon Charmander = new Pokemon("Charmander", "Fuego", "004", "Lanzallamas");
+            Pokemon Charmeleon = new Pokemon("Charmeleon", "Fuego", "005", "Giro fuego");
+            Pokemon Charizard = new Pokemon("Charizard", "Fuego-Volador", "006", "Furia dragón");
+            Pokemon Squirtle = new Pokemon("Squirtle", "Agua", "007", "Pistola de agua");
+            Pokemon Wartortle = new Pokemon("Wartortle", "Agua", "008", "Cabezazo");
+            Pokemon Blastoise = new Pokemon("Blastoise", "Agua", "009", "Hidrobomba");
 
             listaPokemon.Add(Bulbasaur);
             listaPokemon.Add(Ivysaur);
@@ -67,6 +68,18 @@ namespace Entidades
             }
 
             return sb.ToString();
+        }
+
+        public static bool AgregarPokemon(string nombre, string tipo, string id, string ataque)
+        {
+            if(String.IsNullOrEmpty(nombre) || String.IsNullOrEmpty(tipo)
+                || String.IsNullOrEmpty(id) || String.IsNullOrEmpty(ataque))
+            {
+                return false;
+            }
+            Pokemon pokemon = new Pokemon(nombre, tipo, id, ataque);
+            listaPokemon.Add(pokemon);
+            return true;
         }
     }
 }

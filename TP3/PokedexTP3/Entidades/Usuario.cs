@@ -41,7 +41,7 @@ namespace Entidades
 
         public static void HardcodearUsuarios()
         {
-            Usuario usuario1 = new Usuario("Ariel", "Perez", "aperez", "arielsito");
+            Usuario usuario1 = new Usuario("Ash", "Ketchum", "AshKetchum", "charizard");
             Usuario usuario2 = new Usuario("Brian", "Lega", "blega", "thebrian");
             Usuario usuario3 = new Usuario("Carlos", "Bom", "cbom", "carlitos");
             Usuario usuario4 = new Usuario("Denver", "Hetok", "dhetok", "denverland");

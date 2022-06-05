@@ -35,6 +35,14 @@
             this.btnVolver = new System.Windows.Forms.Button();
             this.lstPokemon = new System.Windows.Forms.ListBox();
             this.rchPokemon = new System.Windows.Forms.RichTextBox();
+            this.grpAgregarPokemon = new System.Windows.Forms.GroupBox();
+            this.btnAgregarPokemon = new System.Windows.Forms.Button();
+            this.txtAtaquePokemon = new System.Windows.Forms.TextBox();
+            this.txtIDPokemon = new System.Windows.Forms.TextBox();
+            this.txtTipoPokemon = new System.Windows.Forms.TextBox();
+            this.txtNombrePokemon = new System.Windows.Forms.TextBox();
+            this.chkHabAgrPok = new System.Windows.Forms.CheckBox();
+            this.grpAgregarPokemon.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnVerUsu
@@ -102,12 +110,87 @@
             this.rchPokemon.TabIndex = 28;
             this.rchPokemon.Text = "";
             // 
+            // grpAgregarPokemon
+            // 
+            this.grpAgregarPokemon.Controls.Add(this.btnAgregarPokemon);
+            this.grpAgregarPokemon.Controls.Add(this.txtAtaquePokemon);
+            this.grpAgregarPokemon.Controls.Add(this.txtIDPokemon);
+            this.grpAgregarPokemon.Controls.Add(this.txtTipoPokemon);
+            this.grpAgregarPokemon.Controls.Add(this.txtNombrePokemon);
+            this.grpAgregarPokemon.Location = new System.Drawing.Point(33, 200);
+            this.grpAgregarPokemon.Name = "grpAgregarPokemon";
+            this.grpAgregarPokemon.Size = new System.Drawing.Size(416, 74);
+            this.grpAgregarPokemon.TabIndex = 29;
+            this.grpAgregarPokemon.TabStop = false;
+            this.grpAgregarPokemon.Text = "Agregar Pokemon";
+            // 
+            // btnAgregarPokemon
+            // 
+            this.btnAgregarPokemon.Location = new System.Drawing.Point(352, 34);
+            this.btnAgregarPokemon.Name = "btnAgregarPokemon";
+            this.btnAgregarPokemon.Size = new System.Drawing.Size(58, 23);
+            this.btnAgregarPokemon.TabIndex = 4;
+            this.btnAgregarPokemon.Text = "Agregar";
+            this.btnAgregarPokemon.UseVisualStyleBackColor = true;
+            this.btnAgregarPokemon.Click += new System.EventHandler(this.btnAgregarPokemon_Click);
+            // 
+            // txtAtaquePokemon
+            // 
+            this.txtAtaquePokemon.Location = new System.Drawing.Point(244, 33);
+            this.txtAtaquePokemon.Name = "txtAtaquePokemon";
+            this.txtAtaquePokemon.PlaceholderText = "Ataque principal";
+            this.txtAtaquePokemon.Size = new System.Drawing.Size(100, 23);
+            this.txtAtaquePokemon.TabIndex = 3;
+            this.txtAtaquePokemon.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAtaquePokemon_KeyPress);
+            // 
+            // txtIDPokemon
+            // 
+            this.txtIDPokemon.Location = new System.Drawing.Point(191, 33);
+            this.txtIDPokemon.Name = "txtIDPokemon";
+            this.txtIDPokemon.PlaceholderText = "ID";
+            this.txtIDPokemon.Size = new System.Drawing.Size(47, 23);
+            this.txtIDPokemon.TabIndex = 2;
+            this.txtIDPokemon.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIDPokemon_KeyPress);
+            // 
+            // txtTipoPokemon
+            // 
+            this.txtTipoPokemon.Location = new System.Drawing.Point(101, 33);
+            this.txtTipoPokemon.Name = "txtTipoPokemon";
+            this.txtTipoPokemon.PlaceholderText = "Tipo";
+            this.txtTipoPokemon.Size = new System.Drawing.Size(84, 23);
+            this.txtTipoPokemon.TabIndex = 1;
+            this.txtTipoPokemon.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTipoPokemon_KeyPress);
+            // 
+            // txtNombrePokemon
+            // 
+            this.txtNombrePokemon.Location = new System.Drawing.Point(6, 33);
+            this.txtNombrePokemon.Name = "txtNombrePokemon";
+            this.txtNombrePokemon.PlaceholderText = "Nombre";
+            this.txtNombrePokemon.Size = new System.Drawing.Size(84, 23);
+            this.txtNombrePokemon.TabIndex = 0;
+            this.txtNombrePokemon.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombrePokemon_KeyPress);
+            // 
+            // chkHabAgrPok
+            // 
+            this.chkHabAgrPok.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.chkHabAgrPok.AutoSize = true;
+            this.chkHabAgrPok.CheckAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.chkHabAgrPok.Location = new System.Drawing.Point(12, 237);
+            this.chkHabAgrPok.Name = "chkHabAgrPok";
+            this.chkHabAgrPok.Size = new System.Drawing.Size(15, 14);
+            this.chkHabAgrPok.TabIndex = 30;
+            this.chkHabAgrPok.UseVisualStyleBackColor = true;
+            this.chkHabAgrPok.CheckedChanged += new System.EventHandler(this.chkHabAgrPok_CheckedChanged);
+            // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.RosyBrown;
-            this.ClientSize = new System.Drawing.Size(444, 450);
+            this.ClientSize = new System.Drawing.Size(461, 450);
+            this.Controls.Add(this.chkHabAgrPok);
+            this.Controls.Add(this.grpAgregarPokemon);
             this.Controls.Add(this.rchPokemon);
             this.Controls.Add(this.lstPokemon);
             this.Controls.Add(this.btnVolver);
@@ -123,7 +206,10 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pokedex Menu";
             this.Load += new System.EventHandler(this.Acceso_Load);
+            this.grpAgregarPokemon.ResumeLayout(false);
+            this.grpAgregarPokemon.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -134,5 +220,12 @@
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.ListBox lstPokemon;
         private System.Windows.Forms.RichTextBox rchPokemon;
+        private System.Windows.Forms.GroupBox grpAgregarPokemon;
+        private System.Windows.Forms.CheckBox chkHabAgrPok;
+        private System.Windows.Forms.TextBox txtAtaquePokemon;
+        private System.Windows.Forms.TextBox txtIDPokemon;
+        private System.Windows.Forms.TextBox txtTipoPokemon;
+        private System.Windows.Forms.TextBox txtNombrePokemon;
+        private System.Windows.Forms.Button btnAgregarPokemon;
     }
 }

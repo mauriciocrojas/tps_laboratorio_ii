@@ -14,10 +14,6 @@ namespace PokedexApp
             InitializeComponent();
         }
 
-        private void Login_Load(object sender, EventArgs e)
-        {
-        }
-
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             if (CheckearUsuario(this.txtUsuario.Text, this.txtClave.Text))
@@ -92,7 +88,7 @@ namespace PokedexApp
 
             try
             {
-                if ((usuario == "aperez" && password == "arielsito") || (usuario == "lmessi" && password == "copaamerica"))
+                if ((usuario == "AshKetchum" && password == "charizard") || (usuario == "ProfesorOak" && password == "pueblopaleta"))
                 {
                     flag = true;
                 }

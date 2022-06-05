@@ -20,21 +20,23 @@ namespace PokedexApp
 
         private void Acceso_Load(object sender, EventArgs e)
         {
-            foreach (Pokemon pokemon in Pokemon.listaPokemon)
-            {
-                lstPokemon.Items.Add(pokemon.nombre);
-            }
 
             if (tipoUsuario == "Administrador")
             {
                 this.btnVerUsu.Enabled = true;
                 this.BackColor = System.Drawing.Color.AliceBlue;
+                this.grpAgregarPokemon.Enabled = false;
             }
             else
             {
                 this.btnVerUsu.Enabled = false;
                 this.BackColor = System.Drawing.Color.MistyRose;
+                this.chkHabAgrPok.Visible = false;
+                this.grpAgregarPokemon.Visible = false;
             }
+
+            MostrarPokemonEnListaPokemon();
+
         }
 
 
@@ -76,12 +78,12 @@ namespace PokedexApp
             if (tipoUsuario == "Administrador")
             {
                 string cadena = Administrador.listaAdministradores[0].MostrarDato();
-                MessageBox.Show(cadena, "Usuario logueado tipo Administrador");
+                MessageBox.Show(cadena, "Usuario logueado tipo: Administrador");
             }
             else
             {
                 string cadena = Usuario.listaUsuarios[0].MostrarDato();
-                MessageBox.Show(cadena, "Usuario logueado tipo Usuario simple");
+                MessageBox.Show(cadena, "Usuario logueado tipo: Usuario simple");
             }
         }
 
@@ -108,12 +110,88 @@ namespace PokedexApp
         {
             foreach (Pokemon pokemon in Pokemon.listaPokemon)
             {
-                if (pokemon.nombre == lstPokemon.SelectedItem.ToString())
+                if (pokemon.nombre == this.lstPokemon.SelectedItem.ToString())
                 {
-                    rchPokemon.Text = pokemon.MostrarDato();
+                    this.rchPokemon.Text = pokemon.MostrarDato();
                 }
             }
         }
 
+        public void MostrarPokemonEnListaPokemon()
+        {
+            lstPokemon.Items.Clear();
+            foreach (Pokemon pokemon in Pokemon.listaPokemon)
+            {
+                this.lstPokemon.Items.Add(pokemon.nombre);
+            }
+        }
+
+
+        public void MostrarListaPokemonEnRchPokemon()
+        {
+            foreach (Pokemon pokemon in Pokemon.listaPokemon)
+            {
+                this.rchPokemon.Text = pokemon.MostrarDato();
+            }
+        }
+
+        private void chkHabAgrPok_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkHabAgrPok.Checked)
+            {
+                this.grpAgregarPokemon.Enabled = true;
+            }
+            else { this.grpAgregarPokemon.Enabled = false; }
+        }
+
+        private void btnAgregarPokemon_Click(object sender, EventArgs e)
+        {
+            if (Pokemon.AgregarPokemon(this.txtNombrePokemon.Text, this.txtTipoPokemon.Text, this.txtIDPokemon.Text, this.txtAtaquePokemon.Text))
+            {
+                MostrarPokemonEnListaPokemon();
+                MostrarListaPokemonEnRchPokemon();
+                MessageBox.Show("Se agregó el pokemón");
+            }
+            else
+            {
+                MessageBox.Show("Error o faltante de datos");
+            }
+        }
+
+        private void txtIDPokemon_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) || char.IsSymbol(e.KeyChar) || char.IsWhiteSpace(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Solamente números", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void txtNombrePokemon_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsNumber(e.KeyChar) || char.IsSymbol(e.KeyChar) || char.IsWhiteSpace(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Solamente letras", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void txtTipoPokemon_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsNumber(e.KeyChar) || char.IsSymbol(e.KeyChar) || char.IsWhiteSpace(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Solamente letras", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void txtAtaquePokemon_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsNumber(e.KeyChar) || char.IsSymbol(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Solamente letras", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
