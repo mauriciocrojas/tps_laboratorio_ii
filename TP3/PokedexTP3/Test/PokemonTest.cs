@@ -6,6 +6,7 @@ namespace Test
     [TestClass]
     public class PokemonTest
     {
+        //Pruebo método Carga de datos manual(AgregarPokemon)
         [TestMethod]
         public void ProbarCargaDeDatosManualNuevoPokemon()
         {
@@ -15,6 +16,22 @@ namespace Test
 
             //Assert
             Assert.IsTrue(resultado);
+        }
+
+        //Pruebo método de extensión(LanzarAtaque)
+        [TestMethod]
+        public void ProbarLanzadorDeAtaques()
+        {
+
+            //Arrange
+            string pokemon = "Charmander";
+            string resultadoEsperado = "Charmander ha lanzado Lanzallamas";
+
+            //Act
+            string resultado = pokemon.LanzarAtaque();
+
+            //Assert
+            Assert.AreEqual(resultadoEsperado, resultado);
         }
     }
 }

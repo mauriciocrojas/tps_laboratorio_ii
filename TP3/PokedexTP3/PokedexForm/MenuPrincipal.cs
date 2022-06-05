@@ -49,26 +49,6 @@ namespace PokedexApp
             MessageBox.Show(Usuario.MostrarDatos(), "Usuarios de la app");
         }
 
-        /// <summary>
-        /// Botón que abrirá un formulario para ver y administrar el stock:
-        ///El administrador podrá acceder a:
-        /// Un control de stock y posibilidad de agregar nuevos productos.
-        /// El empleado:
-        /// Sólo control de Stock.
-        /// </summary>
-        private void btnControlDeStock(object sender, EventArgs e)
-        {
-
-        }
-
-        /// <summary>
-        /// Evento donde agruparemos el clickeo de cualquier botón-ubicación de mesa o barra,
-        /// se analizará esa ubicación, y acorde a eso se abrirá la misma.
-        /// </summary>
-        private void btnUbicacion(object sender, EventArgs e)
-        {
-
-        }
 
         /// <summary>
         /// Botón que mostrará el usuario logueado actualmente
@@ -108,12 +88,19 @@ namespace PokedexApp
         /// </summary>
         private void lstPokemon_SelectedIndexChanged(object sender, EventArgs e)
         {
-            foreach (Pokemon pokemon in Pokemon.listaPokemon)
+            try
             {
-                if (pokemon.nombre == this.lstPokemon.SelectedItem.ToString())
+                foreach (Pokemon pokemon in Pokemon.listaPokemon)
                 {
-                    this.rchPokemon.Text = pokemon.MostrarDato();
+                    if (pokemon.nombre == (string)this.lstPokemon.SelectedItem)
+                    {
+                        this.rchPokemon.Text = pokemon.MostrarDato();
+                    }
                 }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("¡Lanzaste una excepción!", "¡Cuidado!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -127,7 +114,7 @@ namespace PokedexApp
         }
 
 
-        public void MostrarListaPokemonEnRchPokemon()
+        public void MostrarPokemonEnRichTextPokemon()
         {
             foreach (Pokemon pokemon in Pokemon.listaPokemon)
             {
@@ -149,12 +136,12 @@ namespace PokedexApp
             if (Pokemon.AgregarPokemon(this.txtNombrePokemon.Text, this.txtTipoPokemon.Text, this.txtIDPokemon.Text, this.txtAtaquePokemon.Text))
             {
                 MostrarPokemonEnListaPokemon();
-                MostrarListaPokemonEnRchPokemon();
-                MessageBox.Show("Se agregó el pokemón");
+                MostrarPokemonEnRichTextPokemon();
+                MessageBox.Show("Se agregó el pokemón", "Agregado correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Error o faltante de datos");
+                MessageBox.Show("Error o faltante de datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -193,5 +180,20 @@ namespace PokedexApp
                 MessageBox.Show("Solamente letras", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btnLanzarAtaque_Click(object sender, EventArgs e)
+        {
+            if (this.lstPokemon.SelectedItem is not null)
+            {
+                string pokemonSeleccionado = (string)this.lstPokemon.SelectedItem;
+
+                MessageBox.Show(pokemonSeleccionado.LanzarAtaque(), "¡Te han atacado!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                MessageBox.Show("No se seleccionó ningún pokemon", "¡Elegí un pokemon!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
     }
 }

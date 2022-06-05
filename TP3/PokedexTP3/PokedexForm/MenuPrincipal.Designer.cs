@@ -42,6 +42,7 @@
             this.txtTipoPokemon = new System.Windows.Forms.TextBox();
             this.txtNombrePokemon = new System.Windows.Forms.TextBox();
             this.chkHabAgrPok = new System.Windows.Forms.CheckBox();
+            this.btnLanzarAtaque = new System.Windows.Forms.Button();
             this.grpAgregarPokemon.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -183,12 +184,23 @@
             this.chkHabAgrPok.UseVisualStyleBackColor = true;
             this.chkHabAgrPok.CheckedChanged += new System.EventHandler(this.chkHabAgrPok_CheckedChanged);
             // 
+            // btnLanzarAtaque
+            // 
+            this.btnLanzarAtaque.Location = new System.Drawing.Point(12, 289);
+            this.btnLanzarAtaque.Name = "btnLanzarAtaque";
+            this.btnLanzarAtaque.Size = new System.Drawing.Size(91, 37);
+            this.btnLanzarAtaque.TabIndex = 31;
+            this.btnLanzarAtaque.Text = "Lanzar ataque";
+            this.btnLanzarAtaque.UseVisualStyleBackColor = true;
+            this.btnLanzarAtaque.Click += new System.EventHandler(this.btnLanzarAtaque_Click);
+            // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.RosyBrown;
             this.ClientSize = new System.Drawing.Size(461, 450);
+            this.Controls.Add(this.btnLanzarAtaque);
             this.Controls.Add(this.chkHabAgrPok);
             this.Controls.Add(this.grpAgregarPokemon);
             this.Controls.Add(this.rchPokemon);
@@ -227,5 +239,6 @@
         private System.Windows.Forms.TextBox txtTipoPokemon;
         private System.Windows.Forms.TextBox txtNombrePokemon;
         private System.Windows.Forms.Button btnAgregarPokemon;
+        private System.Windows.Forms.Button btnLanzarAtaque;
     }
 }

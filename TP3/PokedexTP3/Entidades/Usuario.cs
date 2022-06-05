@@ -42,10 +42,10 @@ namespace Entidades
         public static void HardcodearUsuarios()
         {
             Usuario usuario1 = new Usuario("Ash", "Ketchum", "AshKetchum", "charizard");
-            Usuario usuario2 = new Usuario("Brian", "Lega", "blega", "thebrian");
-            Usuario usuario3 = new Usuario("Carlos", "Bom", "cbom", "carlitos");
-            Usuario usuario4 = new Usuario("Denver", "Hetok", "dhetok", "denverland");
-            Usuario usuario5 = new Usuario("Emul", "Asion", "easion", "emular");
+            Usuario usuario2 = new Usuario("Misty", "Celeste", "MistyCeleste", "cascada");
+            Usuario usuario3 = new Usuario("Brock", "Plateada", "BrockPlateada", "kanto");
+            Usuario usuario4 = new Usuario("Gary", "Oak", "GaryOak", "blastoise");
+            Usuario usuario5 = new Usuario("James", "Mememes", "JamesMememes", "meowth");
 
             listaUsuarios.Add(usuario1);
             listaUsuarios.Add(usuario2);
