@@ -26,6 +26,7 @@ namespace PokedexApp
                 this.btnVerUsu.Enabled = true;
                 this.BackColor = System.Drawing.Color.AliceBlue;
                 this.grpAgregarPokemon.Enabled = false;
+                this.Text = "Pokedex - Menú Administrador";
             }
             else
             {
@@ -33,6 +34,7 @@ namespace PokedexApp
                 this.BackColor = System.Drawing.Color.MistyRose;
                 this.chkHabAgrPok.Visible = false;
                 this.grpAgregarPokemon.Visible = false;
+                this.Text = "Pokedex - Menú Entrenador";
             }
 
             MostrarPokemonEnListaPokemon();
@@ -46,7 +48,7 @@ namespace PokedexApp
         /// </summary>
         private void btnVerUsuarios_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(Usuario.MostrarDatos(), "Usuarios de la app");
+            MessageBox.Show(Entrenador.MostrarDatos(), "Usuarios de la app");
         }
 
 
@@ -62,8 +64,8 @@ namespace PokedexApp
             }
             else
             {
-                string cadena = Usuario.listaUsuarios[0].MostrarDato();
-                MessageBox.Show(cadena, "Usuario logueado tipo: Usuario simple");
+                string cadena = Entrenador.listaEntrenadores[0].MostrarDato();
+                MessageBox.Show(cadena, "Usuario logueado tipo: Entrenador");
             }
         }
 

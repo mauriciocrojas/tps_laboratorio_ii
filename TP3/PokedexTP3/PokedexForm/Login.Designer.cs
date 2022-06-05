@@ -36,8 +36,7 @@
             this.txtClave = new System.Windows.Forms.TextBox();
             this.btnIngresar = new System.Windows.Forms.Button();
             this.btnCargarAdmin = new System.Windows.Forms.Button();
-            this.btnCargarUsuario = new System.Windows.Forms.Button();
-            this.lblPokedex = new System.Windows.Forms.Label();
+            this.btnCargarEntrenador = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -47,16 +46,17 @@
             this.lblBienvenido.BackColor = System.Drawing.Color.MistyRose;
             this.lblBienvenido.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblBienvenido.Font = new System.Drawing.Font("Bell MT", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.lblBienvenido.Location = new System.Drawing.Point(131, 20);
+            this.lblBienvenido.Location = new System.Drawing.Point(48, 9);
             this.lblBienvenido.Name = "lblBienvenido";
-            this.lblBienvenido.Size = new System.Drawing.Size(205, 39);
+            this.lblBienvenido.Size = new System.Drawing.Size(313, 39);
             this.lblBienvenido.TabIndex = 0;
-            this.lblBienvenido.Text = "Bienvenido a la";
+            this.lblBienvenido.Text = "Bienvenido a la Pokedex";
             // 
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Location = new System.Drawing.Point(136, 120);
+            this.lblUsuario.BackColor = System.Drawing.Color.MistyRose;
+            this.lblUsuario.Location = new System.Drawing.Point(118, 58);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(47, 15);
             this.lblUsuario.TabIndex = 1;
@@ -65,7 +65,8 @@
             // lblClave
             // 
             this.lblClave.AutoSize = true;
-            this.lblClave.Location = new System.Drawing.Point(136, 208);
+            this.lblClave.BackColor = System.Drawing.Color.MistyRose;
+            this.lblClave.Location = new System.Drawing.Point(118, 146);
             this.lblClave.Name = "lblClave";
             this.lblClave.Size = new System.Drawing.Size(36, 15);
             this.lblClave.TabIndex = 2;
@@ -73,14 +74,16 @@
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(136, 138);
+            this.txtUsuario.BackColor = System.Drawing.Color.Snow;
+            this.txtUsuario.Location = new System.Drawing.Point(118, 76);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(182, 23);
             this.txtUsuario.TabIndex = 3;
             // 
             // txtClave
             // 
-            this.txtClave.Location = new System.Drawing.Point(136, 226);
+            this.txtClave.BackColor = System.Drawing.Color.Snow;
+            this.txtClave.Location = new System.Drawing.Point(118, 164);
             this.txtClave.Name = "txtClave";
             this.txtClave.PasswordChar = '*';
             this.txtClave.Size = new System.Drawing.Size(182, 23);
@@ -88,53 +91,44 @@
             // 
             // btnIngresar
             // 
+            this.btnIngresar.BackColor = System.Drawing.Color.Snow;
             this.btnIngresar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.btnIngresar.Location = new System.Drawing.Point(180, 277);
+            this.btnIngresar.Location = new System.Drawing.Point(161, 204);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(92, 42);
             this.btnIngresar.TabIndex = 5;
             this.btnIngresar.Text = "Ingresar";
-            this.btnIngresar.UseVisualStyleBackColor = true;
+            this.btnIngresar.UseVisualStyleBackColor = false;
             this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
             // btnCargarAdmin
             // 
-            this.btnCargarAdmin.Location = new System.Drawing.Point(307, 324);
+            this.btnCargarAdmin.BackColor = System.Drawing.Color.Snow;
+            this.btnCargarAdmin.Location = new System.Drawing.Point(265, 267);
             this.btnCargarAdmin.Name = "btnCargarAdmin";
             this.btnCargarAdmin.Size = new System.Drawing.Size(140, 23);
             this.btnCargarAdmin.TabIndex = 7;
             this.btnCargarAdmin.Text = "Cargar Administrador";
-            this.btnCargarAdmin.UseVisualStyleBackColor = true;
+            this.btnCargarAdmin.UseVisualStyleBackColor = false;
             this.btnCargarAdmin.Click += new System.EventHandler(this.btnCargarAdmin_Click);
             // 
-            // btnCargarUsuario
+            // btnCargarEntrenador
             // 
-            this.btnCargarUsuario.Location = new System.Drawing.Point(307, 348);
-            this.btnCargarUsuario.Name = "btnCargarUsuario";
-            this.btnCargarUsuario.Size = new System.Drawing.Size(140, 23);
-            this.btnCargarUsuario.TabIndex = 8;
-            this.btnCargarUsuario.Text = "Cargar Usuario simple";
-            this.btnCargarUsuario.UseVisualStyleBackColor = true;
-            this.btnCargarUsuario.Click += new System.EventHandler(this.btnCargarUsu_Click);
-            // 
-            // lblPokedex
-            // 
-            this.lblPokedex.AutoSize = true;
-            this.lblPokedex.BackColor = System.Drawing.Color.MistyRose;
-            this.lblPokedex.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblPokedex.Font = new System.Drawing.Font("Bell MT", 24F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.lblPokedex.Location = new System.Drawing.Point(165, 59);
-            this.lblPokedex.Name = "lblPokedex";
-            this.lblPokedex.Size = new System.Drawing.Size(119, 39);
-            this.lblPokedex.TabIndex = 9;
-            this.lblPokedex.Text = "Pokedex";
+            this.btnCargarEntrenador.BackColor = System.Drawing.Color.Snow;
+            this.btnCargarEntrenador.Location = new System.Drawing.Point(265, 291);
+            this.btnCargarEntrenador.Name = "btnCargarEntrenador";
+            this.btnCargarEntrenador.Size = new System.Drawing.Size(140, 23);
+            this.btnCargarEntrenador.TabIndex = 8;
+            this.btnCargarEntrenador.Text = "Cargar Entrenador";
+            this.btnCargarEntrenador.UseVisualStyleBackColor = false;
+            this.btnCargarEntrenador.Click += new System.EventHandler(this.btnCargarEntrenador_Click);
             // 
             // btnSalir
             // 
             this.btnSalir.BackColor = System.Drawing.Color.Maroon;
             this.btnSalir.Font = new System.Drawing.Font("Segoe UI", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.btnSalir.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSalir.Location = new System.Drawing.Point(16, 333);
+            this.btnSalir.Location = new System.Drawing.Point(11, 276);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(89, 38);
             this.btnSalir.TabIndex = 10;
@@ -147,10 +141,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.RosyBrown;
-            this.ClientSize = new System.Drawing.Size(459, 383);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ClientSize = new System.Drawing.Size(418, 316);
             this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.lblPokedex);
-            this.Controls.Add(this.btnCargarUsuario);
+            this.Controls.Add(this.btnCargarEntrenador);
             this.Controls.Add(this.btnCargarAdmin);
             this.Controls.Add(this.btnIngresar);
             this.Controls.Add(this.txtClave);
@@ -180,8 +175,7 @@
         private System.Windows.Forms.TextBox txtClave;
         private System.Windows.Forms.Button btnIngresar;
         private System.Windows.Forms.Button btnCargarAdmin;
-        private System.Windows.Forms.Button btnCargarUsuario;
-        private System.Windows.Forms.Label lblPokedex;
+        private System.Windows.Forms.Button btnCargarEntrenador;
         private System.Windows.Forms.Button btnSalir;
     }
 }

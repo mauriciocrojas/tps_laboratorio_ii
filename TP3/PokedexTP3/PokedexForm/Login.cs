@@ -6,8 +6,8 @@ namespace PokedexApp
 {
     public partial class Login : Form
     {
-        private bool btnSeCargoUsuSimp = false;
-        private bool btnSeCargoAdm = false;
+        private bool btnSeCargoEntrenador = false;
+        private bool btnSeCargoAdministrador = false;
 
         public Login()
         {
@@ -19,12 +19,12 @@ namespace PokedexApp
             if (CheckearUsuario(this.txtUsuario.Text, this.txtClave.Text))
             {
                 System.Media.SystemSounds.Hand.Play();
-                if (btnSeCargoUsuSimp)
+                if (btnSeCargoEntrenador)
                 {
-                    MenuPrincipal acceso = new MenuPrincipal("Usuario");
+                    MenuPrincipal acceso = new MenuPrincipal("Entrenador");
                     acceso.ShowDialog();
                 }
-                else if (btnSeCargoAdm)
+                else if (btnSeCargoAdministrador)
                 {
                     MenuPrincipal acceso = new MenuPrincipal("Administrador");
                     acceso.ShowDialog();
@@ -36,12 +36,12 @@ namespace PokedexApp
         /// Función que cargara un usuario.
         /// </summary>
         /// <returns>Retorna un usuario</returns>
-        public Usuario CargarUsuario()
+        public Entrenador CargarEntrenador()
         {
-            this.txtUsuario.Text = Usuario.listaUsuarios[0].user;
-            this.txtClave.Text = Usuario.listaUsuarios[0].password;
-            Usuario usuario = Usuario.listaUsuarios[0];
-            return usuario;
+            this.txtUsuario.Text = Entrenador.listaEntrenadores[0].user;
+            this.txtClave.Text = Entrenador.listaEntrenadores[0].password;
+            Entrenador entrenador = Entrenador.listaEntrenadores[0];
+            return entrenador;
         }
 
         /// <summary>
@@ -52,18 +52,18 @@ namespace PokedexApp
         {
             this.txtUsuario.Text = Administrador.listaAdministradores[0].user;
             this.txtClave.Text = Administrador.listaAdministradores[0].password;
-            Administrador usuario = Administrador.listaAdministradores[0];
-            return usuario;
+            Administrador administrador = Administrador.listaAdministradores[0];
+            return administrador;
         }
 
         /// <summary>
-        /// Botón que cargará los datos del usuario en los textbox correspondientes.
+        /// Botón que cargará los datos del entrenador en los textbox correspondientes.
         /// </summary>
-        private void btnCargarUsu_Click(object sender, EventArgs e)
+        private void btnCargarEntrenador_Click(object sender, EventArgs e)
         {
-            CargarUsuario();
-            btnSeCargoUsuSimp = true;
-            btnSeCargoAdm = false;
+            CargarEntrenador();
+            btnSeCargoEntrenador = true;
+            btnSeCargoAdministrador = false;
         }
 
         /// <summary>
@@ -72,8 +72,8 @@ namespace PokedexApp
         private void btnCargarAdmin_Click(object sender, EventArgs e)
         {
             CargarAdministrador();
-            btnSeCargoAdm = true;
-            btnSeCargoUsuSimp = false;
+            btnSeCargoAdministrador = true;
+            btnSeCargoEntrenador = false;
         }
 
         /// <summary>

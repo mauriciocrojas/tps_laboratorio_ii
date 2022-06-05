@@ -20,3 +20,4 @@ C:\Users\maurojas\Documents\Alumni\Proyectos\Trabajo Practico n° 3\PokedexTP3\P
 C:\Users\maurojas\Documents\Alumni\Proyectos\Trabajo Practico n° 3\PokedexTP3\PokedexForm\obj\Debug\net5.0-windows\PokedexForm.pdb
 C:\Users\maurojas\Documents\Alumni\Proyectos\Trabajo Practico n° 3\PokedexTP3\PokedexForm\obj\Debug\net5.0-windows\PokedexForm.genruntimeconfig.cache
 C:\Users\maurojas\Documents\Alumni\Proyectos\Trabajo Practico n° 3\PokedexTP3\PokedexForm\obj\Debug\net5.0-windows\ref\PokedexForm.dll
+C:\Users\maurojas\Documents\Alumni\Proyectos\Trabajo Practico n° 3\PokedexTP3\PokedexForm\obj\Debug\net5.0-windows\PokedexForm.Properties.Resources.resources

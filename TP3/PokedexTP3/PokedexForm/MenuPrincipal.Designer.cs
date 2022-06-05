@@ -48,19 +48,19 @@
             // 
             // btnVerUsu
             // 
-            this.btnVerUsu.Location = new System.Drawing.Point(12, 381);
+            this.btnVerUsu.Location = new System.Drawing.Point(12, 378);
             this.btnVerUsu.Name = "btnVerUsu";
-            this.btnVerUsu.Size = new System.Drawing.Size(98, 57);
+            this.btnVerUsu.Size = new System.Drawing.Size(111, 57);
             this.btnVerUsu.TabIndex = 23;
-            this.btnVerUsu.Text = "Ver usuarios registrados";
+            this.btnVerUsu.Text = "Ver entrenadores registrados";
             this.btnVerUsu.UseVisualStyleBackColor = true;
             this.btnVerUsu.Click += new System.EventHandler(this.btnVerUsuarios_Click);
             // 
             // btnUsuarioLogeado
             // 
-            this.btnUsuarioLogeado.Location = new System.Drawing.Point(116, 381);
+            this.btnUsuarioLogeado.Location = new System.Drawing.Point(134, 378);
             this.btnUsuarioLogeado.Name = "btnUsuarioLogeado";
-            this.btnUsuarioLogeado.Size = new System.Drawing.Size(92, 60);
+            this.btnUsuarioLogeado.Size = new System.Drawing.Size(102, 60);
             this.btnUsuarioLogeado.TabIndex = 24;
             this.btnUsuarioLogeado.Text = "Mostrar usuario logueado";
             this.btnUsuarioLogeado.UseVisualStyleBackColor = true;
@@ -71,7 +71,7 @@
             this.btnSalir.BackColor = System.Drawing.Color.Maroon;
             this.btnSalir.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnSalir.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSalir.Location = new System.Drawing.Point(347, 392);
+            this.btnSalir.Location = new System.Drawing.Point(358, 392);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(85, 46);
             this.btnSalir.TabIndex = 25;
@@ -84,7 +84,7 @@
             this.btnVolver.BackColor = System.Drawing.Color.Firebrick;
             this.btnVolver.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnVolver.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnVolver.Location = new System.Drawing.Point(256, 392);
+            this.btnVolver.Location = new System.Drawing.Point(267, 392);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(85, 46);
             this.btnVolver.TabIndex = 26;
@@ -118,7 +118,7 @@
             this.grpAgregarPokemon.Controls.Add(this.txtIDPokemon);
             this.grpAgregarPokemon.Controls.Add(this.txtTipoPokemon);
             this.grpAgregarPokemon.Controls.Add(this.txtNombrePokemon);
-            this.grpAgregarPokemon.Location = new System.Drawing.Point(33, 200);
+            this.grpAgregarPokemon.Location = new System.Drawing.Point(21, 237);
             this.grpAgregarPokemon.Name = "grpAgregarPokemon";
             this.grpAgregarPokemon.Size = new System.Drawing.Size(416, 74);
             this.grpAgregarPokemon.TabIndex = 29;
@@ -186,7 +186,7 @@
             // 
             // btnLanzarAtaque
             // 
-            this.btnLanzarAtaque.Location = new System.Drawing.Point(12, 289);
+            this.btnLanzarAtaque.Location = new System.Drawing.Point(12, 194);
             this.btnLanzarAtaque.Name = "btnLanzarAtaque";
             this.btnLanzarAtaque.Size = new System.Drawing.Size(91, 37);
             this.btnLanzarAtaque.TabIndex = 31;
