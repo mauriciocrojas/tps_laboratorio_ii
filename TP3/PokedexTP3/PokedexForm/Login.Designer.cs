@@ -161,7 +161,7 @@
             this.picPokebola.BackColor = System.Drawing.Color.Transparent;
             this.picPokebola.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.picPokebola.Image = ((System.Drawing.Image)(resources.GetObject("picPokebola.Image")));
-            this.picPokebola.Location = new System.Drawing.Point(203, 136);
+            this.picPokebola.Location = new System.Drawing.Point(188, 136);
             this.picPokebola.Name = "picPokebola";
             this.picPokebola.Size = new System.Drawing.Size(50, 53);
             this.picPokebola.TabIndex = 11;

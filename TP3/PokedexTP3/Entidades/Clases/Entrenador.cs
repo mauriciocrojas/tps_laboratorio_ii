@@ -3,7 +3,7 @@ using System.Text;
 
 namespace Entidades
 {
-    public class Entrenador
+    public class Entrenador : IDatos
     {
         public string nombre;
         public string apellido;
@@ -16,7 +16,12 @@ namespace Entidades
             listaEntrenadores = new List<Entrenador>();
             HardcodearEntrenadores();
         }
-        public Entrenador(string nombre, string apellido, string user, string password)
+
+        private Entrenador()
+        {
+
+        }
+        public Entrenador(string nombre, string apellido, string user, string password) : this()
         {
             this.nombre = nombre;
             this.apellido = apellido;
@@ -29,11 +34,24 @@ namespace Entidades
             get { return $"{nombre} {apellido}"; }
         }
 
+        //Implementa la interfaz IDatos
         public string MostrarDato()
         {
             StringBuilder sb = new StringBuilder();
 
             sb.Append($"Nombre: {NombreCompleto}, user: {user}");
+
+            return sb.ToString();
+        }
+
+        public static string MostrarDatos()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            foreach (Entrenador entrenador in listaEntrenadores)
+            {
+                sb.AppendLine($"{entrenador.MostrarDato()}");
+            }
 
             return sb.ToString();
         }
@@ -52,18 +70,6 @@ namespace Entidades
             listaEntrenadores.Add(entrenador3);
             listaEntrenadores.Add(entrenador4);
             listaEntrenadores.Add(entrenador5);
-        }
-
-        public static string MostrarDatos()
-        {
-            StringBuilder sb = new StringBuilder();
-
-            foreach (Entrenador entrenador in listaEntrenadores)
-            {
-                sb.AppendLine($"{entrenador.MostrarDato()}");
-            }
-
-            return sb.ToString();
         }
 
     }

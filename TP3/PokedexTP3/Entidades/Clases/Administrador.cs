@@ -3,7 +3,7 @@ using System.Text;
 
 namespace Entidades
 {
-    public class Administrador
+    public class Administrador : IDatos
     {
         public string nombre;
         public string apellido;
@@ -38,6 +38,7 @@ namespace Entidades
             listaAdministradores.Add(administrador2);
         }
 
+        //Implementa la interfaz IDatos
         public string MostrarDato()
         {
             StringBuilder sb = new StringBuilder();

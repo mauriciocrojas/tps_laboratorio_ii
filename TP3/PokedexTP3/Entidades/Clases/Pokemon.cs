@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Entidades
 {
-    public class Pokemon
+    public class Pokemon : IDatos
     {
         public string nombre;
         public string tipo;
@@ -49,6 +49,7 @@ namespace Entidades
             listaPokemon.Add(Blastoise);
         }
 
+        //Implementa interfaz IDatos
         public string MostrarDato()
         {
             StringBuilder sb = new StringBuilder();
