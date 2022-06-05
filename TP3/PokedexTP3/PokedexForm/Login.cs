@@ -140,6 +140,5 @@ namespace PokedexApp
                 e.Cancel = true;
             }
         }
-
     }
 }

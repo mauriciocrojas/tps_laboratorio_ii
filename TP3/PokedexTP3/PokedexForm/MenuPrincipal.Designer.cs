@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuPrincipal));
-            this.btnVerUsu = new System.Windows.Forms.Button();
+            this.btnVerEntrenadores = new System.Windows.Forms.Button();
             this.btnUsuarioLogeado = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
@@ -46,15 +46,15 @@
             this.grpAgregarPokemon.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btnVerUsu
+            // btnVerEntrenadores
             // 
-            this.btnVerUsu.Location = new System.Drawing.Point(12, 378);
-            this.btnVerUsu.Name = "btnVerUsu";
-            this.btnVerUsu.Size = new System.Drawing.Size(111, 57);
-            this.btnVerUsu.TabIndex = 23;
-            this.btnVerUsu.Text = "Ver entrenadores registrados";
-            this.btnVerUsu.UseVisualStyleBackColor = true;
-            this.btnVerUsu.Click += new System.EventHandler(this.btnVerUsuarios_Click);
+            this.btnVerEntrenadores.Location = new System.Drawing.Point(12, 378);
+            this.btnVerEntrenadores.Name = "btnVerEntrenadores";
+            this.btnVerEntrenadores.Size = new System.Drawing.Size(111, 57);
+            this.btnVerEntrenadores.TabIndex = 23;
+            this.btnVerEntrenadores.Text = "Ver entrenadores registrados";
+            this.btnVerEntrenadores.UseVisualStyleBackColor = true;
+            this.btnVerEntrenadores.Click += new System.EventHandler(this.btnVerEntrenadores_Click);
             // 
             // btnUsuarioLogeado
             // 
@@ -208,7 +208,7 @@
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnUsuarioLogeado);
-            this.Controls.Add(this.btnVerUsu);
+            this.Controls.Add(this.btnVerEntrenadores);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -226,7 +226,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button btnVerUsu;
+        private System.Windows.Forms.Button btnVerEntrenadores;
         private System.Windows.Forms.Button btnUsuarioLogeado;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnVolver;

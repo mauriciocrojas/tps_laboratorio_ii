@@ -23,14 +23,14 @@ namespace PokedexApp
 
             if (tipoUsuario == "Administrador")
             {
-                this.btnVerUsu.Enabled = true;
+                this.btnVerEntrenadores.Enabled = true;
                 this.BackColor = System.Drawing.Color.AliceBlue;
                 this.grpAgregarPokemon.Enabled = false;
                 this.Text = "Pokedex - Menú Administrador";
             }
             else
             {
-                this.btnVerUsu.Enabled = false;
+                this.btnVerEntrenadores.Enabled = false;
                 this.BackColor = System.Drawing.Color.MistyRose;
                 this.chkHabAgrPok.Visible = false;
                 this.grpAgregarPokemon.Visible = false;
@@ -42,15 +42,6 @@ namespace PokedexApp
         }
 
 
-        /// <summary>
-        /// Botón que a través de un MessageBox, mostrará sólo al Administrador,
-        /// los usuarios actuales de la app.
-        /// </summary>
-        private void btnVerUsuarios_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show(Entrenador.MostrarDatos(), "Usuarios de la app");
-        }
-
 
         /// <summary>
         /// Botón que mostrará el usuario logueado actualmente
@@ -60,12 +51,12 @@ namespace PokedexApp
             if (tipoUsuario == "Administrador")
             {
                 string cadena = Administrador.listaAdministradores[0].MostrarDato();
-                MessageBox.Show(cadena, "Usuario logueado tipo: Administrador");
+                MessageBox.Show(cadena, "Usuario logueado tipo: Administrador", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
                 string cadena = Entrenador.listaEntrenadores[0].MostrarDato();
-                MessageBox.Show(cadena, "Usuario logueado tipo: Entrenador");
+                MessageBox.Show(cadena, "Usuario logueado tipo: Entrenador", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -197,5 +188,9 @@ namespace PokedexApp
             }
         }
 
+        private void btnVerEntrenadores_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(Entrenador.MostrarDatos(), "Usuarios de la app", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }
