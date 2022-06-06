@@ -1,4 +1,4 @@
-Pokedex App – Instrutivo:
+Pokedex App (TP3) – Instrutivo:
 
 Bienvenido a la Pokedex, una app muy intuitiva para el usuario, la cual tendrá un Login de 
 ingreso, donde se podrán llenar los datos a través de los botones Cargar entrenador o Cargar 
