@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\maurojas\\Documents\\Alumni\\PokedexTP3\\PokedexForm\\PokedexForm.csproj": {}
+    "C:\\Users\\maurojas\\Documents\\Alumni\\TPS\\TP3\\PokedexTP3\\PokedexForm\\PokedexForm.csproj": {}
   },
   "projects": {
-    "C:\\Users\\maurojas\\Documents\\Alumni\\PokedexTP3\\Entidades\\Entidades.csproj": {
+    "C:\\Users\\maurojas\\Documents\\Alumni\\TPS\\TP3\\PokedexTP3\\Entidades\\Entidades.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\maurojas\\Documents\\Alumni\\PokedexTP3\\Entidades\\Entidades.csproj",
+        "projectUniqueName": "C:\\Users\\maurojas\\Documents\\Alumni\\TPS\\TP3\\PokedexTP3\\Entidades\\Entidades.csproj",
         "projectName": "Entidades",
-        "projectPath": "C:\\Users\\maurojas\\Documents\\Alumni\\PokedexTP3\\Entidades\\Entidades.csproj",
+        "projectPath": "C:\\Users\\maurojas\\Documents\\Alumni\\TPS\\TP3\\PokedexTP3\\Entidades\\Entidades.csproj",
         "packagesPath": "C:\\Users\\maurojas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\maurojas\\Documents\\Alumni\\PokedexTP3\\Entidades\\obj\\",
+        "outputPath": "C:\\Users\\maurojas\\Documents\\Alumni\\TPS\\TP3\\PokedexTP3\\Entidades\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -62,14 +62,14 @@
         }
       }
     },
-    "C:\\Users\\maurojas\\Documents\\Alumni\\PokedexTP3\\PokedexForm\\PokedexForm.csproj": {
+    "C:\\Users\\maurojas\\Documents\\Alumni\\TPS\\TP3\\PokedexTP3\\PokedexForm\\PokedexForm.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\maurojas\\Documents\\Alumni\\PokedexTP3\\PokedexForm\\PokedexForm.csproj",
+        "projectUniqueName": "C:\\Users\\maurojas\\Documents\\Alumni\\TPS\\TP3\\PokedexTP3\\PokedexForm\\PokedexForm.csproj",
         "projectName": "PokedexForm",
-        "projectPath": "C:\\Users\\maurojas\\Documents\\Alumni\\PokedexTP3\\PokedexForm\\PokedexForm.csproj",
+        "projectPath": "C:\\Users\\maurojas\\Documents\\Alumni\\TPS\\TP3\\PokedexTP3\\PokedexForm\\PokedexForm.csproj",
         "packagesPath": "C:\\Users\\maurojas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\maurojas\\Documents\\Alumni\\PokedexTP3\\PokedexForm\\obj\\",
+        "outputPath": "C:\\Users\\maurojas\\Documents\\Alumni\\TPS\\TP3\\PokedexTP3\\PokedexForm\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -90,8 +90,8 @@
           "net5.0-windows7.0": {
             "targetAlias": "net5.0-windows",
             "projectReferences": {
-              "C:\\Users\\maurojas\\Documents\\Alumni\\PokedexTP3\\Entidades\\Entidades.csproj": {
-                "projectPath": "C:\\Users\\maurojas\\Documents\\Alumni\\PokedexTP3\\Entidades\\Entidades.csproj"
+              "C:\\Users\\maurojas\\Documents\\Alumni\\TPS\\TP3\\PokedexTP3\\Entidades\\Entidades.csproj": {
+                "projectPath": "C:\\Users\\maurojas\\Documents\\Alumni\\TPS\\TP3\\PokedexTP3\\Entidades\\Entidades.csproj"
               }
             }
           }
