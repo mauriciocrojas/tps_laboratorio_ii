@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "AkolsqpNOdujgbPjvBvHu4meI7EdE8sO+/1SEvJIlkGSI81L8xEGrXgYAMj6BstuPqCJc1erioS7hJCMX2pnkg==",
+  "dgSpecHash": "0vVcWQEnedvBhEqVABQOviMidJKD/vCyJFzt0jzhXrQ73ha2C3zrnhP5g0bbq+2NEA9z1Cn3EYfTRTLjbqBEsA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\maurojas\\Documents\\Alumni\\TPS\\TP3\\PokedexTP3\\Test\\Test.csproj",
+  "projectFilePath": "C:\\Users\\maurojas\\Documents\\Alumni\\tps_laboratorio_ii\\TP3\\PokedexTP3\\Test\\Test.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\maurojas\\.nuget\\packages\\coverlet.collector\\3.0.2\\coverlet.collector.3.0.2.nupkg.sha512",
     "C:\\Users\\maurojas\\.nuget\\packages\\microsoft.codecoverage\\16.9.4\\microsoft.codecoverage.16.9.4.nupkg.sha512",

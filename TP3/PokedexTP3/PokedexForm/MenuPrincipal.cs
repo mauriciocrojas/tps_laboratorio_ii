@@ -116,7 +116,7 @@ namespace PokedexApp
         {
             foreach (Pokemon pokemon in Pokemon.listaPokemon)
             {
-                this.rchPokemon.Text += pokemon.MostrarDato();
+                this.rchPokemon.Text = pokemon.MostrarDato();
             }
         }
 
