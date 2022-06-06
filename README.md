@@ -23,6 +23,5 @@ en las clases Administrador, Entrenador, y Pokemon.
 extiende un string (que será el nombre del pokemon de la lista), y lanzará el ataque de mismo.
 
 -Se aplica Test Unitarios para probar dos métodos, uno el método de extensión LanzarAtaque, 
-y otro para probar la carga manual de un pokemon
-ProbarCargaDeDatosManualNuevoPokemon.
+y otro para probar la carga manual de un pokemon ProbarCargaDeDatosManualNuevoPokemon.
  
