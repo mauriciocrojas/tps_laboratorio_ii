@@ -11,11 +11,22 @@ namespace Entidades
         public string password;
         public static List<Administrador> listaAdministradores;
 
+        /// <summary>
+        /// Constructor estático que instancia y hardcodea la lista. 
+        /// </summary>
         static Administrador()
         {
             listaAdministradores = new List<Administrador>();
             HardcodearAdministradores();
         }
+
+        /// <summary>
+        /// Constructor de instancia que recibe parámetros del administrador.
+        /// </summary>
+        /// <param name="nombre">Nombre del administrador</param>
+        /// <param name="apellido">Apellido del administrador</param>
+        /// <param name="user">Usuario  del administrador</param>
+        /// <param name="password">Password del administrador</param>
         public Administrador(string nombre, string apellido, string user, string password)
         {
             this.nombre = nombre;
@@ -24,11 +35,17 @@ namespace Entidades
             this.password = password;
         }
 
+        /// <summary>
+        /// Propiedad que devuelve el nombre completo del administrador.
+        /// </summary>
         public string NombreCompleto
         {
             get { return $"{nombre} {apellido}"; }
         }
 
+        /// <summary>
+        /// Función estática que hardcodea los administradores.
+        /// </summary>
         public static void HardcodearAdministradores()
         {
             Administrador administrador1 = new Administrador("Samuel", "Oak", "ProfesorOak", "pueblopaleta");
@@ -38,7 +55,10 @@ namespace Entidades
             listaAdministradores.Add(administrador2);
         }
 
-        //Implementa la interfaz IDatos
+        /// <summary>
+        /// Función que muestra los datos de un administrador, e implementa la interfaz IDatos.
+        /// </summary>
+        /// <returns>Retorna los datos del administrador</returns>
         public string MostrarDato()
         {
             StringBuilder sb = new StringBuilder();
@@ -48,10 +68,13 @@ namespace Entidades
             return sb.ToString();
         }
 
+        /// <summary>
+        /// Función que muestra los datos de todos los administradores del sistema.
+        /// </summary>
+        /// <returns>Retorna los datos de todos los administradores</returns>
         public string MostrarDatos()
         {
             StringBuilder sb = new StringBuilder();
-
 
             foreach (Administrador administrador in listaAdministradores)
             {

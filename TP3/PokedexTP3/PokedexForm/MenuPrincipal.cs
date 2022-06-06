@@ -9,18 +9,20 @@ namespace PokedexApp
         public string tipoUsuario;
 
         /// <summary>
-        /// Constructor que recibe un usuario para luego trabajar con él y otros atributos.
+        /// Constructor que recibe un usuario para luego trabajar con él.
         /// </summary>
-        /// <param name="tipoUsuario">Usuario que definirá cómo se mostrarará el formulario de acceso</param>
+        /// <param name="tipoUsuario">Usuario que definirá cómo se mostrarará el formulario de MenuPrincipal</param>
         public MenuPrincipal(string tipoUsuario)
         {
             InitializeComponent();
             this.tipoUsuario = tipoUsuario;
         }
 
-        private void Acceso_Load(object sender, EventArgs e)
+        /// <summary>
+        /// Se determina cómo se cargará el formulario MenuPrincipal.
+        /// </summary>
+        private void MenuPrincipal_Load(object sender, EventArgs e)
         {
-
             if (tipoUsuario == "Administrador")
             {
                 this.btnVerEntrenadores.Enabled = true;
@@ -38,13 +40,11 @@ namespace PokedexApp
             }
 
             MostrarPokemonEnListaPokemon();
-
         }
 
 
-
         /// <summary>
-        /// Botón que mostrará el usuario logueado actualmente
+        /// Botón que mostrará el usuario logueado actualmente.
         /// </summary>
         private void btnUsuarioLogeado_Click(object sender, EventArgs e)
         {
@@ -97,6 +97,9 @@ namespace PokedexApp
             }
         }
 
+        /// <summary>
+        /// Carga los pokemon de la listaPokemon en la lstPokemon del form.
+        /// </summary>
         public void MostrarPokemonEnListaPokemon()
         {
             lstPokemon.Items.Clear();
@@ -106,15 +109,20 @@ namespace PokedexApp
             }
         }
 
-
+        /// <summary>
+        /// Muestra el último pokemon cargado en el rchPokemon.
+        /// </summary>
         public void MostrarPokemonEnRichTextPokemon()
         {
             foreach (Pokemon pokemon in Pokemon.listaPokemon)
             {
-                this.rchPokemon.Text = pokemon.MostrarDato();
+                this.rchPokemon.Text += pokemon.MostrarDato();
             }
         }
 
+        /// <summary>
+        /// Según si está marcado o no el chkAgregarPokemon, se habilitará el grpAgregarPokemon.
+        /// </summary>
         private void chkHabAgrPok_CheckedChanged(object sender, EventArgs e)
         {
             if (chkHabAgrPok.Checked)
@@ -124,9 +132,13 @@ namespace PokedexApp
             else { this.grpAgregarPokemon.Enabled = false; }
         }
 
-        private void btnAgregarPokemon_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Botón que agregará un nuevo pokemon a la lista, y en caso de éxito, lo mostrará.
+        /// </summary>
+        private void btnAgregarPokemonManual_Click(object sender, EventArgs e)
         {
-            if (Pokemon.AgregarPokemon(this.txtNombrePokemon.Text, this.txtTipoPokemon.Text, this.txtIDPokemon.Text, this.txtAtaquePokemon.Text))
+
+            if (Pokemon.AgregarPokemonManual(this.txtNombrePokemon.Text, this.txtTipoPokemon.Text, this.txtIDPokemon.Text, this.txtAtaquePokemon.Text))
             {
                 MostrarPokemonEnListaPokemon();
                 MostrarPokemonEnRichTextPokemon();
@@ -138,6 +150,9 @@ namespace PokedexApp
             }
         }
 
+        /// <summary>
+        /// Sólo permitimos ingreso de números.
+        /// </summary>
         private void txtIDPokemon_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (char.IsLetter(e.KeyChar) || char.IsSymbol(e.KeyChar) || char.IsWhiteSpace(e.KeyChar))
@@ -147,6 +162,9 @@ namespace PokedexApp
             }
         }
 
+        /// <summary>
+        /// Sólo permitimos ingreso de letras.
+        /// </summary>
         private void txtNombrePokemon_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (char.IsNumber(e.KeyChar) || char.IsSymbol(e.KeyChar) || char.IsWhiteSpace(e.KeyChar))
@@ -156,6 +174,9 @@ namespace PokedexApp
             }
         }
 
+        /// <summary>
+        /// Sólo permitimos ingreso de letras.
+        /// </summary>
         private void txtTipoPokemon_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (char.IsNumber(e.KeyChar) || char.IsSymbol(e.KeyChar) || char.IsWhiteSpace(e.KeyChar))
@@ -165,6 +186,9 @@ namespace PokedexApp
             }
         }
 
+        /// <summary>
+        /// Sólo permitimos ingreso de letras.
+        /// </summary>
         private void txtAtaquePokemon_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (char.IsNumber(e.KeyChar) || char.IsSymbol(e.KeyChar))
@@ -174,6 +198,9 @@ namespace PokedexApp
             }
         }
 
+        /// <summary>
+        /// Función que hace que un pokemon lance un ataque y imprima por pantalla.
+        /// </summary>
         private void btnLanzarAtaque_Click(object sender, EventArgs e)
         {
             if (this.lstPokemon.SelectedItem is not null)
@@ -188,9 +215,13 @@ namespace PokedexApp
             }
         }
 
+        /// <summary>
+        /// Función que imprime por pantalla todos los entrenadores registrados en la app.
+        /// </summary>
         private void btnVerEntrenadores_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(Entrenador.MostrarDatos(), "Usuarios de la app", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(Entrenador.MostrarDatos(), "Entrenadores registrados", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
     }
 }

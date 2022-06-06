@@ -133,7 +133,7 @@
             this.btnAgregarPokemon.TabIndex = 4;
             this.btnAgregarPokemon.Text = "Agregar";
             this.btnAgregarPokemon.UseVisualStyleBackColor = true;
-            this.btnAgregarPokemon.Click += new System.EventHandler(this.btnAgregarPokemon_Click);
+            this.btnAgregarPokemon.Click += new System.EventHandler(this.btnAgregarPokemonManual_Click);
             // 
             // txtAtaquePokemon
             // 
@@ -217,7 +217,7 @@
             this.Name = "MenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pokedex Menu";
-            this.Load += new System.EventHandler(this.Acceso_Load);
+            this.Load += new System.EventHandler(this.MenuPrincipal_Load);
             this.grpAgregarPokemon.ResumeLayout(false);
             this.grpAgregarPokemon.PerformLayout();
             this.ResumeLayout(false);

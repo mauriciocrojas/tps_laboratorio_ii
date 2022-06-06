@@ -6,13 +6,13 @@ namespace Test
     [TestClass]
     public class PokemonTest
     {
-        //Pruebo método Carga de datos manual(AgregarPokemon)
+        //Pruebo método Carga de datos manual(AgregarPokemonManual)
         [TestMethod]
         public void ProbarCargaDeDatosManualNuevoPokemon()
         {
 
             //Act
-            bool resultado = Pokemon.AgregarPokemon("Chikorita", "Planta", "152", "Látigo Cepa");
+            bool resultado = Pokemon.AgregarPokemonManual("Chikorita", "Planta", "152", "Látigo Cepa");
 
             //Assert
             Assert.IsTrue(resultado);

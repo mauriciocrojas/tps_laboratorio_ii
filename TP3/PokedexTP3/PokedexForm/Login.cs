@@ -14,6 +14,9 @@ namespace PokedexApp
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Botón que dará el ingreso al MenuPrincipal, y pasará determinado tipo de usuario según los datos que se hayan cargado.
+        /// </summary>
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             if (CheckearUsuario(this.txtUsuario.Text, this.txtClave.Text))
@@ -21,19 +24,19 @@ namespace PokedexApp
                 System.Media.SystemSounds.Hand.Play();
                 if (btnSeCargoEntrenador)
                 {
-                    MenuPrincipal acceso = new MenuPrincipal("Entrenador");
-                    acceso.ShowDialog();
+                    MenuPrincipal menuPrincipal = new MenuPrincipal("Entrenador");
+                    menuPrincipal.ShowDialog();
                 }
                 else if (btnSeCargoAdministrador)
                 {
-                    MenuPrincipal acceso = new MenuPrincipal("Administrador");
-                    acceso.ShowDialog();
+                    MenuPrincipal menuPrincipal = new MenuPrincipal("Administrador");
+                    menuPrincipal.ShowDialog();
                 }
             }
         }
 
         /// <summary>
-        /// Función que cargara un usuario.
+        /// Función que cargara los datos de un entrenador en los textbox.
         /// </summary>
         /// <returns>Retorna un usuario</returns>
         public Entrenador CargarEntrenador()
@@ -45,7 +48,7 @@ namespace PokedexApp
         }
 
         /// <summary>
-        /// Función que cargará un administrador.
+        /// Función que cargará los datos de un administrador en los textbox.
         /// </summary>
         /// <returns>Retorna unadministrador</returns>
         public Administrador CargarAdministrador()
@@ -77,7 +80,7 @@ namespace PokedexApp
         }
 
         /// <summary>
-        /// Función que chequea si los usuarios ingresados son correctos
+        /// Función que chequea si el usuario ingresado es correcto, se manejan excepciones.
         /// </summary>
         /// <param name="usuario">Usuario que se pasará para chequear</param>
         /// <param name="password">Password que se pasará para chequear</param>
@@ -95,13 +98,11 @@ namespace PokedexApp
                 else if (String.IsNullOrEmpty(usuario) && String.IsNullOrEmpty(password))
                 {
                     System.Media.SystemSounds.Exclamation.Play();
-                    //MessageBox.Show("Campos vacios", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     throw new CamposVaciosException("Alguno de los campos está vacío");
                 }
                 else
                 {
                     System.Media.SystemSounds.Exclamation.Play();
-                    //MessageBox.Show("Campos incorrectos", "Datos erroneos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     throw new CamposErroneosException("Alguno de los campos es incorrecto");
                 }
             }
@@ -129,7 +130,7 @@ namespace PokedexApp
         }
 
         /// <summary>
-        /// Cuando se intente cerrar la app por completo, si se preguntará si está seguro.
+        /// Cuando se intente cerrar la app por completo, se preguntará si está seguro.
         /// </summary>
         private void Login_FormClosing(object sender, FormClosingEventArgs e)
         {

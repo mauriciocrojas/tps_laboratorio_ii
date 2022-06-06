@@ -11,17 +11,23 @@ namespace Entidades
         public string password;
         public static List<Entrenador> listaEntrenadores;
 
+        /// <summary>
+        /// Constructor estático que instancia y hardcodea la lista. 
+        /// </summary>
         static Entrenador()
         {
             listaEntrenadores = new List<Entrenador>();
             HardcodearEntrenadores();
         }
 
-        private Entrenador()
-        {
-
-        }
-        public Entrenador(string nombre, string apellido, string user, string password) : this()
+        /// <summary>
+        /// Constructor de instancia que recibe parámetros del entrenador.
+        /// </summary>
+        /// <param name="nombre">Nombre del entrenador</param>
+        /// <param name="apellido">Apellido del entrenador</param>
+        /// <param name="user">Usuario  del entrenador</param>
+        /// <param name="password">Password del entrenador</param>
+        public Entrenador(string nombre, string apellido, string user, string password)
         {
             this.nombre = nombre;
             this.apellido = apellido;
@@ -29,12 +35,18 @@ namespace Entidades
             this.password = password;
         }
 
+        /// <summary>
+        /// Propiedad que devuelve el nombre completo del entrenador.
+        /// </summary>
         public string NombreCompleto
         {
             get { return $"{nombre} {apellido}"; }
         }
 
-        //Implementa la interfaz IDatos
+        /// <summary>
+        /// Función que muestra los datos de un entrenador, e implementa la interfaz IDatos.
+        /// </summary>
+        /// <returns>Retorna los datos del entrenador</returns>
         public string MostrarDato()
         {
             StringBuilder sb = new StringBuilder();
@@ -44,6 +56,10 @@ namespace Entidades
             return sb.ToString();
         }
 
+        /// <summary>
+        /// Función que muestra los datos de todos los entrenadores del sistema.
+        /// </summary>
+        /// <returns>Retorna los datos de todos los entrenadores</returns>
         public static string MostrarDatos()
         {
             StringBuilder sb = new StringBuilder();
@@ -56,7 +72,9 @@ namespace Entidades
             return sb.ToString();
         }
 
-
+        /// <summary>
+        /// Función estática que hardcodea los entrenadores.
+        /// </summary>
         public static void HardcodearEntrenadores()
         {
             Entrenador entrenador1 = new Entrenador("Ash", "Ketchum", "AshKetchum", "charizard");

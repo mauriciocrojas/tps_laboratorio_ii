@@ -12,12 +12,22 @@ namespace Entidades
         public string ataquePrincipal;
         public static List<Pokemon> listaPokemon = new List<Pokemon>();
 
+        /// <summary>
+        /// Constructor estático que instancia y hardcodea la lista. 
+        /// </summary>
         static Pokemon()
         {
             listaPokemon = new List<Pokemon>();
             HardcodearPokemon();
         }
 
+        /// <summary>
+        /// Constructor de instancia que recibe parámetros del pokemon.
+        /// </summary>
+        /// <param name="nombre">Nombre del pokemon</param>
+        /// <param name="tipo">Tipo del pokemon</param>
+        /// <param name="id">Id  del pokemon</param>
+        /// <param name="ataquePrincipal">Ataque principal del pokemon</param>
         public Pokemon(string nombre, string tipo, string id, string ataquePrincipal)
         {
             this.nombre = nombre;
@@ -26,6 +36,9 @@ namespace Entidades
             this.ataquePrincipal = ataquePrincipal;
         }
 
+        /// <summary>
+        /// Función estática que hardcodea los pokemon.
+        /// </summary>
         public static void HardcodearPokemon()
         {
             Pokemon Bulbasaur = new Pokemon("Bulbasaur", "Planta-Veneno", "001", "Hoja afilada");
@@ -49,7 +62,11 @@ namespace Entidades
             listaPokemon.Add(Blastoise);
         }
 
-        //Implementa interfaz IDatos
+
+        /// <summary>
+        /// Función que muestra los datos de un pokemon, e implementa la interfaz IDatos.
+        /// </summary>
+        /// <returns>Retorna los datos del pokemon</returns>
         public string MostrarDato()
         {
             StringBuilder sb = new StringBuilder();
@@ -59,6 +76,10 @@ namespace Entidades
             return sb.ToString();
         }
 
+        /// <summary>
+        /// Función que muestra los datos de todos los pokemon del sistema.
+        /// </summary>
+        /// <returns>Retorna los datos de todos los pokemon</returns>
         public string MostrarDatos()
         {
             StringBuilder sb = new StringBuilder();
@@ -71,7 +92,15 @@ namespace Entidades
             return sb.ToString();
         }
 
-        public static bool AgregarPokemon(string nombre, string tipo, string id, string ataque)
+        /// <summary>
+        /// Función que agrega un pokemon a la lista si pasa las validaciones.
+        /// </summary>
+        /// <param name="nombre">Nombre del pokemon</param>
+        /// <param name="tipo">Tipo del pokemon</param>
+        /// <param name="id">Id del pokemon</param>
+        /// <param name="ataque">Ataque del pokemon</param>
+        /// <returns>Retorna true en caso de agregar a la lista, false caso contrario</returns>
+        public static bool AgregarPokemonManual(string nombre, string tipo, string id, string ataque)
         {
             if(String.IsNullOrEmpty(nombre) || String.IsNullOrEmpty(tipo)
                 || String.IsNullOrEmpty(id) || String.IsNullOrEmpty(ataque))
