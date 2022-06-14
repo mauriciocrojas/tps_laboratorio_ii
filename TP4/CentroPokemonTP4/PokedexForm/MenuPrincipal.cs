@@ -137,16 +137,18 @@ namespace PokedexApp
         /// </summary>
         private void btnAgregarPokemonManual_Click(object sender, EventArgs e)
         {
-
-            if (Pokemon.AgregarPokemonManual(this.txtNombrePokemon.Text, this.txtTipoPokemon.Text, this.txtIDPokemon.Text, this.txtAtaquePokemon.Text))
+            try
             {
-                MostrarPokemonEnListaPokemon();
-                MostrarPokemonEnRichTextPokemon();
-                MessageBox.Show("Se agregó el pokemón", "Agregado correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (Pokemon.AgregarPokemonManual(this.txtNombrePokemon.Text, this.txtTipoPokemon.Text, int.Parse(this.txtIDPokemon.Text), this.txtAtaquePokemon.Text, int.Parse(this.txtDanio.Text)))
+                {
+                    MostrarPokemonEnListaPokemon();
+                    MostrarPokemonEnRichTextPokemon();
+                    MessageBox.Show("Se agregó el pokemón", "Agregado correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
-            else
+            catch (Exception)
             {
-                MessageBox.Show("Error o faltante de datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error, complete los campos correctamente");
             }
         }
 
@@ -154,6 +156,18 @@ namespace PokedexApp
         /// Sólo permitimos ingreso de números.
         /// </summary>
         private void txtIDPokemon_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) || char.IsSymbol(e.KeyChar) || char.IsWhiteSpace(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Solamente números", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        /// <summary>
+        /// Sólo permitimos ingreso de números.
+        /// </summary>
+        private void txtDanio_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (char.IsLetter(e.KeyChar) || char.IsSymbol(e.KeyChar) || char.IsWhiteSpace(e.KeyChar))
             {
@@ -222,6 +236,5 @@ namespace PokedexApp
         {
             MessageBox.Show(Entrenador.MostrarDatos(), "Entrenadores registrados", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-
     }
 }

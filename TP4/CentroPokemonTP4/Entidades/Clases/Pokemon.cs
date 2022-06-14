@@ -8,8 +8,9 @@ namespace Entidades
     {
         public string nombre;
         public string tipo;
-        public string id;
+        public int id;
         public string ataquePrincipal;
+        public int danio;
         public static List<Pokemon> listaPokemon = new List<Pokemon>();
 
         /// <summary>
@@ -28,12 +29,13 @@ namespace Entidades
         /// <param name="tipo">Tipo del pokemon</param>
         /// <param name="id">Id  del pokemon</param>
         /// <param name="ataquePrincipal">Ataque principal del pokemon</param>
-        public Pokemon(string nombre, string tipo, string id, string ataquePrincipal)
+        public Pokemon(string nombre, string tipo, int id, string ataquePrincipal, int danio)
         {
             this.nombre = nombre;
             this.tipo = tipo;
             this.id = id;
             this.ataquePrincipal = ataquePrincipal;
+            this.danio = danio;
         }
 
         /// <summary>
@@ -41,15 +43,15 @@ namespace Entidades
         /// </summary>
         public static void HardcodearPokemon()
         {
-            Pokemon Bulbasaur = new Pokemon("Bulbasaur", "Planta-Veneno", "001", "Hoja afilada");
-            Pokemon Ivysaur = new Pokemon("Ivysaur", "Planta-Veneno", "002", "Síntesis");
-            Pokemon Venusaur = new Pokemon("Venusaur", "Planta-Veneno", "003", "Rayo solar");
-            Pokemon Charmander = new Pokemon("Charmander", "Fuego", "004", "Lanzallamas");
-            Pokemon Charmeleon = new Pokemon("Charmeleon", "Fuego", "005", "Giro fuego");
-            Pokemon Charizard = new Pokemon("Charizard", "Fuego-Volador", "006", "Furia dragón");
-            Pokemon Squirtle = new Pokemon("Squirtle", "Agua", "007", "Pistola de agua");
-            Pokemon Wartortle = new Pokemon("Wartortle", "Agua", "008", "Cabezazo");
-            Pokemon Blastoise = new Pokemon("Blastoise", "Agua", "009", "Hidrobomba");
+            Pokemon Bulbasaur = new Pokemon("Bulbasaur", "Planta-Veneno", 1, "Hoja afilada", 50);
+            Pokemon Ivysaur = new Pokemon("Ivysaur", "Planta-Veneno", 2, "Síntesis", 25);
+            Pokemon Venusaur = new Pokemon("Venusaur", "Planta-Veneno", 3, "Rayo solar", 33);
+            Pokemon Charmander = new Pokemon("Charmander", "Fuego", 4, "Lanzallamas", 98);
+            Pokemon Charmeleon = new Pokemon("Charmeleon", "Fuego", 5, "Giro fuego", 15);
+            Pokemon Charizard = new Pokemon("Charizard", "Fuego-Volador", 6, "Furia dragón", 73);
+            Pokemon Squirtle = new Pokemon("Squirtle", "Agua", 7, "Pistola de agua", 61);
+            Pokemon Wartortle = new Pokemon("Wartortle", "Agua", 8, "Cabezazo", 58);
+            Pokemon Blastoise = new Pokemon("Blastoise", "Agua", 9, "Hidrobomba", 89);
 
             listaPokemon.Add(Bulbasaur);
             listaPokemon.Add(Ivysaur);
@@ -71,7 +73,7 @@ namespace Entidades
         {
             StringBuilder sb = new StringBuilder();
 
-            sb.Append($"ID: {id}\nNombre: {nombre}\nTipo: {tipo}\nAtaque principal: {ataquePrincipal}");
+            sb.Append($"ID: {id}\nNombre: {nombre}\nTipo: {tipo}\nAtaque principal: {ataquePrincipal}\nNivel de daño: {danio}%");
 
             return sb.ToString();
         }
@@ -100,14 +102,14 @@ namespace Entidades
         /// <param name="id">Id del pokemon</param>
         /// <param name="ataque">Ataque del pokemon</param>
         /// <returns>Retorna true en caso de agregar a la lista, false caso contrario</returns>
-        public static bool AgregarPokemonManual(string nombre, string tipo, string id, string ataque)
+        public static bool AgregarPokemonManual(string nombre, string tipo, int id, string ataque, int danio)
         {
-            if(String.IsNullOrEmpty(nombre) || String.IsNullOrEmpty(tipo)
-                || String.IsNullOrEmpty(id) || String.IsNullOrEmpty(ataque))
+            if(String.IsNullOrEmpty(nombre) || String.IsNullOrEmpty(tipo) || String.IsNullOrEmpty(ataque) 
+                || String.IsNullOrEmpty(id.ToString()) || String.IsNullOrEmpty(danio.ToString()))
             {
                 return false;
             }
-            Pokemon pokemon = new Pokemon(nombre, tipo, id, ataque);
+            Pokemon pokemon = new Pokemon(nombre, tipo, id, ataque, danio);
             listaPokemon.Add(pokemon);
             return true;
         }

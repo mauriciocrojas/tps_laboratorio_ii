@@ -36,6 +36,7 @@
             this.lstPokemon = new System.Windows.Forms.ListBox();
             this.rchPokemon = new System.Windows.Forms.RichTextBox();
             this.grpAgregarPokemon = new System.Windows.Forms.GroupBox();
+            this.txtDanio = new System.Windows.Forms.TextBox();
             this.btnAgregarPokemon = new System.Windows.Forms.Button();
             this.txtAtaquePokemon = new System.Windows.Forms.TextBox();
             this.txtIDPokemon = new System.Windows.Forms.TextBox();
@@ -71,7 +72,7 @@
             this.btnSalir.BackColor = System.Drawing.Color.Maroon;
             this.btnSalir.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnSalir.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSalir.Location = new System.Drawing.Point(358, 392);
+            this.btnSalir.Location = new System.Drawing.Point(432, 389);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(85, 46);
             this.btnSalir.TabIndex = 25;
@@ -84,7 +85,7 @@
             this.btnVolver.BackColor = System.Drawing.Color.Firebrick;
             this.btnVolver.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnVolver.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnVolver.Location = new System.Drawing.Point(267, 392);
+            this.btnVolver.Location = new System.Drawing.Point(341, 389);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(85, 46);
             this.btnVolver.TabIndex = 26;
@@ -98,21 +99,22 @@
             this.lstPokemon.ItemHeight = 15;
             this.lstPokemon.Location = new System.Drawing.Point(12, 12);
             this.lstPokemon.Name = "lstPokemon";
-            this.lstPokemon.Size = new System.Drawing.Size(150, 169);
+            this.lstPokemon.Size = new System.Drawing.Size(169, 169);
             this.lstPokemon.TabIndex = 27;
             this.lstPokemon.SelectedIndexChanged += new System.EventHandler(this.lstPokemon_SelectedIndexChanged);
             // 
             // rchPokemon
             // 
-            this.rchPokemon.Location = new System.Drawing.Point(204, 12);
+            this.rchPokemon.Location = new System.Drawing.Point(265, 12);
             this.rchPokemon.Name = "rchPokemon";
             this.rchPokemon.ReadOnly = true;
-            this.rchPokemon.Size = new System.Drawing.Size(228, 169);
+            this.rchPokemon.Size = new System.Drawing.Size(256, 169);
             this.rchPokemon.TabIndex = 28;
             this.rchPokemon.Text = "";
             // 
             // grpAgregarPokemon
             // 
+            this.grpAgregarPokemon.Controls.Add(this.txtDanio);
             this.grpAgregarPokemon.Controls.Add(this.btnAgregarPokemon);
             this.grpAgregarPokemon.Controls.Add(this.txtAtaquePokemon);
             this.grpAgregarPokemon.Controls.Add(this.txtIDPokemon);
@@ -120,14 +122,23 @@
             this.grpAgregarPokemon.Controls.Add(this.txtNombrePokemon);
             this.grpAgregarPokemon.Location = new System.Drawing.Point(21, 237);
             this.grpAgregarPokemon.Name = "grpAgregarPokemon";
-            this.grpAgregarPokemon.Size = new System.Drawing.Size(416, 74);
+            this.grpAgregarPokemon.Size = new System.Drawing.Size(496, 74);
             this.grpAgregarPokemon.TabIndex = 29;
             this.grpAgregarPokemon.TabStop = false;
             this.grpAgregarPokemon.Text = "Agregar Pokemon";
             // 
+            // txtDanio
+            // 
+            this.txtDanio.Location = new System.Drawing.Point(350, 33);
+            this.txtDanio.Name = "txtDanio";
+            this.txtDanio.PlaceholderText = "Daño %";
+            this.txtDanio.Size = new System.Drawing.Size(76, 23);
+            this.txtDanio.TabIndex = 5;
+            this.txtDanio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDanio_KeyPress);
+            // 
             // btnAgregarPokemon
             // 
-            this.btnAgregarPokemon.Location = new System.Drawing.Point(352, 34);
+            this.btnAgregarPokemon.Location = new System.Drawing.Point(432, 33);
             this.btnAgregarPokemon.Name = "btnAgregarPokemon";
             this.btnAgregarPokemon.Size = new System.Drawing.Size(58, 23);
             this.btnAgregarPokemon.TabIndex = 4;
@@ -199,7 +210,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.RosyBrown;
-            this.ClientSize = new System.Drawing.Size(461, 450);
+            this.ClientSize = new System.Drawing.Size(534, 450);
             this.Controls.Add(this.btnLanzarAtaque);
             this.Controls.Add(this.chkHabAgrPok);
             this.Controls.Add(this.grpAgregarPokemon);
@@ -216,7 +227,7 @@
             this.MinimizeBox = false;
             this.Name = "MenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Pokedex Menu";
+            this.Text = "Centro Pokemon Menú";
             this.Load += new System.EventHandler(this.MenuPrincipal_Load);
             this.grpAgregarPokemon.ResumeLayout(false);
             this.grpAgregarPokemon.PerformLayout();
@@ -240,5 +251,6 @@
         private System.Windows.Forms.TextBox txtNombrePokemon;
         private System.Windows.Forms.Button btnAgregarPokemon;
         private System.Windows.Forms.Button btnLanzarAtaque;
+        private System.Windows.Forms.TextBox txtDanio;
     }
 }
