@@ -37,10 +37,10 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.picPokebola = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.picCentroPokemon = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picPokebola)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCentroPokemon)).BeginInit();
             this.SuspendLayout();
             // 
             // txtUsuario
@@ -137,15 +137,15 @@
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 
-            // pictureBox2
+            // picCentroPokemon
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(-43, 2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(489, 65);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 13;
-            this.pictureBox2.TabStop = false;
+            this.picCentroPokemon.Image = ((System.Drawing.Image)(resources.GetObject("picCentroPokemon.Image")));
+            this.picCentroPokemon.Location = new System.Drawing.Point(-43, 2);
+            this.picCentroPokemon.Name = "picCentroPokemon";
+            this.picCentroPokemon.Size = new System.Drawing.Size(489, 65);
+            this.picCentroPokemon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picCentroPokemon.TabIndex = 13;
+            this.picCentroPokemon.TabStop = false;
             // 
             // Login
             // 
@@ -155,7 +155,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(422, 434);
-            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.picCentroPokemon);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnCargarEntrenador);
@@ -174,7 +174,7 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Login_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.picPokebola)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picCentroPokemon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -189,6 +189,6 @@
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.PictureBox picPokebola;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox picCentroPokemon;
     }
 }

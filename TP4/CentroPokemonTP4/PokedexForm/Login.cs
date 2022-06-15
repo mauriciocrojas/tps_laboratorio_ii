@@ -91,7 +91,7 @@ namespace PokedexApp
 
             try
             {
-                if ((usuario == "AshKetchum" && password == "charizard") || (usuario == "ProfesorOak" && password == "pueblopaleta"))
+                if ((usuario == "AshKetchum" && password == "charizard") || (usuario == "EnfermeraJoy" && password == "centropokemon"))
                 {
                     flag = true;
                 }

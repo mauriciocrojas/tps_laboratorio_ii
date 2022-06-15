@@ -22,6 +22,8 @@ namespace Entidades
             HardcodearPokemon();
         }
 
+        public Pokemon() { }
+
         /// <summary>
         /// Constructor de instancia que recibe parámetros del pokemon.
         /// </summary>

@@ -43,7 +43,9 @@
             this.txtTipoPokemon = new System.Windows.Forms.TextBox();
             this.txtNombrePokemon = new System.Windows.Forms.TextBox();
             this.chkHabAgrPok = new System.Windows.Forms.CheckBox();
-            this.btnLanzarAtaque = new System.Windows.Forms.Button();
+            this.btnCurarPokemon = new System.Windows.Forms.Button();
+            this.txtPokemonAtendido = new System.Windows.Forms.Label();
+            this.lblDetalle = new System.Windows.Forms.Label();
             this.grpAgregarPokemon.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -97,7 +99,7 @@
             // 
             this.lstPokemon.FormattingEnabled = true;
             this.lstPokemon.ItemHeight = 15;
-            this.lstPokemon.Location = new System.Drawing.Point(12, 12);
+            this.lstPokemon.Location = new System.Drawing.Point(13, 31);
             this.lstPokemon.Name = "lstPokemon";
             this.lstPokemon.Size = new System.Drawing.Size(169, 169);
             this.lstPokemon.TabIndex = 27;
@@ -105,7 +107,7 @@
             // 
             // rchPokemon
             // 
-            this.rchPokemon.Location = new System.Drawing.Point(265, 12);
+            this.rchPokemon.Location = new System.Drawing.Point(266, 31);
             this.rchPokemon.Name = "rchPokemon";
             this.rchPokemon.ReadOnly = true;
             this.rchPokemon.Size = new System.Drawing.Size(256, 169);
@@ -120,7 +122,7 @@
             this.grpAgregarPokemon.Controls.Add(this.txtIDPokemon);
             this.grpAgregarPokemon.Controls.Add(this.txtTipoPokemon);
             this.grpAgregarPokemon.Controls.Add(this.txtNombrePokemon);
-            this.grpAgregarPokemon.Location = new System.Drawing.Point(21, 237);
+            this.grpAgregarPokemon.Location = new System.Drawing.Point(22, 256);
             this.grpAgregarPokemon.Name = "grpAgregarPokemon";
             this.grpAgregarPokemon.Size = new System.Drawing.Size(496, 74);
             this.grpAgregarPokemon.TabIndex = 29;
@@ -188,22 +190,42 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.chkHabAgrPok.AutoSize = true;
             this.chkHabAgrPok.CheckAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.chkHabAgrPok.Location = new System.Drawing.Point(12, 237);
+            this.chkHabAgrPok.Location = new System.Drawing.Point(13, 256);
             this.chkHabAgrPok.Name = "chkHabAgrPok";
             this.chkHabAgrPok.Size = new System.Drawing.Size(15, 14);
             this.chkHabAgrPok.TabIndex = 30;
             this.chkHabAgrPok.UseVisualStyleBackColor = true;
             this.chkHabAgrPok.CheckedChanged += new System.EventHandler(this.chkHabAgrPok_CheckedChanged);
             // 
-            // btnLanzarAtaque
+            // btnCurarPokemon
             // 
-            this.btnLanzarAtaque.Location = new System.Drawing.Point(12, 194);
-            this.btnLanzarAtaque.Name = "btnLanzarAtaque";
-            this.btnLanzarAtaque.Size = new System.Drawing.Size(91, 37);
-            this.btnLanzarAtaque.TabIndex = 31;
-            this.btnLanzarAtaque.Text = "Lanzar ataque";
-            this.btnLanzarAtaque.UseVisualStyleBackColor = true;
-            this.btnLanzarAtaque.Click += new System.EventHandler(this.btnLanzarAtaque_Click);
+            this.btnCurarPokemon.Location = new System.Drawing.Point(13, 213);
+            this.btnCurarPokemon.Name = "btnCurarPokemon";
+            this.btnCurarPokemon.Size = new System.Drawing.Size(111, 37);
+            this.btnCurarPokemon.TabIndex = 31;
+            this.btnCurarPokemon.Text = "Curar pokemon";
+            this.btnCurarPokemon.UseVisualStyleBackColor = true;
+            this.btnCurarPokemon.Click += new System.EventHandler(this.btnCurarPokemon_Click);
+            // 
+            // txtPokemonAtendido
+            // 
+            this.txtPokemonAtendido.AutoSize = true;
+            this.txtPokemonAtendido.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
+            this.txtPokemonAtendido.Location = new System.Drawing.Point(12, 11);
+            this.txtPokemonAtendido.Name = "txtPokemonAtendido";
+            this.txtPokemonAtendido.Size = new System.Drawing.Size(144, 17);
+            this.txtPokemonAtendido.TabIndex = 32;
+            this.txtPokemonAtendido.Text = "Pokemon en atención:";
+            // 
+            // lblDetalle
+            // 
+            this.lblDetalle.AutoSize = true;
+            this.lblDetalle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
+            this.lblDetalle.Location = new System.Drawing.Point(266, 11);
+            this.lblDetalle.Name = "lblDetalle";
+            this.lblDetalle.Size = new System.Drawing.Size(52, 17);
+            this.lblDetalle.TabIndex = 33;
+            this.lblDetalle.Text = "Detalle:";
             // 
             // MenuPrincipal
             // 
@@ -211,7 +233,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.RosyBrown;
             this.ClientSize = new System.Drawing.Size(534, 450);
-            this.Controls.Add(this.btnLanzarAtaque);
+            this.Controls.Add(this.lblDetalle);
+            this.Controls.Add(this.txtPokemonAtendido);
+            this.Controls.Add(this.btnCurarPokemon);
             this.Controls.Add(this.chkHabAgrPok);
             this.Controls.Add(this.grpAgregarPokemon);
             this.Controls.Add(this.rchPokemon);
@@ -250,7 +274,9 @@
         private System.Windows.Forms.TextBox txtTipoPokemon;
         private System.Windows.Forms.TextBox txtNombrePokemon;
         private System.Windows.Forms.Button btnAgregarPokemon;
-        private System.Windows.Forms.Button btnLanzarAtaque;
+        private System.Windows.Forms.Button btnCurarPokemon;
         private System.Windows.Forms.TextBox txtDanio;
+        private System.Windows.Forms.Label txtPokemonAtendido;
+        private System.Windows.Forms.Label lblDetalle;
     }
 }

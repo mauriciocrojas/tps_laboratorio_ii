@@ -28,7 +28,7 @@ namespace PokedexApp
                 this.btnVerEntrenadores.Enabled = true;
                 this.BackColor = System.Drawing.Color.AliceBlue;
                 this.grpAgregarPokemon.Enabled = false;
-                this.Text = "Pokedex - Menú Administrador";
+                this.Text = "Centro Pokemon - Menú enfermería";
             }
             else
             {
@@ -36,7 +36,7 @@ namespace PokedexApp
                 this.BackColor = System.Drawing.Color.MistyRose;
                 this.chkHabAgrPok.Visible = false;
                 this.grpAgregarPokemon.Visible = false;
-                this.Text = "Pokedex - Menú Entrenador";
+                this.Text = "Centro Pokemon - Menú Entrenadores";
             }
 
             MostrarPokemonEnListaPokemon();
@@ -221,11 +221,29 @@ namespace PokedexApp
             {
                 string pokemonSeleccionado = (string)this.lstPokemon.SelectedItem;
 
-                MessageBox.Show(pokemonSeleccionado.LanzarAtaque(), "¡Te han atacado!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                foreach (Pokemon pokemon in Pokemon.listaPokemon)
+                {
+                    if (pokemon.nombre == pokemonSeleccionado)
+                    {
+
+                        if (pokemon.danio == 0)
+                        {
+                            MessageBox.Show("El pokemón no presenta daños", "¡Elegí un pokemon aún sin sanar!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else if (pokemon.danio < 0 || pokemon.danio > 100)
+                        {
+                            MessageBox.Show("El porcentaje del daño del pokemon no puede ser negativo ni mayor a 100, carguelo correctamente", "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else
+                        {
+                            MessageBox.Show(pokemonSeleccionado.CurarPokemon(), "Estado de salud", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        }
+                    }
+                }
             }
             else
             {
-                MessageBox.Show("No se seleccionó ningún pokemon", "¡Elegí un pokemon!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No se seleccionó ningún pokemon", "¡Elegí un pokemon a sanar!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -236,5 +254,42 @@ namespace PokedexApp
         {
             MessageBox.Show(Entrenador.MostrarDatos(), "Entrenadores registrados", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        /// <summary>
+        /// Función que hace que un pokemon lance un ataque y imprima por pantalla.
+        /// </summary>
+        private void btnCurarPokemon_Click(object sender, EventArgs e)
+        {
+
+            if (this.lstPokemon.SelectedItem is not null)
+            {
+                string pokemonSeleccionado = (string)this.lstPokemon.SelectedItem;
+
+                foreach (Pokemon pokemon in Pokemon.listaPokemon)
+                {
+                    if (pokemon.nombre == pokemonSeleccionado)
+                    {
+
+                        if (pokemon.danio == 0)
+                        {
+                            MessageBox.Show("El pokemón no presenta daños", "¡Elegí un pokemon aún sin sanar!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else if (pokemon.danio < 0 || pokemon.danio > 100)
+                        {
+                            MessageBox.Show("El porcentaje del daño del pokemon no puede ser negativo ni mayor a 100, carguelo correctamente", "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else
+                        {
+                            MessageBox.Show(pokemonSeleccionado.CurarPokemon(), "Estado de salud", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("No se seleccionó ningún pokemon", "¡Elegí un pokemon a sanar!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
+
 }

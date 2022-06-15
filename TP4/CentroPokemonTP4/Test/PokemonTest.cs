@@ -28,7 +28,7 @@ namespace Test
             string resultadoEsperado = "Charmander ha lanzado Lanzallamas";
 
             //Act
-            string resultado = pokemon.LanzarAtaque();
+            string resultado = pokemon.CurarPokemon();
 
             //Assert
             Assert.AreEqual(resultadoEsperado, resultado);

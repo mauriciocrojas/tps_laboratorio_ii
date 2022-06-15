@@ -48,8 +48,8 @@ namespace Entidades
         /// </summary>
         public static void HardcodearAdministradores()
         {
-            Administrador administrador1 = new Administrador("Samuel", "Oak", "ProfesorOak", "pueblopaleta");
-            Administrador administrador2 = new Administrador("Enfermera", "Joy", "EnfermeraJoy", "centropokemon");
+            Administrador administrador1 = new Administrador("Enfermera", "Joy", "EnfermeraJoy", "centropokemon"); 
+            Administrador administrador2 = new Administrador("Samuel", "Oak", "ProfesorOak", "pueblopaleta");
 
             listaAdministradores.Add(administrador1);
             listaAdministradores.Add(administrador2);
