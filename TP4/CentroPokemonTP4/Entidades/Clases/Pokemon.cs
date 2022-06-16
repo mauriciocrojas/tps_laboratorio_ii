@@ -103,6 +103,7 @@ namespace Entidades
         /// <param name="tipo">Tipo del pokemon</param>
         /// <param name="id">Id del pokemon</param>
         /// <param name="ataque">Ataque del pokemon</param>
+        /// <param name="danio">Danio del pokemon</param>
         /// <returns>Retorna true en caso de agregar a la lista, false caso contrario</returns>
         public static bool AgregarPokemonManual(string nombre, string tipo, int id, string ataque, int danio)
         {
@@ -113,11 +114,11 @@ namespace Entidades
                     return false;
                 }
             }
-            if(String.IsNullOrEmpty(nombre) || String.IsNullOrEmpty(tipo) || String.IsNullOrEmpty(ataque) 
-                || String.IsNullOrEmpty(id.ToString()) || String.IsNullOrEmpty(danio.ToString()))
-            {
-                return false;
-            }
+            //if(String.IsNullOrEmpty(nombre) || String.IsNullOrEmpty(tipo) || String.IsNullOrEmpty(ataque) 
+            //    || String.IsNullOrEmpty(id.ToString()) || String.IsNullOrEmpty(danio.ToString()))
+            //{
+            //    return false;
+            //}
             Pokemon pokemon = new Pokemon(nombre, tipo, id, ataque, danio);
             listaPokemon.Add(pokemon);
             return true;

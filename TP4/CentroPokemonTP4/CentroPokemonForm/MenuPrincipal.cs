@@ -143,7 +143,7 @@ namespace PokedexApp
                 {
                     MostrarPokemonEnListaPokemon();
                     MostrarPokemonEnRichTextPokemon();
-                    MessageBox.Show("Se agregó el pokemón", "Agregado correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Se agregó el pokemón.", "Agregado correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
