@@ -18,7 +18,7 @@ namespace Test
             Assert.IsTrue(resultado);
         }
 
-        //Pruebo método de extensión(LanzarAtaque)
+        //Pruebo método de extensión(CurarPokemon)
         [TestMethod]
         public void ProbarCurarPokemon()
         {
