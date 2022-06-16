@@ -1,6 +1,6 @@
 ﻿namespace Entidades
 {
-    public static class Ataque
+    public static class Salud
     {
         /// <summary>
         /// Método de extensión que extiende un string (que será el nombre del pokemon de la lista) y le cura los daños.

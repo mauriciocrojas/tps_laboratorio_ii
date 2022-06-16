@@ -33,11 +33,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\maurojas\\Documents\\Alumni\\TP4\\CentroPokemonTP4\\PokedexForm\\CentroPokemonForm.csproj",
+      "projectUniqueName": "C:\\Users\\maurojas\\Documents\\Alumni\\TP4\\CentroPokemonTP4\\CentroPokemonForm\\CentroPokemonForm.csproj",
       "projectName": "CentroPokemonForm",
-      "projectPath": "C:\\Users\\maurojas\\Documents\\Alumni\\TP4\\CentroPokemonTP4\\PokedexForm\\CentroPokemonForm.csproj",
+      "projectPath": "C:\\Users\\maurojas\\Documents\\Alumni\\TP4\\CentroPokemonTP4\\CentroPokemonForm\\CentroPokemonForm.csproj",
       "packagesPath": "C:\\Users\\maurojas\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\maurojas\\Documents\\Alumni\\TP4\\CentroPokemonTP4\\PokedexForm\\obj\\",
+      "outputPath": "C:\\Users\\maurojas\\Documents\\Alumni\\TP4\\CentroPokemonTP4\\CentroPokemonForm\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

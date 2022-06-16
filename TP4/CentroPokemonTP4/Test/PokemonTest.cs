@@ -12,7 +12,7 @@ namespace Test
         {
 
             //Act
-            bool resultado = Pokemon.AgregarPokemonManual("Chikorita", "Planta", "152", "Látigo Cepa");
+            bool resultado = Pokemon.AgregarPokemonManual("Chikorita", "Planta", 152, "Látigo Cepa", 33);
 
             //Assert
             Assert.IsTrue(resultado);
@@ -20,12 +20,12 @@ namespace Test
 
         //Pruebo método de extensión(LanzarAtaque)
         [TestMethod]
-        public void ProbarLanzadorDeAtaques()
+        public void ProbarCurarPokemon()
         {
 
             //Arrange
-            string pokemon = "Pikachu";
-            string resultadoEsperado = "Charmander ha lanzado Lanzallamas";
+            string pokemon = "Charmander";
+            string resultadoEsperado = "Charmander ha sido curado y su daño es 0";
 
             //Act
             string resultado = pokemon.CurarPokemon();
