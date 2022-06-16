@@ -145,10 +145,16 @@ namespace PokedexApp
                     MostrarPokemonEnRichTextPokemon();
                     MessageBox.Show("Se agregó el pokemón", "Agregado correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+                else
+                {
+                    MessageBox.Show("Solo se admite un mismo tipo de pokemon, por ejemplo, un solo Pikachu, proximamente ampliaremos el centro.", "Admisión no aceptada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+
             }
             catch (Exception)
             {
-                MessageBox.Show("Error, complete los campos correctamente");
+                MessageBox.Show("Hay campos que se encuentran vacíos.", "Error en los campos", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

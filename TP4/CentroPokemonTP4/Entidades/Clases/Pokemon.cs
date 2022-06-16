@@ -106,6 +106,13 @@ namespace Entidades
         /// <returns>Retorna true en caso de agregar a la lista, false caso contrario</returns>
         public static bool AgregarPokemonManual(string nombre, string tipo, int id, string ataque, int danio)
         {
+            foreach(Pokemon itempokemon in listaPokemon)
+            {
+                if (itempokemon.nombre == nombre)
+                {
+                    return false;
+                }
+            }
             if(String.IsNullOrEmpty(nombre) || String.IsNullOrEmpty(tipo) || String.IsNullOrEmpty(ataque) 
                 || String.IsNullOrEmpty(id.ToString()) || String.IsNullOrEmpty(danio.ToString()))
             {

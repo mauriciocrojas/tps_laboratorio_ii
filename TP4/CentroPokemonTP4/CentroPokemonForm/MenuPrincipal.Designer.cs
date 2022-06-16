@@ -135,7 +135,7 @@
             this.txtDanio.Name = "txtDanio";
             this.txtDanio.PlaceholderText = "Daño %";
             this.txtDanio.Size = new System.Drawing.Size(76, 23);
-            this.txtDanio.TabIndex = 5;
+            this.txtDanio.TabIndex = 4;
             this.txtDanio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDanio_KeyPress);
             // 
             // btnAgregarPokemon
@@ -143,7 +143,7 @@
             this.btnAgregarPokemon.Location = new System.Drawing.Point(432, 33);
             this.btnAgregarPokemon.Name = "btnAgregarPokemon";
             this.btnAgregarPokemon.Size = new System.Drawing.Size(58, 23);
-            this.btnAgregarPokemon.TabIndex = 4;
+            this.btnAgregarPokemon.TabIndex = 5;
             this.btnAgregarPokemon.Text = "Agregar";
             this.btnAgregarPokemon.UseVisualStyleBackColor = true;
             this.btnAgregarPokemon.Click += new System.EventHandler(this.btnAgregarPokemonManual_Click);
