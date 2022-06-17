@@ -146,16 +146,13 @@ namespace PokedexApp
                 else if (int.Parse(this.txtDanio.Text) > 100)
                 {
                     MessageBox.Show("El porcentaje del daño del pokemon no puede ser mayor a 100, carguelo correctamente", "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
                 }
                 else if(int.Parse(this.txtIDPokemon.Text) <= 0)
                 {
                     MessageBox.Show("El ID del pokemon no puede ser 0 ni negativo, carguelo correctamente", "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
                 }
                 else
                 {
-
                     if (Pokemon.AgregarPokemonManual(this.txtNombrePokemon.Text, this.txtTipoPokemon.Text, int.Parse(this.txtIDPokemon.Text), this.txtAtaquePokemon.Text, int.Parse(this.txtDanio.Text)))
                     {
                         MostrarPokemonEnListaPokemon();

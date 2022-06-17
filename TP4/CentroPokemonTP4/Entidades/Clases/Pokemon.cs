@@ -114,11 +114,6 @@ namespace Entidades
                     return false;
                 }
             }
-            //if(String.IsNullOrEmpty(nombre) || String.IsNullOrEmpty(tipo) || String.IsNullOrEmpty(ataque) 
-            //    || String.IsNullOrEmpty(id.ToString()) || String.IsNullOrEmpty(danio.ToString()))
-            //{
-            //    return false;
-            //}
             Pokemon pokemon = new Pokemon(nombre, tipo, id, ataque, danio);
             listaPokemon.Add(pokemon);
             return true;
