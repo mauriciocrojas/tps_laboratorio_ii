@@ -11,7 +11,8 @@ namespace Entidades
         public int id;
         public string ataquePrincipal;
         public int danio;
-        public static List<Pokemon> listaPokemon = new List<Pokemon>();
+        static List<Pokemon> listaPokemon;
+
 
         /// <summary>
         /// Constructor estático que instancia y hardcodea la lista. 
@@ -39,6 +40,11 @@ namespace Entidades
             this.ataquePrincipal = ataquePrincipal;
             this.danio = danio;
         }
+
+        /// <summary>
+        /// Propiedad para acceder y escribir en la lista.
+        /// </summary>
+        public static List<Pokemon> ListaPokemon { get => listaPokemon; set => listaPokemon = value; }
 
         /// <summary>
         /// Función estática que hardcodea los pokemon.

@@ -9,7 +9,7 @@
         /// <returns>Retorna el ataque</returns>
         public static string CurarPokemon(this string strpokemon)
         {
-            foreach (Pokemon pokemon in Pokemon.listaPokemon)
+            foreach (Pokemon pokemon in Pokemon.ListaPokemon)
             {
                 if (strpokemon == pokemon.nombre)
                 {

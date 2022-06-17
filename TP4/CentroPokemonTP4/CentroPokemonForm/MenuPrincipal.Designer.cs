@@ -46,6 +46,7 @@
             this.btnCurarPokemon = new System.Windows.Forms.Button();
             this.txtPokemonAtendido = new System.Windows.Forms.Label();
             this.lblDetalle = new System.Windows.Forms.Label();
+            this.btnGuardarEnArchivo = new System.Windows.Forms.Button();
             this.grpAgregarPokemon.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -227,12 +228,22 @@
             this.lblDetalle.TabIndex = 33;
             this.lblDetalle.Text = "Detalle:";
             // 
+            // btnGuardarEnArchivo
+            // 
+            this.btnGuardarEnArchivo.Location = new System.Drawing.Point(130, 213);
+            this.btnGuardarEnArchivo.Name = "btnGuardarEnArchivo";
+            this.btnGuardarEnArchivo.Size = new System.Drawing.Size(130, 37);
+            this.btnGuardarEnArchivo.TabIndex = 34;
+            this.btnGuardarEnArchivo.Text = "Guardar en archivo";
+            this.btnGuardarEnArchivo.UseVisualStyleBackColor = true;
+            // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.RosyBrown;
             this.ClientSize = new System.Drawing.Size(534, 450);
+            this.Controls.Add(this.btnGuardarEnArchivo);
             this.Controls.Add(this.lblDetalle);
             this.Controls.Add(this.txtPokemonAtendido);
             this.Controls.Add(this.btnCurarPokemon);
@@ -278,5 +289,6 @@
         private System.Windows.Forms.TextBox txtDanio;
         private System.Windows.Forms.Label txtPokemonAtendido;
         private System.Windows.Forms.Label lblDetalle;
+        private System.Windows.Forms.Button btnGuardarEnArchivo;
     }
 }

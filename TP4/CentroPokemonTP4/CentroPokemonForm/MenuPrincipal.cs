@@ -83,7 +83,7 @@ namespace PokedexApp
         {
             try
             {
-                foreach (Pokemon pokemon in Pokemon.listaPokemon)
+                foreach (Pokemon pokemon in Pokemon.ListaPokemon)
                 {
                     if (pokemon.nombre == (string)this.lstPokemon.SelectedItem)
                     {
@@ -103,7 +103,7 @@ namespace PokedexApp
         public void MostrarPokemonEnListaPokemon()
         {
             lstPokemon.Items.Clear();
-            foreach (Pokemon pokemon in Pokemon.listaPokemon)
+            foreach (Pokemon pokemon in Pokemon.ListaPokemon)
             {
                 this.lstPokemon.Items.Add(pokemon.nombre);
             }
@@ -114,7 +114,7 @@ namespace PokedexApp
         /// </summary>
         public void MostrarPokemonEnRichTextPokemon()
         {
-            foreach (Pokemon pokemon in Pokemon.listaPokemon)
+            foreach (Pokemon pokemon in Pokemon.ListaPokemon)
             {
                 this.rchPokemon.Text = pokemon.MostrarDato();
             }
@@ -250,7 +250,7 @@ namespace PokedexApp
             {
                 string pokemonSeleccionado = (string)this.lstPokemon.SelectedItem;
 
-                foreach (Pokemon pokemon in Pokemon.listaPokemon)
+                foreach (Pokemon pokemon in Pokemon.ListaPokemon)
                 {
                     if (pokemon.nombre == pokemonSeleccionado)
                     {
