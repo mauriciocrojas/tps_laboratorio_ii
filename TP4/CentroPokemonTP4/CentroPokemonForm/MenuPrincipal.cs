@@ -139,18 +139,34 @@ namespace PokedexApp
         {
             try
             {
-                if (Pokemon.AgregarPokemonManual(this.txtNombrePokemon.Text, this.txtTipoPokemon.Text, int.Parse(this.txtIDPokemon.Text), this.txtAtaquePokemon.Text, int.Parse(this.txtDanio.Text)))
+                if (int.Parse(this.txtDanio.Text) < 0)
                 {
-                    MostrarPokemonEnListaPokemon();
-                    MostrarPokemonEnRichTextPokemon();
-                    MessageBox.Show("Se agregó el pokemón.", "Agregado correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("El porcentaje del daño del pokemon no puede ser negativo, carguelo correctamente", "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (int.Parse(this.txtDanio.Text) > 100)
+                {
+                    MessageBox.Show("El porcentaje del daño del pokemon no puede ser mayor a 100, carguelo correctamente", "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
+                else if(int.Parse(this.txtIDPokemon.Text) <= 0)
+                {
+                    MessageBox.Show("El ID del pokemon no puede ser 0 ni negativo, carguelo correctamente", "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                 }
                 else
                 {
-                    MessageBox.Show("Solo se admite un mismo tipo de pokemon, por ejemplo, un solo Pikachu, proximamente ampliaremos el centro.", "Admisión no aceptada", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                    if (Pokemon.AgregarPokemonManual(this.txtNombrePokemon.Text, this.txtTipoPokemon.Text, int.Parse(this.txtIDPokemon.Text), this.txtAtaquePokemon.Text, int.Parse(this.txtDanio.Text)))
+                    {
+                        MostrarPokemonEnListaPokemon();
+                        MostrarPokemonEnRichTextPokemon();
+                        MessageBox.Show("Se agregó el pokemón.", "Agregado correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Solo se admite un mismo tipo de pokemon, por ejemplo, un solo Pikachu, proximamente ampliaremos el centro.", "Admisión no aceptada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
-
             }
             catch (Exception)
             {
@@ -218,40 +234,6 @@ namespace PokedexApp
             }
         }
 
-        /// <summary>
-        /// Función que hace que un pokemon lance un ataque y imprima por pantalla.
-        /// </summary>
-        private void btnLanzarAtaque_Click(object sender, EventArgs e)
-        {
-            if (this.lstPokemon.SelectedItem is not null)
-            {
-                string pokemonSeleccionado = (string)this.lstPokemon.SelectedItem;
-
-                foreach (Pokemon pokemon in Pokemon.listaPokemon)
-                {
-                    if (pokemon.nombre == pokemonSeleccionado)
-                    {
-
-                        if (pokemon.danio == 0)
-                        {
-                            MessageBox.Show("El pokemón no presenta daños", "¡Elegí un pokemon aún sin sanar!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                        else if (pokemon.danio < 0 || pokemon.danio > 100)
-                        {
-                            MessageBox.Show("El porcentaje del daño del pokemon no puede ser negativo ni mayor a 100, carguelo correctamente", "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                        else
-                        {
-                            MessageBox.Show(pokemonSeleccionado.CurarPokemon(), "Estado de salud", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        }
-                    }
-                }
-            }
-            else
-            {
-                MessageBox.Show("No se seleccionó ningún pokemon", "¡Elegí un pokemon a sanar!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
 
         /// <summary>
         /// Función que imprime por pantalla todos los entrenadores registrados en la app.
@@ -278,15 +260,11 @@ namespace PokedexApp
 
                         if (pokemon.danio == 0)
                         {
-                            MessageBox.Show("El pokemón no presenta daños", "¡Elegí un pokemon aún sin sanar!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                        else if (pokemon.danio < 0 || pokemon.danio > 100)
-                        {
-                            MessageBox.Show("El porcentaje del daño del pokemon no puede ser negativo ni mayor a 100, carguelo correctamente", "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("El pokemón no presenta daños", "¡Elegí un pokemon aún sin sanar!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         }
                         else
                         {
-                            MessageBox.Show(pokemonSeleccionado.CurarPokemon(), "Estado de salud", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            MessageBox.Show(pokemonSeleccionado.CurarPokemon(), "Estado de salud", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
                 }
