@@ -164,7 +164,7 @@ namespace PokedexApp
                     }
                     else
                     {
-                        MessageBox.Show("Solo se admite un mismo tipo de pokemon, por ejemplo, un solo Pikachu, proximamente ampliaremos el centro.", "Admisión no aceptada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("El id o el nombre del pokemón ya se encuentra registrado en el centro. Se admite solo un mismo tipo de pokemon, por ejemplo, un solo Pikachu, proximamente ampliaremos el centro, sepa disculpar las molestias.", "Admisión no aceptada", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
             }

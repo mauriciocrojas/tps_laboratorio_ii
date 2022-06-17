@@ -109,7 +109,7 @@ namespace Entidades
         {
             foreach(Pokemon itempokemon in listaPokemon)
             {
-                if (itempokemon.nombre == nombre)
+                if (itempokemon.nombre == nombre || itempokemon.id == id)
                 {
                     return false;
                 }
