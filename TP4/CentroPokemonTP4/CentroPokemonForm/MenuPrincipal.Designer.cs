@@ -46,10 +46,12 @@
             this.btnCurarPokemon = new System.Windows.Forms.Button();
             this.txtPokemonAtendido = new System.Windows.Forms.Label();
             this.lblDetalle = new System.Windows.Forms.Label();
-            this.btnGuardarEnArchivoTxt = new System.Windows.Forms.Button();
-            this.btnLeerDeArchivoTxt = new System.Windows.Forms.Button();
             this.btnLeerDeArchivoXml = new System.Windows.Forms.Button();
             this.btnGuardarEnArchivoXml = new System.Windows.Forms.Button();
+            this.btnLeerDeArchivoJson = new System.Windows.Forms.Button();
+            this.btnGuardarEnArchivoJson = new System.Windows.Forms.Button();
+            this.btnGuardarEnArchivoTxt = new System.Windows.Forms.Button();
+            this.btnLeerDeArchivoTxt = new System.Windows.Forms.Button();
             this.grpAgregarPokemon.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -205,7 +207,7 @@
             // 
             this.btnCurarPokemon.Location = new System.Drawing.Point(178, 31);
             this.btnCurarPokemon.Name = "btnCurarPokemon";
-            this.btnCurarPokemon.Size = new System.Drawing.Size(94, 53);
+            this.btnCurarPokemon.Size = new System.Drawing.Size(94, 49);
             this.btnCurarPokemon.TabIndex = 31;
             this.btnCurarPokemon.Text = "Curar pokemon";
             this.btnCurarPokemon.UseVisualStyleBackColor = true;
@@ -231,31 +233,11 @@
             this.lblDetalle.TabIndex = 33;
             this.lblDetalle.Text = "Detalle:";
             // 
-            // btnGuardarEnArchivoTxt
-            // 
-            this.btnGuardarEnArchivoTxt.Location = new System.Drawing.Point(11, 206);
-            this.btnGuardarEnArchivoTxt.Name = "btnGuardarEnArchivoTxt";
-            this.btnGuardarEnArchivoTxt.Size = new System.Drawing.Size(93, 49);
-            this.btnGuardarEnArchivoTxt.TabIndex = 34;
-            this.btnGuardarEnArchivoTxt.Text = "Guardar en archivo .txt";
-            this.btnGuardarEnArchivoTxt.UseVisualStyleBackColor = true;
-            this.btnGuardarEnArchivoTxt.Click += new System.EventHandler(this.btnGuardarEnArchivoTxt_Click);
-            // 
-            // btnLeerDeArchivoTxt
-            // 
-            this.btnLeerDeArchivoTxt.Location = new System.Drawing.Point(110, 206);
-            this.btnLeerDeArchivoTxt.Name = "btnLeerDeArchivoTxt";
-            this.btnLeerDeArchivoTxt.Size = new System.Drawing.Size(93, 48);
-            this.btnLeerDeArchivoTxt.TabIndex = 35;
-            this.btnLeerDeArchivoTxt.Text = "Leer de archivo .txt";
-            this.btnLeerDeArchivoTxt.UseVisualStyleBackColor = true;
-            this.btnLeerDeArchivoTxt.Click += new System.EventHandler(this.btnLeerDeArchivoTxt_Click);
-            // 
             // btnLeerDeArchivoXml
             // 
-            this.btnLeerDeArchivoXml.Location = new System.Drawing.Point(308, 206);
+            this.btnLeerDeArchivoXml.Location = new System.Drawing.Point(278, 205);
             this.btnLeerDeArchivoXml.Name = "btnLeerDeArchivoXml";
-            this.btnLeerDeArchivoXml.Size = new System.Drawing.Size(93, 48);
+            this.btnLeerDeArchivoXml.Size = new System.Drawing.Size(85, 49);
             this.btnLeerDeArchivoXml.TabIndex = 37;
             this.btnLeerDeArchivoXml.Text = "Leer de archivo .xml";
             this.btnLeerDeArchivoXml.UseVisualStyleBackColor = true;
@@ -263,13 +245,52 @@
             // 
             // btnGuardarEnArchivoXml
             // 
-            this.btnGuardarEnArchivoXml.Location = new System.Drawing.Point(209, 206);
+            this.btnGuardarEnArchivoXml.Location = new System.Drawing.Point(187, 206);
             this.btnGuardarEnArchivoXml.Name = "btnGuardarEnArchivoXml";
-            this.btnGuardarEnArchivoXml.Size = new System.Drawing.Size(93, 49);
+            this.btnGuardarEnArchivoXml.Size = new System.Drawing.Size(85, 49);
             this.btnGuardarEnArchivoXml.TabIndex = 36;
             this.btnGuardarEnArchivoXml.Text = "Guardar en archivo .xml";
             this.btnGuardarEnArchivoXml.UseVisualStyleBackColor = true;
             this.btnGuardarEnArchivoXml.Click += new System.EventHandler(this.btnGuardarEnArchivoXml_Click);
+            // 
+            // btnLeerDeArchivoJson
+            // 
+            this.btnLeerDeArchivoJson.Location = new System.Drawing.Point(178, 145);
+            this.btnLeerDeArchivoJson.Name = "btnLeerDeArchivoJson";
+            this.btnLeerDeArchivoJson.Size = new System.Drawing.Size(94, 49);
+            this.btnLeerDeArchivoJson.TabIndex = 39;
+            this.btnLeerDeArchivoJson.Text = "Leer de archivo .json";
+            this.btnLeerDeArchivoJson.UseVisualStyleBackColor = true;
+            // 
+            // btnGuardarEnArchivoJson
+            // 
+            this.btnGuardarEnArchivoJson.Location = new System.Drawing.Point(178, 90);
+            this.btnGuardarEnArchivoJson.Name = "btnGuardarEnArchivoJson";
+            this.btnGuardarEnArchivoJson.Size = new System.Drawing.Size(94, 49);
+            this.btnGuardarEnArchivoJson.TabIndex = 38;
+            this.btnGuardarEnArchivoJson.Text = "Guardar en archivo .json";
+            this.btnGuardarEnArchivoJson.UseVisualStyleBackColor = true;
+            this.btnGuardarEnArchivoJson.Click += new System.EventHandler(this.btnGuardarEnArchivoJson_Click);
+            // 
+            // btnGuardarEnArchivoTxt
+            // 
+            this.btnGuardarEnArchivoTxt.Location = new System.Drawing.Point(11, 206);
+            this.btnGuardarEnArchivoTxt.Name = "btnGuardarEnArchivoTxt";
+            this.btnGuardarEnArchivoTxt.Size = new System.Drawing.Size(85, 49);
+            this.btnGuardarEnArchivoTxt.TabIndex = 34;
+            this.btnGuardarEnArchivoTxt.Text = "Guardar en archivo .txt";
+            this.btnGuardarEnArchivoTxt.UseVisualStyleBackColor = true;
+            this.btnGuardarEnArchivoTxt.Click += new System.EventHandler(this.btnGuardarEnArchivoTxt_Click);
+            // 
+            // btnLeerDeArchivoTxt
+            // 
+            this.btnLeerDeArchivoTxt.Location = new System.Drawing.Point(97, 206);
+            this.btnLeerDeArchivoTxt.Name = "btnLeerDeArchivoTxt";
+            this.btnLeerDeArchivoTxt.Size = new System.Drawing.Size(85, 49);
+            this.btnLeerDeArchivoTxt.TabIndex = 35;
+            this.btnLeerDeArchivoTxt.Text = "Leer de archivo .txt";
+            this.btnLeerDeArchivoTxt.UseVisualStyleBackColor = true;
+            this.btnLeerDeArchivoTxt.Click += new System.EventHandler(this.btnLeerDeArchivoTxt_Click);
             // 
             // MenuPrincipal
             // 
@@ -277,6 +298,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.RosyBrown;
             this.ClientSize = new System.Drawing.Size(534, 450);
+            this.Controls.Add(this.btnLeerDeArchivoJson);
+            this.Controls.Add(this.btnGuardarEnArchivoJson);
             this.Controls.Add(this.btnLeerDeArchivoXml);
             this.Controls.Add(this.btnGuardarEnArchivoXml);
             this.Controls.Add(this.btnLeerDeArchivoTxt);
@@ -326,9 +349,11 @@
         private System.Windows.Forms.TextBox txtDanio;
         private System.Windows.Forms.Label txtPokemonAtendido;
         private System.Windows.Forms.Label lblDetalle;
-        private System.Windows.Forms.Button btnGuardarEnArchivoTxt;
-        private System.Windows.Forms.Button btnLeerDeArchivoTxt;
         private System.Windows.Forms.Button btnLeerDeArchivoXml;
         private System.Windows.Forms.Button btnGuardarEnArchivoXml;
+        private System.Windows.Forms.Button btnLeerDeArchivoJson;
+        private System.Windows.Forms.Button btnGuardarEnArchivoJson;
+        private System.Windows.Forms.Button btnGuardarEnArchivoTxt;
+        private System.Windows.Forms.Button btnLeerDeArchivoTxt;
     }
 }

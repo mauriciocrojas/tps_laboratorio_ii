@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\maurojas\\Documents\\Alumni\\TP4\\CentroPokemonTP4\\CentroPokemonForm\\CentroPokemonForm.csproj": {}
+    "C:\\Users\\maurojas\\Documents\\Alumni\\TP4\\CentroPokemonTP4 - copia (12)\\CentroPokemonForm\\CentroPokemonForm.csproj": {}
   },
   "projects": {
-    "C:\\Users\\maurojas\\Documents\\Alumni\\TP4\\CentroPokemonTP4\\CentroPokemonForm\\CentroPokemonForm.csproj": {
+    "C:\\Users\\maurojas\\Documents\\Alumni\\TP4\\CentroPokemonTP4 - copia (12)\\CentroPokemonForm\\CentroPokemonForm.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\maurojas\\Documents\\Alumni\\TP4\\CentroPokemonTP4\\CentroPokemonForm\\CentroPokemonForm.csproj",
+        "projectUniqueName": "C:\\Users\\maurojas\\Documents\\Alumni\\TP4\\CentroPokemonTP4 - copia (12)\\CentroPokemonForm\\CentroPokemonForm.csproj",
         "projectName": "CentroPokemonForm",
-        "projectPath": "C:\\Users\\maurojas\\Documents\\Alumni\\TP4\\CentroPokemonTP4\\CentroPokemonForm\\CentroPokemonForm.csproj",
+        "projectPath": "C:\\Users\\maurojas\\Documents\\Alumni\\TP4\\CentroPokemonTP4 - copia (12)\\CentroPokemonForm\\CentroPokemonForm.csproj",
         "packagesPath": "C:\\Users\\maurojas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\maurojas\\Documents\\Alumni\\TP4\\CentroPokemonTP4\\CentroPokemonForm\\obj\\",
+        "outputPath": "C:\\Users\\maurojas\\Documents\\Alumni\\TP4\\CentroPokemonTP4 - copia (12)\\CentroPokemonForm\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -32,8 +32,8 @@
           "net5.0-windows7.0": {
             "targetAlias": "net5.0-windows",
             "projectReferences": {
-              "C:\\Users\\maurojas\\Documents\\Alumni\\TP4\\CentroPokemonTP4\\Entidades\\Entidades.csproj": {
-                "projectPath": "C:\\Users\\maurojas\\Documents\\Alumni\\TP4\\CentroPokemonTP4\\Entidades\\Entidades.csproj"
+              "C:\\Users\\maurojas\\Documents\\Alumni\\TP4\\CentroPokemonTP4 - copia (12)\\Entidades\\Entidades.csproj": {
+                "projectPath": "C:\\Users\\maurojas\\Documents\\Alumni\\TP4\\CentroPokemonTP4 - copia (12)\\Entidades\\Entidades.csproj"
               }
             }
           }
@@ -69,14 +69,14 @@
         }
       }
     },
-    "C:\\Users\\maurojas\\Documents\\Alumni\\TP4\\CentroPokemonTP4\\Entidades\\Entidades.csproj": {
+    "C:\\Users\\maurojas\\Documents\\Alumni\\TP4\\CentroPokemonTP4 - copia (12)\\Entidades\\Entidades.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\maurojas\\Documents\\Alumni\\TP4\\CentroPokemonTP4\\Entidades\\Entidades.csproj",
+        "projectUniqueName": "C:\\Users\\maurojas\\Documents\\Alumni\\TP4\\CentroPokemonTP4 - copia (12)\\Entidades\\Entidades.csproj",
         "projectName": "Entidades",
-        "projectPath": "C:\\Users\\maurojas\\Documents\\Alumni\\TP4\\CentroPokemonTP4\\Entidades\\Entidades.csproj",
+        "projectPath": "C:\\Users\\maurojas\\Documents\\Alumni\\TP4\\CentroPokemonTP4 - copia (12)\\Entidades\\Entidades.csproj",
         "packagesPath": "C:\\Users\\maurojas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\maurojas\\Documents\\Alumni\\TP4\\CentroPokemonTP4\\Entidades\\obj\\",
+        "outputPath": "C:\\Users\\maurojas\\Documents\\Alumni\\TP4\\CentroPokemonTP4 - copia (12)\\Entidades\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

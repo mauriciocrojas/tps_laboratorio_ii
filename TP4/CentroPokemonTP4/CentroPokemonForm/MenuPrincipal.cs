@@ -336,6 +336,20 @@ namespace PokedexApp
                 MessageBox.Show("No se pudo acceder al archivo .xml", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btnGuardarEnArchivoJson_Click(object sender, EventArgs e)
+        {
+            //try
+            //{
+
+            Pokemon.EscribirJsonUnDato(Pokemon.ListaPokemon[1].MostrarJson());
+            Pokemon.EscribirJsonLista(Pokemon.ListaPokemon);
+            //}
+            //catch (Exception)
+            //{
+            //    MessageBox.Show("Error al intentar guardar archivo .json", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
+        }
     }
 
 }

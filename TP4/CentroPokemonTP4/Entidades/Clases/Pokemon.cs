@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using System.Text.Json;
 using System.Xml.Serialization;
 
 namespace Entidades
@@ -83,6 +84,50 @@ namespace Entidades
             listaPokemon.Add(Squirtle);
             listaPokemon.Add(Wartortle);
             listaPokemon.Add(Blastoise);
+        }
+
+        public string MostrarJson()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendLine($"Nombre: " + nombre);
+            sb.AppendLine($"Tipo: " + this.tipo);
+            sb.AppendLine($"Id: " + this.id);
+            sb.AppendLine($"Ataque: " + this.ataquePrincipal);
+            sb.AppendLine($"Daño: " + this.danio);
+
+            return sb.ToString();
+
+        }
+
+        public static void EscribirJsonUnDato(string datos)
+        {
+            string nombreArchivo = @"/Listado de Pokemon UN DATO en el Centro.JSON";
+            string rutaCompleta = rutaEscritorioYCarpeta + nombreArchivo;
+
+            if (!Directory.Exists(rutaEscritorioYCarpeta))
+            {
+                Directory.CreateDirectory(rutaEscritorioYCarpeta);
+            }
+
+
+            File.WriteAllText(rutaCompleta, JsonSerializer.Serialize(datos));
+
+        }
+
+        public static void EscribirJsonLista(List<Pokemon> datos)
+        {
+            string nombreArchivo = @"/Listado de Pokemon LISTA en el Centro.JSON";
+            string rutaCompleta = rutaEscritorioYCarpeta + nombreArchivo;
+
+            if (!Directory.Exists(rutaEscritorioYCarpeta))
+            {
+                Directory.CreateDirectory(rutaEscritorioYCarpeta);
+            }
+
+
+            File.WriteAllText(rutaCompleta, JsonSerializer.Serialize(datos));
+
         }
 
         /// <summary>
@@ -233,4 +278,6 @@ namespace Entidades
             return true;
         }
     }
+
+
 }

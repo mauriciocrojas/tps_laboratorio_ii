@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6Tvz3VCqPyxykkSdGCwmBR1z+42TDvDp9LQhxX+YdH+Rasq3L3PLr7iXFwb9YqPRK3CUpDjuHpwwsmHi5PknNg==",
+  "dgSpecHash": "pnSPlYIqq7RgCBZYGic8deKUFO+y/oYI4Bs19avOOxa+9yQ0bugGsNtwpBMLTm36YfmkGcxUG5oI0UZO+HGDTA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\maurojas\\Documents\\Alumni\\TP4\\CentroPokemonTP4\\Test\\Test.csproj",
+  "projectFilePath": "C:\\Users\\maurojas\\Documents\\Alumni\\TP4\\CentroPokemonTP4 - copia (12)\\Test\\Test.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\maurojas\\.nuget\\packages\\coverlet.collector\\3.0.2\\coverlet.collector.3.0.2.nupkg.sha512",
     "C:\\Users\\maurojas\\.nuget\\packages\\microsoft.codecoverage\\16.9.4\\microsoft.codecoverage.16.9.4.nupkg.sha512",
