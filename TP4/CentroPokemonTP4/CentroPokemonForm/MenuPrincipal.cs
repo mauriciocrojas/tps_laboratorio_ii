@@ -1,4 +1,5 @@
 ﻿using Entidades;
+using Entidades.Clases;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -34,7 +35,7 @@ namespace PokedexApp
             {
                 this.grpAgregarPokemon.Enabled = false;
                 this.grpLeerArchivo.Enabled = false;
-  		this.grpGuardarArchivo.Enabled = false;
+                this.grpGuardarArchivo.Enabled = false;
                 this.btnVerEntrenadores.Enabled = false;
                 this.btnCurarPokemon.Enabled = false;
                 this.BackColor = System.Drawing.Color.MistyRose;
@@ -145,15 +146,15 @@ namespace PokedexApp
             {
                 if (int.Parse(this.txtDanio.Text) < 0)
                 {
-                    MessageBox.Show("El porcentaje del daño del pokemon no puede ser negativo, carguelo correctamente", "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("El porcentaje del daño del pokemon no puede ser negativo, carguelo correctamente.", "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else if (int.Parse(this.txtDanio.Text) > 100)
                 {
-                    MessageBox.Show("El porcentaje del daño del pokemon no puede ser mayor a 100, carguelo correctamente", "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("El porcentaje del daño del pokemon no puede ser mayor a 100, carguelo correctamente.", "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else if (int.Parse(this.txtIDPokemon.Text) <= 0)
                 {
-                    MessageBox.Show("El ID del pokemon no puede ser 0 ni negativo, carguelo correctamente", "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("El ID del pokemon no puede ser 0 ni negativo, carguelo correctamente.", "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else if (String.IsNullOrWhiteSpace(this.txtNombrePokemon.Text) || String.IsNullOrWhiteSpace(this.txtTipoPokemon.Text) || String.IsNullOrWhiteSpace(this.txtIDPokemon.Text) ||
                 String.IsNullOrWhiteSpace(this.txtAtaquePokemon.Text) || String.IsNullOrWhiteSpace(this.txtDanio.Text))
@@ -188,7 +189,7 @@ namespace PokedexApp
             if (char.IsLetter(e.KeyChar) || char.IsSymbol(e.KeyChar) || char.IsWhiteSpace(e.KeyChar))
             {
                 e.Handled = true;
-                MessageBox.Show("Solamente números", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Solamente números.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -200,7 +201,7 @@ namespace PokedexApp
             if (char.IsLetter(e.KeyChar) || char.IsSymbol(e.KeyChar) || char.IsWhiteSpace(e.KeyChar))
             {
                 e.Handled = true;
-                MessageBox.Show("Solamente números", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Solamente números.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -212,7 +213,7 @@ namespace PokedexApp
             if (char.IsNumber(e.KeyChar) || char.IsSymbol(e.KeyChar) || char.IsWhiteSpace(e.KeyChar))
             {
                 e.Handled = true;
-                MessageBox.Show("Solamente letras", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Solamente letras.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -224,7 +225,7 @@ namespace PokedexApp
             if (char.IsNumber(e.KeyChar) || char.IsSymbol(e.KeyChar) || char.IsWhiteSpace(e.KeyChar))
             {
                 e.Handled = true;
-                MessageBox.Show("Solamente letras", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Solamente letras.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -236,7 +237,7 @@ namespace PokedexApp
             if (char.IsNumber(e.KeyChar) || char.IsSymbol(e.KeyChar))
             {
                 e.Handled = true;
-                MessageBox.Show("Solamente letras", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Solamente letras.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -266,7 +267,7 @@ namespace PokedexApp
 
                         if (pokemon.danio == 0)
                         {
-                            MessageBox.Show("El pokemón no presenta daños", "¡Elegí un pokemon aún sin sanar!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            MessageBox.Show("El pokemón no presenta daños.", "Elegí un pokemon dañado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                         }
                         else
                         {
@@ -277,7 +278,7 @@ namespace PokedexApp
             }
             else
             {
-                MessageBox.Show("No se seleccionó ningún pokemon", "¡Elegí un pokemon a sanar!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No se seleccionó ningún pokemon.", "Elegí un pokemon a sanar", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -290,7 +291,7 @@ namespace PokedexApp
             }
             catch (Exception)
             {
-                MessageBox.Show("Error al intentar guardar archivo .txt", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error al intentar guardar archivo .txt.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -301,11 +302,11 @@ namespace PokedexApp
             if (datosArchivo != string.Empty)
             {
                 this.rchPokemon.Text = "Leyendo desde archivo txt:\n\n" + datosArchivo;
-                MessageBox.Show("Datos del archivo .txt cargado en la lista", "Lectura correcta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Datos del archivo .txt cargado en la lista.", "Lectura correcta", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("No se pudo acceder al archivo .txt", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No se pudo acceder al archivo .txt.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -318,7 +319,7 @@ namespace PokedexApp
             }
             catch (Exception)
             {
-                MessageBox.Show("Error al intentar guardar archivo .xml", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error al intentar guardar archivo .xml.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -335,11 +336,11 @@ namespace PokedexApp
                     this.rchPokemon.Text += item.MostrarDato() + "\n\n";
                 }
 
-                MessageBox.Show("Datos del archivo .xml cargado en la lista", "Lectura correcta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Datos del archivo .xml cargado en la lista.", "Lectura correcta", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("No se pudo acceder al archivo .xml", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No se pudo acceder al archivo .xml.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -359,7 +360,39 @@ namespace PokedexApp
 
         private void btnLeerDeArchivoJson_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Soy un botón que aún no funciona :(", "Disculpe", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Soy un botón que aún no funciona :(.", "Estamos trabajando", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void btnCargarDeBaseDatos_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                List<Pokemon> auxListaPokemon = PokemonAccesoDatos.Leer();
+                this.rchPokemon.Text = "Leyendo desde base de datos:" + "\n\n";
+
+                foreach (var pokemonAux in auxListaPokemon)
+                {
+                    foreach (var pokemonList in Pokemon.ListaPokemon)
+                    {
+                        if (pokemonAux.nombre == pokemonList.nombre || pokemonAux.id == pokemonList.id)
+                        {
+                            throw new CamposErroneosException("No se pudo cargar el listado de la base de datos porque hay pokemon que ya se encuentran registrados.");
+                        }
+                    }
+                    this.rchPokemon.Text += pokemonAux.MostrarDato() + "\n\n";
+                    Pokemon.ListaPokemon.Add(pokemonAux);
+                }
+                MostrarPokemonEnListaPokemon();
+                MessageBox.Show("Listado de la base de datos cargado en la lista.", "Lectura correcta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (CamposErroneosException ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("No se pudo acceder a la base de datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 

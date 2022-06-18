@@ -54,6 +54,7 @@
             this.btnLeerDeArchivoTxt = new System.Windows.Forms.Button();
             this.grpGuardarArchivo = new System.Windows.Forms.GroupBox();
             this.grpLeerArchivo = new System.Windows.Forms.GroupBox();
+            this.btnCargarDeBaseDatos = new System.Windows.Forms.Button();
             this.grpAgregarPokemon.SuspendLayout();
             this.grpGuardarArchivo.SuspendLayout();
             this.grpLeerArchivo.SuspendLayout();
@@ -61,10 +62,9 @@
             // 
             // btnVerEntrenadores
             // 
-            this.btnVerEntrenadores.Location = new System.Drawing.Point(14, 533);
-            this.btnVerEntrenadores.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnVerEntrenadores.Location = new System.Drawing.Point(12, 400);
             this.btnVerEntrenadores.Name = "btnVerEntrenadores";
-            this.btnVerEntrenadores.Size = new System.Drawing.Size(117, 80);
+            this.btnVerEntrenadores.Size = new System.Drawing.Size(102, 60);
             this.btnVerEntrenadores.TabIndex = 23;
             this.btnVerEntrenadores.Text = "Ver entrenadores registrados";
             this.btnVerEntrenadores.UseVisualStyleBackColor = true;
@@ -72,10 +72,9 @@
             // 
             // btnUsuarioLogeado
             // 
-            this.btnUsuarioLogeado.Location = new System.Drawing.Point(153, 533);
-            this.btnUsuarioLogeado.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnUsuarioLogeado.Location = new System.Drawing.Point(134, 400);
             this.btnUsuarioLogeado.Name = "btnUsuarioLogeado";
-            this.btnUsuarioLogeado.Size = new System.Drawing.Size(117, 80);
+            this.btnUsuarioLogeado.Size = new System.Drawing.Size(102, 60);
             this.btnUsuarioLogeado.TabIndex = 24;
             this.btnUsuarioLogeado.Text = "Mostrar usuario logueado";
             this.btnUsuarioLogeado.UseVisualStyleBackColor = true;
@@ -86,10 +85,9 @@
             this.btnSalir.BackColor = System.Drawing.Color.Maroon;
             this.btnSalir.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnSalir.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSalir.Location = new System.Drawing.Point(524, 543);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSalir.Location = new System.Drawing.Point(458, 407);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(104, 66);
+            this.btnSalir.Size = new System.Drawing.Size(91, 50);
             this.btnSalir.TabIndex = 25;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
@@ -100,10 +98,9 @@
             this.btnVolver.BackColor = System.Drawing.Color.Firebrick;
             this.btnVolver.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnVolver.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnVolver.Location = new System.Drawing.Point(414, 543);
-            this.btnVolver.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnVolver.Location = new System.Drawing.Point(362, 407);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(104, 66);
+            this.btnVolver.Size = new System.Drawing.Size(91, 50);
             this.btnVolver.TabIndex = 26;
             this.btnVolver.Text = "Volver Atrás";
             this.btnVolver.UseVisualStyleBackColor = false;
@@ -112,21 +109,19 @@
             // lstPokemon
             // 
             this.lstPokemon.FormattingEnabled = true;
-            this.lstPokemon.ItemHeight = 20;
-            this.lstPokemon.Location = new System.Drawing.Point(14, 41);
-            this.lstPokemon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.lstPokemon.ItemHeight = 15;
+            this.lstPokemon.Location = new System.Drawing.Point(12, 31);
             this.lstPokemon.Name = "lstPokemon";
-            this.lstPokemon.Size = new System.Drawing.Size(182, 224);
+            this.lstPokemon.Size = new System.Drawing.Size(160, 169);
             this.lstPokemon.TabIndex = 27;
             this.lstPokemon.SelectedIndexChanged += new System.EventHandler(this.lstPokemon_SelectedIndexChanged);
             // 
             // rchPokemon
             // 
-            this.rchPokemon.Location = new System.Drawing.Point(338, 41);
-            this.rchPokemon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.rchPokemon.Location = new System.Drawing.Point(296, 31);
             this.rchPokemon.Name = "rchPokemon";
             this.rchPokemon.ReadOnly = true;
-            this.rchPokemon.Size = new System.Drawing.Size(290, 224);
+            this.rchPokemon.Size = new System.Drawing.Size(254, 169);
             this.rchPokemon.TabIndex = 28;
             this.rchPokemon.Text = "";
             // 
@@ -138,31 +133,27 @@
             this.grpAgregarPokemon.Controls.Add(this.txtIDPokemon);
             this.grpAgregarPokemon.Controls.Add(this.txtTipoPokemon);
             this.grpAgregarPokemon.Controls.Add(this.txtNombrePokemon);
-            this.grpAgregarPokemon.Location = new System.Drawing.Point(24, 282);
-            this.grpAgregarPokemon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.grpAgregarPokemon.Location = new System.Drawing.Point(21, 212);
             this.grpAgregarPokemon.Name = "grpAgregarPokemon";
-            this.grpAgregarPokemon.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.grpAgregarPokemon.Size = new System.Drawing.Size(604, 99);
+            this.grpAgregarPokemon.Size = new System.Drawing.Size(528, 74);
             this.grpAgregarPokemon.TabIndex = 29;
             this.grpAgregarPokemon.TabStop = false;
             this.grpAgregarPokemon.Text = "Agregar Pokemon";
             // 
             // txtDanio
             // 
-            this.txtDanio.Location = new System.Drawing.Point(406, 42);
-            this.txtDanio.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtDanio.Location = new System.Drawing.Point(355, 32);
             this.txtDanio.Name = "txtDanio";
             this.txtDanio.PlaceholderText = "Daño %";
-            this.txtDanio.Size = new System.Drawing.Size(65, 27);
+            this.txtDanio.Size = new System.Drawing.Size(57, 23);
             this.txtDanio.TabIndex = 4;
             this.txtDanio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDanio_KeyPress);
             // 
             // btnAgregarPokemon
             // 
-            this.btnAgregarPokemon.Location = new System.Drawing.Point(488, 30);
-            this.btnAgregarPokemon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnAgregarPokemon.Location = new System.Drawing.Point(427, 22);
             this.btnAgregarPokemon.Name = "btnAgregarPokemon";
-            this.btnAgregarPokemon.Size = new System.Drawing.Size(95, 50);
+            this.btnAgregarPokemon.Size = new System.Drawing.Size(83, 38);
             this.btnAgregarPokemon.TabIndex = 5;
             this.btnAgregarPokemon.Text = "Agregar";
             this.btnAgregarPokemon.UseVisualStyleBackColor = true;
@@ -170,41 +161,37 @@
             // 
             // txtAtaquePokemon
             // 
-            this.txtAtaquePokemon.Location = new System.Drawing.Point(271, 42);
-            this.txtAtaquePokemon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtAtaquePokemon.Location = new System.Drawing.Point(237, 32);
             this.txtAtaquePokemon.Name = "txtAtaquePokemon";
             this.txtAtaquePokemon.PlaceholderText = "Ataque principal";
-            this.txtAtaquePokemon.Size = new System.Drawing.Size(129, 27);
+            this.txtAtaquePokemon.Size = new System.Drawing.Size(113, 23);
             this.txtAtaquePokemon.TabIndex = 3;
             this.txtAtaquePokemon.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAtaquePokemon_KeyPress);
             // 
             // txtIDPokemon
             // 
-            this.txtIDPokemon.Location = new System.Drawing.Point(225, 42);
-            this.txtIDPokemon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtIDPokemon.Location = new System.Drawing.Point(197, 32);
             this.txtIDPokemon.Name = "txtIDPokemon";
             this.txtIDPokemon.PlaceholderText = "ID";
-            this.txtIDPokemon.Size = new System.Drawing.Size(40, 27);
+            this.txtIDPokemon.Size = new System.Drawing.Size(36, 23);
             this.txtIDPokemon.TabIndex = 2;
             this.txtIDPokemon.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIDPokemon_KeyPress);
             // 
             // txtTipoPokemon
             // 
-            this.txtTipoPokemon.Location = new System.Drawing.Point(122, 42);
-            this.txtTipoPokemon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtTipoPokemon.Location = new System.Drawing.Point(107, 32);
             this.txtTipoPokemon.Name = "txtTipoPokemon";
             this.txtTipoPokemon.PlaceholderText = "Tipo";
-            this.txtTipoPokemon.Size = new System.Drawing.Size(95, 27);
+            this.txtTipoPokemon.Size = new System.Drawing.Size(84, 23);
             this.txtTipoPokemon.TabIndex = 1;
             this.txtTipoPokemon.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTipoPokemon_KeyPress);
             // 
             // txtNombrePokemon
             // 
-            this.txtNombrePokemon.Location = new System.Drawing.Point(14, 42);
-            this.txtNombrePokemon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtNombrePokemon.Location = new System.Drawing.Point(12, 32);
             this.txtNombrePokemon.Name = "txtNombrePokemon";
             this.txtNombrePokemon.PlaceholderText = "Nombre";
-            this.txtNombrePokemon.Size = new System.Drawing.Size(95, 27);
+            this.txtNombrePokemon.Size = new System.Drawing.Size(84, 23);
             this.txtNombrePokemon.TabIndex = 0;
             this.txtNombrePokemon.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombrePokemon_KeyPress);
             // 
@@ -214,20 +201,18 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.chkHabAgrPok.AutoSize = true;
             this.chkHabAgrPok.CheckAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.chkHabAgrPok.Location = new System.Drawing.Point(14, 282);
-            this.chkHabAgrPok.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.chkHabAgrPok.Location = new System.Drawing.Point(12, 212);
             this.chkHabAgrPok.Name = "chkHabAgrPok";
-            this.chkHabAgrPok.Size = new System.Drawing.Size(18, 17);
+            this.chkHabAgrPok.Size = new System.Drawing.Size(15, 14);
             this.chkHabAgrPok.TabIndex = 30;
             this.chkHabAgrPok.UseVisualStyleBackColor = true;
             this.chkHabAgrPok.CheckedChanged += new System.EventHandler(this.chkHabAgrPok_CheckedChanged);
             // 
             // btnCurarPokemon
             // 
-            this.btnCurarPokemon.Location = new System.Drawing.Point(214, 50);
-            this.btnCurarPokemon.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnCurarPokemon.Location = new System.Drawing.Point(187, 38);
             this.btnCurarPokemon.Name = "btnCurarPokemon";
-            this.btnCurarPokemon.Size = new System.Drawing.Size(107, 51);
+            this.btnCurarPokemon.Size = new System.Drawing.Size(94, 38);
             this.btnCurarPokemon.TabIndex = 31;
             this.btnCurarPokemon.Text = "Curar pokemon";
             this.btnCurarPokemon.UseVisualStyleBackColor = true;
@@ -237,9 +222,9 @@
             // 
             this.txtPokemonAtendido.AutoSize = true;
             this.txtPokemonAtendido.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
-            this.txtPokemonAtendido.Location = new System.Drawing.Point(13, 15);
+            this.txtPokemonAtendido.Location = new System.Drawing.Point(11, 11);
             this.txtPokemonAtendido.Name = "txtPokemonAtendido";
-            this.txtPokemonAtendido.Size = new System.Drawing.Size(181, 23);
+            this.txtPokemonAtendido.Size = new System.Drawing.Size(144, 17);
             this.txtPokemonAtendido.TabIndex = 32;
             this.txtPokemonAtendido.Text = "Pokemon en atención:";
             // 
@@ -247,18 +232,17 @@
             // 
             this.lblDetalle.AutoSize = true;
             this.lblDetalle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
-            this.lblDetalle.Location = new System.Drawing.Point(338, 15);
+            this.lblDetalle.Location = new System.Drawing.Point(296, 11);
             this.lblDetalle.Name = "lblDetalle";
-            this.lblDetalle.Size = new System.Drawing.Size(67, 23);
+            this.lblDetalle.Size = new System.Drawing.Size(52, 17);
             this.lblDetalle.TabIndex = 33;
             this.lblDetalle.Text = "Detalle:";
             // 
             // btnLeerDeArchivoXml
             // 
-            this.btnLeerDeArchivoXml.Location = new System.Drawing.Point(89, 26);
-            this.btnLeerDeArchivoXml.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnLeerDeArchivoXml.Location = new System.Drawing.Point(78, 20);
             this.btnLeerDeArchivoXml.Name = "btnLeerDeArchivoXml";
-            this.btnLeerDeArchivoXml.Size = new System.Drawing.Size(48, 34);
+            this.btnLeerDeArchivoXml.Size = new System.Drawing.Size(42, 26);
             this.btnLeerDeArchivoXml.TabIndex = 37;
             this.btnLeerDeArchivoXml.Text = "Xml";
             this.btnLeerDeArchivoXml.UseVisualStyleBackColor = true;
@@ -266,10 +250,9 @@
             // 
             // btnGuardarEnArchivoXml
             // 
-            this.btnGuardarEnArchivoXml.Location = new System.Drawing.Point(79, 27);
-            this.btnGuardarEnArchivoXml.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnGuardarEnArchivoXml.Location = new System.Drawing.Point(69, 20);
             this.btnGuardarEnArchivoXml.Name = "btnGuardarEnArchivoXml";
-            this.btnGuardarEnArchivoXml.Size = new System.Drawing.Size(48, 34);
+            this.btnGuardarEnArchivoXml.Size = new System.Drawing.Size(42, 26);
             this.btnGuardarEnArchivoXml.TabIndex = 36;
             this.btnGuardarEnArchivoXml.Text = "Xml";
             this.btnGuardarEnArchivoXml.UseVisualStyleBackColor = true;
@@ -277,10 +260,9 @@
             // 
             // btnLeerDeArchivoJson
             // 
-            this.btnLeerDeArchivoJson.Location = new System.Drawing.Point(143, 26);
-            this.btnLeerDeArchivoJson.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnLeerDeArchivoJson.Location = new System.Drawing.Point(125, 20);
             this.btnLeerDeArchivoJson.Name = "btnLeerDeArchivoJson";
-            this.btnLeerDeArchivoJson.Size = new System.Drawing.Size(48, 34);
+            this.btnLeerDeArchivoJson.Size = new System.Drawing.Size(42, 26);
             this.btnLeerDeArchivoJson.TabIndex = 39;
             this.btnLeerDeArchivoJson.Text = "Json";
             this.btnLeerDeArchivoJson.UseVisualStyleBackColor = true;
@@ -288,10 +270,9 @@
             // 
             // btnGuardarEnArchivoJson
             // 
-            this.btnGuardarEnArchivoJson.Location = new System.Drawing.Point(133, 27);
-            this.btnGuardarEnArchivoJson.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnGuardarEnArchivoJson.Location = new System.Drawing.Point(116, 20);
             this.btnGuardarEnArchivoJson.Name = "btnGuardarEnArchivoJson";
-            this.btnGuardarEnArchivoJson.Size = new System.Drawing.Size(48, 34);
+            this.btnGuardarEnArchivoJson.Size = new System.Drawing.Size(42, 26);
             this.btnGuardarEnArchivoJson.TabIndex = 38;
             this.btnGuardarEnArchivoJson.Text = "Json";
             this.btnGuardarEnArchivoJson.UseVisualStyleBackColor = true;
@@ -299,10 +280,9 @@
             // 
             // btnGuardarEnArchivoTxt
             // 
-            this.btnGuardarEnArchivoTxt.Location = new System.Drawing.Point(25, 27);
-            this.btnGuardarEnArchivoTxt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnGuardarEnArchivoTxt.Location = new System.Drawing.Point(22, 20);
             this.btnGuardarEnArchivoTxt.Name = "btnGuardarEnArchivoTxt";
-            this.btnGuardarEnArchivoTxt.Size = new System.Drawing.Size(48, 34);
+            this.btnGuardarEnArchivoTxt.Size = new System.Drawing.Size(42, 26);
             this.btnGuardarEnArchivoTxt.TabIndex = 34;
             this.btnGuardarEnArchivoTxt.Text = "Txt";
             this.btnGuardarEnArchivoTxt.UseVisualStyleBackColor = true;
@@ -310,10 +290,9 @@
             // 
             // btnLeerDeArchivoTxt
             // 
-            this.btnLeerDeArchivoTxt.Location = new System.Drawing.Point(35, 26);
-            this.btnLeerDeArchivoTxt.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnLeerDeArchivoTxt.Location = new System.Drawing.Point(31, 20);
             this.btnLeerDeArchivoTxt.Name = "btnLeerDeArchivoTxt";
-            this.btnLeerDeArchivoTxt.Size = new System.Drawing.Size(48, 34);
+            this.btnLeerDeArchivoTxt.Size = new System.Drawing.Size(42, 26);
             this.btnLeerDeArchivoTxt.TabIndex = 35;
             this.btnLeerDeArchivoTxt.Text = "Txt";
             this.btnLeerDeArchivoTxt.UseVisualStyleBackColor = true;
@@ -324,9 +303,11 @@
             this.grpGuardarArchivo.Controls.Add(this.btnGuardarEnArchivoTxt);
             this.grpGuardarArchivo.Controls.Add(this.btnGuardarEnArchivoXml);
             this.grpGuardarArchivo.Controls.Add(this.btnGuardarEnArchivoJson);
-            this.grpGuardarArchivo.Location = new System.Drawing.Point(20, 389);
+            this.grpGuardarArchivo.Location = new System.Drawing.Point(18, 292);
+            this.grpGuardarArchivo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpGuardarArchivo.Name = "grpGuardarArchivo";
-            this.grpGuardarArchivo.Size = new System.Drawing.Size(221, 74);
+            this.grpGuardarArchivo.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grpGuardarArchivo.Size = new System.Drawing.Size(193, 56);
             this.grpGuardarArchivo.TabIndex = 42;
             this.grpGuardarArchivo.TabStop = false;
             this.grpGuardarArchivo.Text = "Guardar listado en formato:";
@@ -336,19 +317,32 @@
             this.grpLeerArchivo.Controls.Add(this.btnLeerDeArchivoXml);
             this.grpLeerArchivo.Controls.Add(this.btnLeerDeArchivoTxt);
             this.grpLeerArchivo.Controls.Add(this.btnLeerDeArchivoJson);
-            this.grpLeerArchivo.Location = new System.Drawing.Point(261, 389);
+            this.grpLeerArchivo.Location = new System.Drawing.Point(228, 292);
+            this.grpLeerArchivo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpLeerArchivo.Name = "grpLeerArchivo";
-            this.grpLeerArchivo.Size = new System.Drawing.Size(221, 74);
+            this.grpLeerArchivo.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grpLeerArchivo.Size = new System.Drawing.Size(193, 56);
             this.grpLeerArchivo.TabIndex = 43;
             this.grpLeerArchivo.TabStop = false;
             this.grpLeerArchivo.Text = "Leer listado en formato:";
             // 
+            // btnCargarDeBaseDatos
+            // 
+            this.btnCargarDeBaseDatos.Location = new System.Drawing.Point(190, 88);
+            this.btnCargarDeBaseDatos.Name = "btnCargarDeBaseDatos";
+            this.btnCargarDeBaseDatos.Size = new System.Drawing.Size(91, 55);
+            this.btnCargarDeBaseDatos.TabIndex = 44;
+            this.btnCargarDeBaseDatos.Text = "Cargar lista de base de datos";
+            this.btnCargarDeBaseDatos.UseVisualStyleBackColor = true;
+            this.btnCargarDeBaseDatos.Click += new System.EventHandler(this.btnCargarDeBaseDatos_Click);
+            // 
             // MenuPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.RosyBrown;
-            this.ClientSize = new System.Drawing.Size(644, 622);
+            this.ClientSize = new System.Drawing.Size(564, 466);
+            this.Controls.Add(this.btnCargarDeBaseDatos);
             this.Controls.Add(this.grpLeerArchivo);
             this.Controls.Add(this.grpGuardarArchivo);
             this.Controls.Add(this.lblDetalle);
@@ -365,7 +359,6 @@
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MenuPrincipal";
@@ -407,5 +400,6 @@
         private System.Windows.Forms.Button btnLeerDeArchivoTxt;
         private System.Windows.Forms.GroupBox grpGuardarArchivo;
         private System.Windows.Forms.GroupBox grpLeerArchivo;
+        private System.Windows.Forms.Button btnCargarDeBaseDatos;
     }
 }
