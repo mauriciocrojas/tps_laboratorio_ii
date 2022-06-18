@@ -46,8 +46,8 @@
             this.btnCurarPokemon = new System.Windows.Forms.Button();
             this.txtPokemonAtendido = new System.Windows.Forms.Label();
             this.lblDetalle = new System.Windows.Forms.Label();
-            this.btnGuardarEnArchivo = new System.Windows.Forms.Button();
-            this.btnLeerDeArchivo = new System.Windows.Forms.Button();
+            this.btnGuardarEnArchivoTxt = new System.Windows.Forms.Button();
+            this.btnLeerDeArchivoTxt = new System.Windows.Forms.Button();
             this.grpAgregarPokemon.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -101,18 +101,18 @@
             // 
             this.lstPokemon.FormattingEnabled = true;
             this.lstPokemon.ItemHeight = 15;
-            this.lstPokemon.Location = new System.Drawing.Point(13, 31);
+            this.lstPokemon.Location = new System.Drawing.Point(12, 31);
             this.lstPokemon.Name = "lstPokemon";
-            this.lstPokemon.Size = new System.Drawing.Size(169, 169);
+            this.lstPokemon.Size = new System.Drawing.Size(160, 169);
             this.lstPokemon.TabIndex = 27;
             this.lstPokemon.SelectedIndexChanged += new System.EventHandler(this.lstPokemon_SelectedIndexChanged);
             // 
             // rchPokemon
             // 
-            this.rchPokemon.Location = new System.Drawing.Point(266, 31);
+            this.rchPokemon.Location = new System.Drawing.Point(278, 31);
             this.rchPokemon.Name = "rchPokemon";
             this.rchPokemon.ReadOnly = true;
-            this.rchPokemon.Size = new System.Drawing.Size(256, 169);
+            this.rchPokemon.Size = new System.Drawing.Size(244, 169);
             this.rchPokemon.TabIndex = 28;
             this.rchPokemon.Text = "";
             // 
@@ -124,7 +124,7 @@
             this.grpAgregarPokemon.Controls.Add(this.txtIDPokemon);
             this.grpAgregarPokemon.Controls.Add(this.txtTipoPokemon);
             this.grpAgregarPokemon.Controls.Add(this.txtNombrePokemon);
-            this.grpAgregarPokemon.Location = new System.Drawing.Point(22, 256);
+            this.grpAgregarPokemon.Location = new System.Drawing.Point(21, 267);
             this.grpAgregarPokemon.Name = "grpAgregarPokemon";
             this.grpAgregarPokemon.Size = new System.Drawing.Size(496, 74);
             this.grpAgregarPokemon.TabIndex = 29;
@@ -192,7 +192,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.chkHabAgrPok.AutoSize = true;
             this.chkHabAgrPok.CheckAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.chkHabAgrPok.Location = new System.Drawing.Point(13, 256);
+            this.chkHabAgrPok.Location = new System.Drawing.Point(12, 267);
             this.chkHabAgrPok.Name = "chkHabAgrPok";
             this.chkHabAgrPok.Size = new System.Drawing.Size(15, 14);
             this.chkHabAgrPok.TabIndex = 30;
@@ -201,9 +201,9 @@
             // 
             // btnCurarPokemon
             // 
-            this.btnCurarPokemon.Location = new System.Drawing.Point(13, 213);
+            this.btnCurarPokemon.Location = new System.Drawing.Point(178, 31);
             this.btnCurarPokemon.Name = "btnCurarPokemon";
-            this.btnCurarPokemon.Size = new System.Drawing.Size(111, 37);
+            this.btnCurarPokemon.Size = new System.Drawing.Size(94, 53);
             this.btnCurarPokemon.TabIndex = 31;
             this.btnCurarPokemon.Text = "Curar pokemon";
             this.btnCurarPokemon.UseVisualStyleBackColor = true;
@@ -213,7 +213,7 @@
             // 
             this.txtPokemonAtendido.AutoSize = true;
             this.txtPokemonAtendido.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
-            this.txtPokemonAtendido.Location = new System.Drawing.Point(12, 11);
+            this.txtPokemonAtendido.Location = new System.Drawing.Point(11, 11);
             this.txtPokemonAtendido.Name = "txtPokemonAtendido";
             this.txtPokemonAtendido.Size = new System.Drawing.Size(144, 17);
             this.txtPokemonAtendido.TabIndex = 32;
@@ -223,31 +223,31 @@
             // 
             this.lblDetalle.AutoSize = true;
             this.lblDetalle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point);
-            this.lblDetalle.Location = new System.Drawing.Point(266, 11);
+            this.lblDetalle.Location = new System.Drawing.Point(278, 11);
             this.lblDetalle.Name = "lblDetalle";
             this.lblDetalle.Size = new System.Drawing.Size(52, 17);
             this.lblDetalle.TabIndex = 33;
             this.lblDetalle.Text = "Detalle:";
             // 
-            // btnGuardarEnArchivo
+            // btnGuardarEnArchivoTxt
             // 
-            this.btnGuardarEnArchivo.Location = new System.Drawing.Point(130, 213);
-            this.btnGuardarEnArchivo.Name = "btnGuardarEnArchivo";
-            this.btnGuardarEnArchivo.Size = new System.Drawing.Size(130, 37);
-            this.btnGuardarEnArchivo.TabIndex = 34;
-            this.btnGuardarEnArchivo.Text = "Guardar en archivo";
-            this.btnGuardarEnArchivo.UseVisualStyleBackColor = true;
-            this.btnGuardarEnArchivo.Click += new System.EventHandler(this.btnGuardarEnArchivo_Click);
+            this.btnGuardarEnArchivoTxt.Location = new System.Drawing.Point(11, 206);
+            this.btnGuardarEnArchivoTxt.Name = "btnGuardarEnArchivoTxt";
+            this.btnGuardarEnArchivoTxt.Size = new System.Drawing.Size(93, 49);
+            this.btnGuardarEnArchivoTxt.TabIndex = 34;
+            this.btnGuardarEnArchivoTxt.Text = "Guardar en archivo .txt";
+            this.btnGuardarEnArchivoTxt.UseVisualStyleBackColor = true;
+            this.btnGuardarEnArchivoTxt.Click += new System.EventHandler(this.btnGuardarEnArchivoTxt_Click);
             // 
-            // btnLeerDeArchivo
+            // btnLeerDeArchivoTxt
             // 
-            this.btnLeerDeArchivo.Location = new System.Drawing.Point(266, 214);
-            this.btnLeerDeArchivo.Name = "btnLeerDeArchivo";
-            this.btnLeerDeArchivo.Size = new System.Drawing.Size(126, 36);
-            this.btnLeerDeArchivo.TabIndex = 35;
-            this.btnLeerDeArchivo.Text = "Leer de archivo";
-            this.btnLeerDeArchivo.UseVisualStyleBackColor = true;
-            this.btnLeerDeArchivo.Click += new System.EventHandler(this.btnLeerDeArchivo_Click);
+            this.btnLeerDeArchivoTxt.Location = new System.Drawing.Point(110, 206);
+            this.btnLeerDeArchivoTxt.Name = "btnLeerDeArchivoTxt";
+            this.btnLeerDeArchivoTxt.Size = new System.Drawing.Size(93, 48);
+            this.btnLeerDeArchivoTxt.TabIndex = 35;
+            this.btnLeerDeArchivoTxt.Text = "Leer de archivo .txt";
+            this.btnLeerDeArchivoTxt.UseVisualStyleBackColor = true;
+            this.btnLeerDeArchivoTxt.Click += new System.EventHandler(this.btnLeerDeArchivoTxt_Click);
             // 
             // MenuPrincipal
             // 
@@ -255,8 +255,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.RosyBrown;
             this.ClientSize = new System.Drawing.Size(534, 450);
-            this.Controls.Add(this.btnLeerDeArchivo);
-            this.Controls.Add(this.btnGuardarEnArchivo);
+            this.Controls.Add(this.btnLeerDeArchivoTxt);
+            this.Controls.Add(this.btnGuardarEnArchivoTxt);
             this.Controls.Add(this.lblDetalle);
             this.Controls.Add(this.txtPokemonAtendido);
             this.Controls.Add(this.btnCurarPokemon);
@@ -302,7 +302,7 @@
         private System.Windows.Forms.TextBox txtDanio;
         private System.Windows.Forms.Label txtPokemonAtendido;
         private System.Windows.Forms.Label lblDetalle;
-        private System.Windows.Forms.Button btnGuardarEnArchivo;
-        private System.Windows.Forms.Button btnLeerDeArchivo;
+        private System.Windows.Forms.Button btnGuardarEnArchivoTxt;
+        private System.Windows.Forms.Button btnLeerDeArchivoTxt;
     }
 }

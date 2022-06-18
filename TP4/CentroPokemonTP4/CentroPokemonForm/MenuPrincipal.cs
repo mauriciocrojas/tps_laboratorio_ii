@@ -32,7 +32,8 @@ namespace PokedexApp
             else
             {
                 this.btnVerEntrenadores.Enabled = false;
-                this.btnGuardarEnArchivo.Enabled = false;
+                this.btnGuardarEnArchivoTxt.Enabled = false;
+                this.btnLeerDeArchivoTxt.Enabled = false;
                 this.btnCurarPokemon.Enabled = false;
                 this.BackColor = System.Drawing.Color.MistyRose;
                 this.chkHabAgrPok.Visible = false;
@@ -273,11 +274,11 @@ namespace PokedexApp
             }
         }
 
-        private void btnGuardarEnArchivo_Click(object sender, EventArgs e)
+        private void btnGuardarEnArchivoTxt_Click(object sender, EventArgs e)
         {
             try
             {
-                Pokemon.Escribir();
+                Pokemon.EscribirTxt();
                 MessageBox.Show("Se guardó el archivo correctamente.", "Guardado exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception)
@@ -286,19 +287,19 @@ namespace PokedexApp
             }
         }
 
-        private void btnLeerDeArchivo_Click(object sender, EventArgs e)
+        private void btnLeerDeArchivoTxt_Click(object sender, EventArgs e)
         {
-            string datosArchivo = Pokemon.Leer("/Listado de Pokemon en el Centro.txt");
+            string datosArchivo = Pokemon.LeerTxt("/Listado de Pokemon en el Centro.txt");
 
-                if (datosArchivo != string.Empty)
-                {
-                    this.rchPokemon.Text = "Leyendo desde archivo txt:\n\n" + datosArchivo;
-                    MessageBox.Show("Datos del archivo cargado en la lista", "Lectura correcta", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("No se pudo acceder al archivo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+            if (datosArchivo != string.Empty)
+            {
+                this.rchPokemon.Text = "Leyendo desde archivo txt:\n\n" + datosArchivo;
+                MessageBox.Show("Datos del archivo cargado en la lista", "Lectura correcta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("No se pudo acceder al archivo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 

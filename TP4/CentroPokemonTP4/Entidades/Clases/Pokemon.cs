@@ -84,7 +84,7 @@ namespace Entidades
         /// <summary>
         /// Método que creará un archivo txt con el listado de pokemon alojados en el centro.
         /// </summary>
-        public static void Escribir()
+        public static void EscribirTxt()
         {
             //string rutaProyecto = AppDomain.CurrentDomain.BaseDirectory;
             //string nombreArchivo = @"/Listado de Pokemon en el Centro al " + DateTime.Now.ToString("dd_MM_yy HH.mm") + ".txt";
@@ -108,11 +108,11 @@ namespace Entidades
         /// </summary>
         /// <param name="archivo">Nombre de Archivo a leer</param>
         /// <returns>Retorna el contenido del archivo en formato string</returns>
-        public static string Leer(string archivo)
+        public static string LeerTxt(string archivo)
         {
             string rutaCompleta = rutaEscritorioYCarpeta + archivo;
-
             string datos = string.Empty;
+
             try
             {
                 if (Directory.Exists(rutaEscritorioYCarpeta))
