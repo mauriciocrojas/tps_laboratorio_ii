@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\maurojas\\Documents\\Alumni\\TP4\\CentroPokemonTP4 - copia (12)\\CentroPokemonForm\\CentroPokemonForm.csproj": {}
+    "C:\\Users\\mauri\\Desktop\\TP\\tps_laboratorio_ii\\TP4\\CentroPokemonTP4\\CentroPokemonForm\\CentroPokemonForm.csproj": {}
   },
   "projects": {
-    "C:\\Users\\maurojas\\Documents\\Alumni\\TP4\\CentroPokemonTP4 - copia (12)\\CentroPokemonForm\\CentroPokemonForm.csproj": {
+    "C:\\Users\\mauri\\Desktop\\TP\\tps_laboratorio_ii\\TP4\\CentroPokemonTP4\\CentroPokemonForm\\CentroPokemonForm.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\maurojas\\Documents\\Alumni\\TP4\\CentroPokemonTP4 - copia (12)\\CentroPokemonForm\\CentroPokemonForm.csproj",
+        "projectUniqueName": "C:\\Users\\mauri\\Desktop\\TP\\tps_laboratorio_ii\\TP4\\CentroPokemonTP4\\CentroPokemonForm\\CentroPokemonForm.csproj",
         "projectName": "CentroPokemonForm",
-        "projectPath": "C:\\Users\\maurojas\\Documents\\Alumni\\TP4\\CentroPokemonTP4 - copia (12)\\CentroPokemonForm\\CentroPokemonForm.csproj",
-        "packagesPath": "C:\\Users\\maurojas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\maurojas\\Documents\\Alumni\\TP4\\CentroPokemonTP4 - copia (12)\\CentroPokemonForm\\obj\\",
+        "projectPath": "C:\\Users\\mauri\\Desktop\\TP\\tps_laboratorio_ii\\TP4\\CentroPokemonTP4\\CentroPokemonForm\\CentroPokemonForm.csproj",
+        "packagesPath": "C:\\Users\\mauri\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mauri\\Desktop\\TP\\tps_laboratorio_ii\\TP4\\CentroPokemonTP4\\CentroPokemonForm\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\maurojas\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\mauri\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -32,8 +28,8 @@
           "net5.0-windows7.0": {
             "targetAlias": "net5.0-windows",
             "projectReferences": {
-              "C:\\Users\\maurojas\\Documents\\Alumni\\TP4\\CentroPokemonTP4 - copia (12)\\Entidades\\Entidades.csproj": {
-                "projectPath": "C:\\Users\\maurojas\\Documents\\Alumni\\TP4\\CentroPokemonTP4 - copia (12)\\Entidades\\Entidades.csproj"
+              "C:\\Users\\mauri\\Desktop\\TP\\tps_laboratorio_ii\\TP4\\CentroPokemonTP4\\Entidades\\Entidades.csproj": {
+                "projectPath": "C:\\Users\\mauri\\Desktop\\TP\\tps_laboratorio_ii\\TP4\\CentroPokemonTP4\\Entidades\\Entidades.csproj"
               }
             }
           }
@@ -69,21 +65,17 @@
         }
       }
     },
-    "C:\\Users\\maurojas\\Documents\\Alumni\\TP4\\CentroPokemonTP4 - copia (12)\\Entidades\\Entidades.csproj": {
+    "C:\\Users\\mauri\\Desktop\\TP\\tps_laboratorio_ii\\TP4\\CentroPokemonTP4\\Entidades\\Entidades.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\maurojas\\Documents\\Alumni\\TP4\\CentroPokemonTP4 - copia (12)\\Entidades\\Entidades.csproj",
+        "projectUniqueName": "C:\\Users\\mauri\\Desktop\\TP\\tps_laboratorio_ii\\TP4\\CentroPokemonTP4\\Entidades\\Entidades.csproj",
         "projectName": "Entidades",
-        "projectPath": "C:\\Users\\maurojas\\Documents\\Alumni\\TP4\\CentroPokemonTP4 - copia (12)\\Entidades\\Entidades.csproj",
-        "packagesPath": "C:\\Users\\maurojas\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\maurojas\\Documents\\Alumni\\TP4\\CentroPokemonTP4 - copia (12)\\Entidades\\obj\\",
+        "projectPath": "C:\\Users\\mauri\\Desktop\\TP\\tps_laboratorio_ii\\TP4\\CentroPokemonTP4\\Entidades\\Entidades.csproj",
+        "packagesPath": "C:\\Users\\mauri\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mauri\\Desktop\\TP\\tps_laboratorio_ii\\TP4\\CentroPokemonTP4\\Entidades\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\maurojas\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\mauri\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

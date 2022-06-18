@@ -32,13 +32,13 @@ namespace PokedexApp
             }
             else
             {
+                this.grpAgregarPokemon.Enabled = false;
+                this.grpLeerArchivo.Enabled = false;
                 this.btnVerEntrenadores.Enabled = false;
-                this.btnGuardarEnArchivoTxt.Enabled = false;
-                this.btnLeerDeArchivoTxt.Enabled = false;
                 this.btnCurarPokemon.Enabled = false;
                 this.BackColor = System.Drawing.Color.MistyRose;
                 this.chkHabAgrPok.Visible = false;
-                this.grpAgregarPokemon.Visible = false;
+                this.grpAgregarPokemon.Enabled = false;
                 this.Text = "Centro Pokemon - Menú Entrenadores";
             }
 
@@ -153,6 +153,11 @@ namespace PokedexApp
                 else if (int.Parse(this.txtIDPokemon.Text) <= 0)
                 {
                     MessageBox.Show("El ID del pokemon no puede ser 0 ni negativo, carguelo correctamente", "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (String.IsNullOrWhiteSpace(this.txtNombrePokemon.Text) || String.IsNullOrWhiteSpace(this.txtTipoPokemon.Text) || String.IsNullOrWhiteSpace(this.txtIDPokemon.Text) ||
+                String.IsNullOrWhiteSpace(this.txtAtaquePokemon.Text) || String.IsNullOrWhiteSpace(this.txtDanio.Text))
+                {
+                    MessageBox.Show("Hay campos vacíos o erróneos, se necesitan completar todos los campos.", "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
@@ -349,6 +354,11 @@ namespace PokedexApp
             //{
             //    MessageBox.Show("Error al intentar guardar archivo .json", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             //}
+        }
+
+        private void btnLeerDeArchivoJson_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Soy un botón que aún no funciona :(", "Disculpe", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 
