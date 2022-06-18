@@ -86,7 +86,7 @@ namespace Entidades
         }
 
         /// <summary>
-        /// Método que creará un archivo txt con el listado de pokemon alojados en el centro.
+        /// Método que creará un archivo xml con el listado de pokemon alojados en el centro.
         /// </summary>
         public static void EscribirXml(List<Pokemon> pokemon)
         {
@@ -108,8 +108,7 @@ namespace Entidades
         /// <summary>
         /// Método que leerá el archivo pasado como parámetro, y lo mostrará en el RichTextBox.
         /// </summary>
-        /// <param name="archivo">Nombre de Archivo a leer</param>
-        /// <returns>Retorna el contenido del archivo en formato string</returns>
+        /// <returns>Retorna una lista pokemon</returns>
         public static List<Pokemon> LeerXml()
         {
             string rutaCompleta = rutaEscritorioYCarpeta + @"/Listado de Pokemon en el Centro.xml";
@@ -125,7 +124,6 @@ namespace Entidades
                     return listaPokemon;
                 }
             }
-
             return null;
         }
 
