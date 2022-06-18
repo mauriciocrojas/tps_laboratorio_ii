@@ -34,6 +34,7 @@ namespace PokedexApp
             {
                 this.grpAgregarPokemon.Enabled = false;
                 this.grpLeerArchivo.Enabled = false;
+  		this.grpGuardarArchivo.Enabled = false;
                 this.btnVerEntrenadores.Enabled = false;
                 this.btnCurarPokemon.Enabled = false;
                 this.BackColor = System.Drawing.Color.MistyRose;
