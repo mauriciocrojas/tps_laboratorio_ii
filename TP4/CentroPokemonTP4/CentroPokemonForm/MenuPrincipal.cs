@@ -1,5 +1,6 @@
 ﻿using Entidades;
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace PokedexApp
@@ -279,11 +280,11 @@ namespace PokedexApp
             try
             {
                 Pokemon.EscribirTxt();
-                MessageBox.Show("Se guardó el archivo correctamente.", "Guardado exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Se guardó el archivo .txt correctamente.", "Guardado exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception)
             {
-                MessageBox.Show("Error al intentar guardar archivo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error al intentar guardar archivo .txt", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -294,11 +295,45 @@ namespace PokedexApp
             if (datosArchivo != string.Empty)
             {
                 this.rchPokemon.Text = "Leyendo desde archivo txt:\n\n" + datosArchivo;
-                MessageBox.Show("Datos del archivo cargado en la lista", "Lectura correcta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Datos del archivo .txt cargado en la lista", "Lectura correcta", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("No se pudo acceder al archivo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No se pudo acceder al archivo .txt", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnGuardarEnArchivoXml_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Pokemon.EscribirXml(Pokemon.ListaPokemon);
+                MessageBox.Show("Se guardó el archivo .xml correctamente.", "Guardado exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error al intentar guardar archivo .xml", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnLeerDeArchivoXml_Click(object sender, EventArgs e)
+        {
+            List<Pokemon> datosArchivo = Pokemon.LeerXml();
+
+            if (datosArchivo is not null)
+            {
+                this.rchPokemon.Text = "Leyendo desde archivo xml:\n\n";
+
+                foreach (var item in datosArchivo)
+                {
+                    this.rchPokemon.Text += item.MostrarDato() + "\n\n";
+                }
+
+                MessageBox.Show("Datos del archivo .xml cargado en la lista", "Lectura correcta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("No se pudo acceder al archivo .xml", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

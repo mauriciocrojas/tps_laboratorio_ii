@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using System.Xml.Serialization;
 
 namespace Entidades
 {
@@ -31,6 +32,9 @@ namespace Entidades
             rutaEscritorioYCarpeta = rutaEscritorio + nombreCarpeta;
         }
 
+        /// <summary>
+        /// Creo este constructor para poder serializar en XML.
+        /// </summary>
         public Pokemon() { }
 
         /// <summary>
@@ -84,11 +88,55 @@ namespace Entidades
         /// <summary>
         /// Método que creará un archivo txt con el listado de pokemon alojados en el centro.
         /// </summary>
+        public static void EscribirXml(List<Pokemon> pokemon)
+        {
+            string nombreArchivo = @"/Listado de Pokemon en el Centro.xml";
+            string rutaCompleta = rutaEscritorioYCarpeta + nombreArchivo;
+
+            if (!Directory.Exists(rutaEscritorioYCarpeta))
+            {
+                Directory.CreateDirectory(rutaEscritorioYCarpeta);
+            }
+
+            using (StreamWriter sw = new StreamWriter(rutaCompleta))
+            {
+                XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Pokemon>));
+                xmlSerializer.Serialize(sw, pokemon);
+            }
+        }
+
+        /// <summary>
+        /// Método que leerá el archivo pasado como parámetro, y lo mostrará en el RichTextBox.
+        /// </summary>
+        /// <param name="archivo">Nombre de Archivo a leer</param>
+        /// <returns>Retorna el contenido del archivo en formato string</returns>
+        public static List<Pokemon> LeerXml()
+        {
+            string rutaCompleta = rutaEscritorioYCarpeta + @"/Listado de Pokemon en el Centro.xml";
+            List<Pokemon> listaPokemon;
+
+            if (Directory.Exists(rutaEscritorioYCarpeta))
+            {
+                using (StreamReader sr = new StreamReader(rutaCompleta))
+                {
+                    XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Pokemon>));
+                    listaPokemon = (List<Pokemon>)xmlSerializer.Deserialize(sr);
+
+                    return listaPokemon;
+                }
+            }
+
+            return null;
+        }
+
+        /// <summary>
+        /// Método que creará un archivo txt con el listado de pokemon alojados en el centro.
+        /// </summary>
         public static void EscribirTxt()
         {
             //string rutaProyecto = AppDomain.CurrentDomain.BaseDirectory;
             //string nombreArchivo = @"/Listado de Pokemon en el Centro al " + DateTime.Now.ToString("dd_MM_yy HH.mm") + ".txt";
-            
+
             string nombreArchivo = @"/Listado de Pokemon en el Centro.txt";
             string rutaCompleta = rutaEscritorioYCarpeta + nombreArchivo;
 

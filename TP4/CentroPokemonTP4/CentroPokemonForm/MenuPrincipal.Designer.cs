@@ -48,6 +48,8 @@
             this.lblDetalle = new System.Windows.Forms.Label();
             this.btnGuardarEnArchivoTxt = new System.Windows.Forms.Button();
             this.btnLeerDeArchivoTxt = new System.Windows.Forms.Button();
+            this.btnLeerDeArchivoXml = new System.Windows.Forms.Button();
+            this.btnGuardarEnArchivoXml = new System.Windows.Forms.Button();
             this.grpAgregarPokemon.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -249,12 +251,34 @@
             this.btnLeerDeArchivoTxt.UseVisualStyleBackColor = true;
             this.btnLeerDeArchivoTxt.Click += new System.EventHandler(this.btnLeerDeArchivoTxt_Click);
             // 
+            // btnLeerDeArchivoXml
+            // 
+            this.btnLeerDeArchivoXml.Location = new System.Drawing.Point(308, 206);
+            this.btnLeerDeArchivoXml.Name = "btnLeerDeArchivoXml";
+            this.btnLeerDeArchivoXml.Size = new System.Drawing.Size(93, 48);
+            this.btnLeerDeArchivoXml.TabIndex = 37;
+            this.btnLeerDeArchivoXml.Text = "Leer de archivo .xml";
+            this.btnLeerDeArchivoXml.UseVisualStyleBackColor = true;
+            this.btnLeerDeArchivoXml.Click += new System.EventHandler(this.btnLeerDeArchivoXml_Click);
+            // 
+            // btnGuardarEnArchivoXml
+            // 
+            this.btnGuardarEnArchivoXml.Location = new System.Drawing.Point(209, 206);
+            this.btnGuardarEnArchivoXml.Name = "btnGuardarEnArchivoXml";
+            this.btnGuardarEnArchivoXml.Size = new System.Drawing.Size(93, 49);
+            this.btnGuardarEnArchivoXml.TabIndex = 36;
+            this.btnGuardarEnArchivoXml.Text = "Guardar en archivo .xml";
+            this.btnGuardarEnArchivoXml.UseVisualStyleBackColor = true;
+            this.btnGuardarEnArchivoXml.Click += new System.EventHandler(this.btnGuardarEnArchivoXml_Click);
+            // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.RosyBrown;
             this.ClientSize = new System.Drawing.Size(534, 450);
+            this.Controls.Add(this.btnLeerDeArchivoXml);
+            this.Controls.Add(this.btnGuardarEnArchivoXml);
             this.Controls.Add(this.btnLeerDeArchivoTxt);
             this.Controls.Add(this.btnGuardarEnArchivoTxt);
             this.Controls.Add(this.lblDetalle);
@@ -304,5 +328,7 @@
         private System.Windows.Forms.Label lblDetalle;
         private System.Windows.Forms.Button btnGuardarEnArchivoTxt;
         private System.Windows.Forms.Button btnLeerDeArchivoTxt;
+        private System.Windows.Forms.Button btnLeerDeArchivoXml;
+        private System.Windows.Forms.Button btnGuardarEnArchivoXml;
     }
 }
