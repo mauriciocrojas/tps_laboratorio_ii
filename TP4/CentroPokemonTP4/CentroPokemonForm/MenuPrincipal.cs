@@ -25,7 +25,6 @@ namespace PokedexApp
         {
             if (tipoUsuario == "Administrador")
             {
-                this.btnVerEntrenadores.Enabled = true;
                 this.BackColor = System.Drawing.Color.AliceBlue;
                 this.grpAgregarPokemon.Enabled = false;
                 this.Text = "Centro Pokemon - Menú enfermería";
@@ -33,6 +32,8 @@ namespace PokedexApp
             else
             {
                 this.btnVerEntrenadores.Enabled = false;
+                this.btnGuardarEnArchivo.Enabled = false;
+                this.btnCurarPokemon.Enabled = false;
                 this.BackColor = System.Drawing.Color.MistyRose;
                 this.chkHabAgrPok.Visible = false;
                 this.grpAgregarPokemon.Visible = false;
@@ -147,7 +148,7 @@ namespace PokedexApp
                 {
                     MessageBox.Show("El porcentaje del daño del pokemon no puede ser mayor a 100, carguelo correctamente", "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                else if(int.Parse(this.txtIDPokemon.Text) <= 0)
+                else if (int.Parse(this.txtIDPokemon.Text) <= 0)
                 {
                     MessageBox.Show("El ID del pokemon no puede ser 0 ni negativo, carguelo correctamente", "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -270,6 +271,34 @@ namespace PokedexApp
             {
                 MessageBox.Show("No se seleccionó ningún pokemon", "¡Elegí un pokemon a sanar!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnGuardarEnArchivo_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Pokemon.Escribir();
+                MessageBox.Show("Se guardó el archivo correctamente.", "Guardado exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error al intentar guardar archivo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnLeerDeArchivo_Click(object sender, EventArgs e)
+        {
+            string datosArchivo = Pokemon.Leer("/Listado de Pokemon en el Centro.txt");
+
+                if (datosArchivo != string.Empty)
+                {
+                    this.rchPokemon.Text = "Leyendo desde archivo txt:\n\n" + datosArchivo;
+                    MessageBox.Show("Datos del archivo cargado en la lista", "Lectura correcta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo acceder al archivo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
         }
     }
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 
 namespace Entidades
@@ -13,6 +14,10 @@ namespace Entidades
         public int danio;
         static List<Pokemon> listaPokemon;
 
+        static string rutaEscritorio;
+        static string nombreCarpeta;
+        static string rutaEscritorioYCarpeta;
+
 
         /// <summary>
         /// Constructor estático que instancia y hardcodea la lista. 
@@ -21,6 +26,9 @@ namespace Entidades
         {
             listaPokemon = new List<Pokemon>();
             HardcodearPokemon();
+            rutaEscritorio = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            nombreCarpeta = @"/Listados Pokemon";
+            rutaEscritorioYCarpeta = rutaEscritorio + nombreCarpeta;
         }
 
         public Pokemon() { }
@@ -32,6 +40,7 @@ namespace Entidades
         /// <param name="tipo">Tipo del pokemon</param>
         /// <param name="id">Id  del pokemon</param>
         /// <param name="ataquePrincipal">Ataque principal del pokemon</param>
+        /// <param name="danio">Daño que presenta el pokemon</param>
         public Pokemon(string nombre, string tipo, int id, string ataquePrincipal, int danio)
         {
             this.nombre = nombre;
@@ -72,6 +81,59 @@ namespace Entidades
             listaPokemon.Add(Blastoise);
         }
 
+        /// <summary>
+        /// Método que creará un archivo txt con el listado de pokemon alojados en el centro.
+        /// </summary>
+        public static void Escribir()
+        {
+            //string rutaProyecto = AppDomain.CurrentDomain.BaseDirectory;
+            //string nombreArchivo = @"/Listado de Pokemon en el Centro al " + DateTime.Now.ToString("dd_MM_yy HH.mm") + ".txt";
+            
+            string nombreArchivo = @"/Listado de Pokemon en el Centro.txt";
+            string rutaCompleta = rutaEscritorioYCarpeta + nombreArchivo;
+
+            if (!Directory.Exists(rutaEscritorioYCarpeta))
+            {
+                Directory.CreateDirectory(rutaEscritorioYCarpeta);
+            }
+
+            using (StreamWriter sw = new StreamWriter(rutaCompleta))
+            {
+                sw.WriteLine(Pokemon.MostrarDatos());
+            }
+        }
+
+        /// <summary>
+        /// Método que leerá el archivo pasado como parámetro, y lo mostrará en el RichTextBox.
+        /// </summary>
+        /// <param name="archivo">Nombre de Archivo a leer</param>
+        /// <returns>Retorna el contenido del archivo en formato string</returns>
+        public static string Leer(string archivo)
+        {
+            string rutaCompleta = rutaEscritorioYCarpeta + archivo;
+
+            string datos = string.Empty;
+            try
+            {
+                if (Directory.Exists(rutaEscritorioYCarpeta))
+                {
+                    using (StreamReader sr = new StreamReader(rutaCompleta))
+                    {
+                        datos = sr.ReadToEnd();
+                        return datos;
+                    }
+                }
+                else
+                {
+                    return datos;
+                }
+            }
+            catch (Exception)
+            {
+                return datos;
+            }
+        }
+
 
         /// <summary>
         /// Función que muestra los datos de un pokemon, e implementa la interfaz IDatos.
@@ -90,13 +152,13 @@ namespace Entidades
         /// Función que muestra los datos de todos los pokemon del sistema.
         /// </summary>
         /// <returns>Retorna los datos de todos los pokemon</returns>
-        public string MostrarDatos()
+        public static string MostrarDatos()
         {
             StringBuilder sb = new StringBuilder();
 
             foreach (Pokemon pokemon in listaPokemon)
             {
-                sb.AppendLine($"{pokemon.MostrarDato()}");
+                sb.AppendLine($"{pokemon.MostrarDato()}\n");
             }
 
             return sb.ToString();
@@ -113,7 +175,7 @@ namespace Entidades
         /// <returns>Retorna true en caso de agregar a la lista, false caso contrario</returns>
         public static bool AgregarPokemonManual(string nombre, string tipo, int id, string ataque, int danio)
         {
-            foreach(Pokemon itempokemon in listaPokemon)
+            foreach (Pokemon itempokemon in listaPokemon)
             {
                 if (itempokemon.nombre == nombre || itempokemon.id == id)
                 {

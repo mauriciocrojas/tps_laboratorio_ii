@@ -47,6 +47,7 @@
             this.txtPokemonAtendido = new System.Windows.Forms.Label();
             this.lblDetalle = new System.Windows.Forms.Label();
             this.btnGuardarEnArchivo = new System.Windows.Forms.Button();
+            this.btnLeerDeArchivo = new System.Windows.Forms.Button();
             this.grpAgregarPokemon.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -236,6 +237,17 @@
             this.btnGuardarEnArchivo.TabIndex = 34;
             this.btnGuardarEnArchivo.Text = "Guardar en archivo";
             this.btnGuardarEnArchivo.UseVisualStyleBackColor = true;
+            this.btnGuardarEnArchivo.Click += new System.EventHandler(this.btnGuardarEnArchivo_Click);
+            // 
+            // btnLeerDeArchivo
+            // 
+            this.btnLeerDeArchivo.Location = new System.Drawing.Point(266, 214);
+            this.btnLeerDeArchivo.Name = "btnLeerDeArchivo";
+            this.btnLeerDeArchivo.Size = new System.Drawing.Size(126, 36);
+            this.btnLeerDeArchivo.TabIndex = 35;
+            this.btnLeerDeArchivo.Text = "Leer de archivo";
+            this.btnLeerDeArchivo.UseVisualStyleBackColor = true;
+            this.btnLeerDeArchivo.Click += new System.EventHandler(this.btnLeerDeArchivo_Click);
             // 
             // MenuPrincipal
             // 
@@ -243,6 +255,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.RosyBrown;
             this.ClientSize = new System.Drawing.Size(534, 450);
+            this.Controls.Add(this.btnLeerDeArchivo);
             this.Controls.Add(this.btnGuardarEnArchivo);
             this.Controls.Add(this.lblDetalle);
             this.Controls.Add(this.txtPokemonAtendido);
@@ -290,5 +303,6 @@
         private System.Windows.Forms.Label txtPokemonAtendido;
         private System.Windows.Forms.Label lblDetalle;
         private System.Windows.Forms.Button btnGuardarEnArchivo;
+        private System.Windows.Forms.Button btnLeerDeArchivo;
     }
 }
