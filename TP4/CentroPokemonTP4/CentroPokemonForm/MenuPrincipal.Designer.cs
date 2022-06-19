@@ -42,7 +42,6 @@
             this.txtIDPokemon = new System.Windows.Forms.TextBox();
             this.txtTipoPokemon = new System.Windows.Forms.TextBox();
             this.txtNombrePokemon = new System.Windows.Forms.TextBox();
-            this.chkHabAgrPok = new System.Windows.Forms.CheckBox();
             this.btnCurarPokemon = new System.Windows.Forms.Button();
             this.txtPokemonAtendido = new System.Windows.Forms.Label();
             this.lblDetalle = new System.Windows.Forms.Label();
@@ -108,6 +107,7 @@
             // 
             // lstPokemon
             // 
+            this.lstPokemon.BackColor = System.Drawing.Color.Linen;
             this.lstPokemon.FormattingEnabled = true;
             this.lstPokemon.ItemHeight = 15;
             this.lstPokemon.Location = new System.Drawing.Point(12, 31);
@@ -194,19 +194,6 @@
             this.txtNombrePokemon.Size = new System.Drawing.Size(84, 23);
             this.txtNombrePokemon.TabIndex = 0;
             this.txtNombrePokemon.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombrePokemon_KeyPress);
-            // 
-            // chkHabAgrPok
-            // 
-            this.chkHabAgrPok.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.chkHabAgrPok.AutoSize = true;
-            this.chkHabAgrPok.CheckAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.chkHabAgrPok.Location = new System.Drawing.Point(12, 212);
-            this.chkHabAgrPok.Name = "chkHabAgrPok";
-            this.chkHabAgrPok.Size = new System.Drawing.Size(15, 14);
-            this.chkHabAgrPok.TabIndex = 30;
-            this.chkHabAgrPok.UseVisualStyleBackColor = true;
-            this.chkHabAgrPok.CheckedChanged += new System.EventHandler(this.chkHabAgrPok_CheckedChanged);
             // 
             // btnCurarPokemon
             // 
@@ -348,7 +335,6 @@
             this.Controls.Add(this.lblDetalle);
             this.Controls.Add(this.txtPokemonAtendido);
             this.Controls.Add(this.btnCurarPokemon);
-            this.Controls.Add(this.chkHabAgrPok);
             this.Controls.Add(this.grpAgregarPokemon);
             this.Controls.Add(this.rchPokemon);
             this.Controls.Add(this.lstPokemon);
@@ -382,7 +368,6 @@
         private System.Windows.Forms.ListBox lstPokemon;
         private System.Windows.Forms.RichTextBox rchPokemon;
         private System.Windows.Forms.GroupBox grpAgregarPokemon;
-        private System.Windows.Forms.CheckBox chkHabAgrPok;
         private System.Windows.Forms.TextBox txtAtaquePokemon;
         private System.Windows.Forms.TextBox txtIDPokemon;
         private System.Windows.Forms.TextBox txtTipoPokemon;

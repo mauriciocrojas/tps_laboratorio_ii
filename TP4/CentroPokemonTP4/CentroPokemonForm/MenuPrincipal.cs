@@ -28,7 +28,6 @@ namespace PokedexApp
             if (tipoUsuario == "Administrador")
             {
                 this.BackColor = System.Drawing.Color.AliceBlue;
-                this.grpAgregarPokemon.Enabled = false;
                 this.Text = "Centro Pokemon - Menú enfermería";
             }
             else
@@ -39,7 +38,6 @@ namespace PokedexApp
                 this.btnVerEntrenadores.Enabled = false;
                 this.btnCurarPokemon.Enabled = false;
                 this.BackColor = System.Drawing.Color.MistyRose;
-                this.chkHabAgrPok.Visible = false;
                 this.grpAgregarPokemon.Enabled = false;
                 this.Text = "Centro Pokemon - Menú Entrenadores";
             }
@@ -122,18 +120,6 @@ namespace PokedexApp
             {
                 this.rchPokemon.Text = pokemon.MostrarDato();
             }
-        }
-
-        /// <summary>
-        /// Según si está marcado o no el chkAgregarPokemon, se habilitará el grpAgregarPokemon.
-        /// </summary>
-        private void chkHabAgrPok_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chkHabAgrPok.Checked)
-            {
-                this.grpAgregarPokemon.Enabled = true;
-            }
-            else { this.grpAgregarPokemon.Enabled = false; }
         }
 
         /// <summary>
