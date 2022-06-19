@@ -379,6 +379,31 @@ namespace PokedexApp
                 MessageBox.Show("No se pudo acceder a la base de datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btnDesalojarPokemon_Click(object sender, EventArgs e)
+        {
+
+            if (this.lstPokemon.SelectedItem is not null)
+            {
+                string pokemonSeleccionado = (string)this.lstPokemon.SelectedItem;
+                if (Pokemon.DesalojarPokemon(pokemonSeleccionado))
+                {
+
+                MessageBox.Show("Se desalojó al pokemon.", "Desalojo exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MostrarPokemonEnListaPokemon();
+                }
+                else
+                {
+                    MessageBox.Show("El pokemon aún no se encuentra curado.", "Elegí un pokemon sano", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("No se seleccionó ningún pokemon.", "Elegí un pokemon a desalojar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 
 }

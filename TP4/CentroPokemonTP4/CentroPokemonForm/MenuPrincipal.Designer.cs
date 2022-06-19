@@ -54,6 +54,7 @@
             this.grpGuardarArchivo = new System.Windows.Forms.GroupBox();
             this.grpLeerArchivo = new System.Windows.Forms.GroupBox();
             this.btnCargarDeBaseDatos = new System.Windows.Forms.Button();
+            this.btnDesalojarPokemon = new System.Windows.Forms.Button();
             this.grpAgregarPokemon.SuspendLayout();
             this.grpGuardarArchivo.SuspendLayout();
             this.grpLeerArchivo.SuspendLayout();
@@ -197,9 +198,9 @@
             // 
             // btnCurarPokemon
             // 
-            this.btnCurarPokemon.Location = new System.Drawing.Point(187, 38);
+            this.btnCurarPokemon.Location = new System.Drawing.Point(187, 31);
             this.btnCurarPokemon.Name = "btnCurarPokemon";
-            this.btnCurarPokemon.Size = new System.Drawing.Size(94, 38);
+            this.btnCurarPokemon.Size = new System.Drawing.Size(91, 50);
             this.btnCurarPokemon.TabIndex = 31;
             this.btnCurarPokemon.Text = "Curar pokemon";
             this.btnCurarPokemon.UseVisualStyleBackColor = true;
@@ -315,13 +316,23 @@
             // 
             // btnCargarDeBaseDatos
             // 
-            this.btnCargarDeBaseDatos.Location = new System.Drawing.Point(190, 88);
+            this.btnCargarDeBaseDatos.Location = new System.Drawing.Point(187, 151);
             this.btnCargarDeBaseDatos.Name = "btnCargarDeBaseDatos";
-            this.btnCargarDeBaseDatos.Size = new System.Drawing.Size(91, 55);
+            this.btnCargarDeBaseDatos.Size = new System.Drawing.Size(91, 50);
             this.btnCargarDeBaseDatos.TabIndex = 44;
             this.btnCargarDeBaseDatos.Text = "Cargar lista de base de datos";
             this.btnCargarDeBaseDatos.UseVisualStyleBackColor = true;
             this.btnCargarDeBaseDatos.Click += new System.EventHandler(this.btnCargarDeBaseDatos_Click);
+            // 
+            // btnDesalojarPokemon
+            // 
+            this.btnDesalojarPokemon.Location = new System.Drawing.Point(187, 92);
+            this.btnDesalojarPokemon.Name = "btnDesalojarPokemon";
+            this.btnDesalojarPokemon.Size = new System.Drawing.Size(91, 50);
+            this.btnDesalojarPokemon.TabIndex = 45;
+            this.btnDesalojarPokemon.Text = "Desalojar pokemon";
+            this.btnDesalojarPokemon.UseVisualStyleBackColor = true;
+            this.btnDesalojarPokemon.Click += new System.EventHandler(this.btnDesalojarPokemon_Click);
             // 
             // MenuPrincipal
             // 
@@ -329,6 +340,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.RosyBrown;
             this.ClientSize = new System.Drawing.Size(564, 466);
+            this.Controls.Add(this.btnDesalojarPokemon);
             this.Controls.Add(this.btnCargarDeBaseDatos);
             this.Controls.Add(this.grpLeerArchivo);
             this.Controls.Add(this.grpGuardarArchivo);
@@ -386,5 +398,6 @@
         private System.Windows.Forms.GroupBox grpGuardarArchivo;
         private System.Windows.Forms.GroupBox grpLeerArchivo;
         private System.Windows.Forms.Button btnCargarDeBaseDatos;
+        private System.Windows.Forms.Button btnDesalojarPokemon;
     }
 }
