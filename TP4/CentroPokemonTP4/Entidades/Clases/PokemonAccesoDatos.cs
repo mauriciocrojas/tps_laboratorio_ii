@@ -32,14 +32,9 @@ namespace Entidades.Clases
                 {
                     while (dataReader.Read())
                     {
-                        //if(!Pokemon.AgregarPokemonManual(dataReader["Nombre"].ToString(), dataReader["Tipo"].ToString(), Convert.ToInt32(dataReader["IDPokemon"]), dataReader["AtaquePrincipal"].ToString(), Convert.ToInt32(dataReader["Danio"])))
-                        //{
-                        //    return null;
-                        //}
                         listaPokemon.Add(new Pokemon(dataReader["Nombre"].ToString(), dataReader["Tipo"].ToString(), Convert.ToInt32(dataReader["IDPokemon"]), dataReader["AtaquePrincipal"].ToString(), Convert.ToInt32(dataReader["Danio"])));
                     }
                 }
-                //return Pokemon.ListaPokemon;
                 return listaPokemon;
             }
             catch (NullReferenceException)

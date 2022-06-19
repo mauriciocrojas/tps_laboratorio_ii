@@ -43,7 +43,6 @@ namespace PokedexApp
                 this.grpAgregarPokemon.Enabled = false;
                 this.Text = "Centro Pokemon - Menú Entrenadores";
             }
-
             MostrarPokemonEnListaPokemon();
         }
 
@@ -82,7 +81,7 @@ namespace PokedexApp
         }
 
         /// <summary>
-        /// Al  seleccionar un item de la lista, mandará la descripción de mismo al RichTextBox.
+        /// Al  seleccionar un item de la lista, mandará la descripción del mismo al RichTextBox.
         /// </summary>
         private void lstPokemon_SelectedIndexChanged(object sender, EventArgs e)
         {
