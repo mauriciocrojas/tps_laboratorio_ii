@@ -9,6 +9,7 @@ namespace PokedexApp
     public partial class MenuPrincipal : Form
     {
         public string tipoUsuario;
+        Pokemon.DesalojarDelCentro desalojarDelCentro = Pokemon.DesalojarPokemon;
 
         /// <summary>
         /// Constructor que recibe un usuario para luego trabajar con él.
@@ -162,7 +163,7 @@ namespace PokedexApp
             }
             catch (Exception)
             {
-                MessageBox.Show("Hay campos que se encuentran vacíos.", "Error en los campos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Hay campos que se encuentran vacíos o con datos inválidos.", "Error en los campos", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -336,6 +337,8 @@ namespace PokedexApp
 
             Pokemon.EscribirJsonUnDato(Pokemon.ListaPokemon[1].MostrarJson());
             Pokemon.EscribirJsonLista(Pokemon.ListaPokemon);
+            MessageBox.Show("Funcionamiento del botón en proceso, guarda json pero no visualiza correctamente.", "En proceso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             //}
             //catch (Exception)
             //{
@@ -382,22 +385,18 @@ namespace PokedexApp
 
         private void btnDesalojarPokemon_Click(object sender, EventArgs e)
         {
-
             if (this.lstPokemon.SelectedItem is not null)
             {
                 string pokemonSeleccionado = (string)this.lstPokemon.SelectedItem;
-                if (Pokemon.DesalojarPokemon(pokemonSeleccionado))
+                if (desalojarDelCentro(pokemonSeleccionado))
                 {
-
-                MessageBox.Show("Se desalojó al pokemon.", "Desalojo exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                MostrarPokemonEnListaPokemon();
+                    MessageBox.Show("Se desalojó al pokemon.", "Desalojo exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MostrarPokemonEnListaPokemon();
                 }
                 else
                 {
                     MessageBox.Show("El pokemon aún no se encuentra curado.", "Elegí un pokemon sano", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
                 }
-
             }
             else
             {

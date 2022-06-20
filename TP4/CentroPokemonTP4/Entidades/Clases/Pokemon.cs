@@ -20,6 +20,8 @@ namespace Entidades
         static string nombreCarpeta;
         static string rutaEscritorioYCarpeta;
 
+        public delegate bool DesalojarDelCentro(string nombre);
+
         /// <summary>
         /// Constructor estático que instancia y hardcodea la lista. 
         /// </summary>
@@ -279,9 +281,9 @@ namespace Entidades
 
         public static bool DesalojarPokemon(string nombre)
         {
-            foreach(Pokemon pokemon in Pokemon.ListaPokemon)
+            foreach (Pokemon pokemon in Pokemon.ListaPokemon)
             {
-                if(pokemon.nombre == nombre && pokemon.danio == 0)
+                if (pokemon.nombre == nombre && pokemon.danio == 0)
                 {
                     Pokemon.ListaPokemon.Remove(pokemon);
                     return true;
