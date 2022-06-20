@@ -111,14 +111,17 @@ namespace Entidades
                 Directory.CreateDirectory(rutaEscritorioYCarpeta);
             }
 
-
-            File.WriteAllText(rutaCompleta, JsonSerializer.Serialize(datos));
-
+            using (StreamWriter writer = new StreamWriter(rutaCompleta))
+            {
+                string json = JsonSerializer.Serialize(datos);
+                writer.WriteLine(json);
+            }
+            //File.WriteAllText(rutaCompleta, JsonSerializer.Serialize(datos));
         }
 
         public static void EscribirJsonLista(List<Pokemon> datos)
         {
-            string nombreArchivo = @"/Listado de Pokemon LISTA en el Centro.JSON";
+            string nombreArchivo = @"/Listado de Pokemon LISTA en el Centro.json";
             string rutaCompleta = rutaEscritorioYCarpeta + nombreArchivo;
 
             if (!Directory.Exists(rutaEscritorioYCarpeta))
@@ -126,9 +129,12 @@ namespace Entidades
                 Directory.CreateDirectory(rutaEscritorioYCarpeta);
             }
 
-
-            File.WriteAllText(rutaCompleta, JsonSerializer.Serialize(datos));
-
+            using (StreamWriter writer = new StreamWriter(rutaCompleta))
+            {
+                string json = JsonSerializer.Serialize(datos);
+                writer.WriteLine(json);
+            }
+            //File.WriteAllText(rutaCompleta, JsonSerializer.Serialize(datos));
         }
 
         /// <summary>
