@@ -10,7 +10,6 @@ namespace Test
         [TestMethod]
         public void ProbarCargaDeDatosManualNuevoPokemon()
         {
-
             //Act
             bool resultado = Pokemon.AgregarPokemonManual("Chikorita", "Planta", "152", "Látigo Cepa");
 
