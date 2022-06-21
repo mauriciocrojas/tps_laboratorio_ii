@@ -302,11 +302,8 @@ namespace PokedexApp
         {
             try
             {
-                //Pokemon pokemon = new Pokemon("Pikachu", "Electrico", 25, "Trueno", 22);
-                //Pokemon.EscribirJsonUnDato(pokemon);
                 Pokemon.EscribirJsonLista(Pokemon.ListaPokemon);
                 MessageBox.Show("Se guardó el archivo json correctamente.", "Guardado exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
             }
             catch (Exception)
             {
@@ -316,7 +313,23 @@ namespace PokedexApp
 
         private void btnLeerDeArchivoJson_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Soy un botón que aún no funciona :(.", "Estamos trabajando", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            List<Pokemon> datosArchivo = Pokemon.LeerJson();
+
+            if (datosArchivo is not null)
+            {
+                this.rchPokemon.Text = "Leyendo desde archivo json:\n\n";
+
+                foreach (var item in datosArchivo)
+                {
+                    this.rchPokemon.Text += item.MostrarDato() + "\n\n";
+                }
+
+                MessageBox.Show("Datos del archivo .json cargado en la lista.", "Lectura correcta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("No se pudo acceder al archivo .json.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         /// <summary>
@@ -357,7 +370,7 @@ namespace PokedexApp
         {
             if (this.lstPokemon.SelectedItem is not null)
             {
-                string pokemonSeleccionado = (string) this.lstPokemon.SelectedItem;
+                string pokemonSeleccionado = (string)this.lstPokemon.SelectedItem;
                 if (PokemonAccesoDatos.EliminarPokemonDeBase(pokemonSeleccionado) && desalojarDelCentro(pokemonSeleccionado))
                 {
                     MessageBox.Show($"Se desalojó a {pokemonSeleccionado}, se quitó de la lista y de la base si se encontraba en ella.", "Desalojo exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -411,7 +424,7 @@ namespace PokedexApp
                 MessageBox.Show("Error al intentar leer pokemon.", "Elegí un pokemon a sanar", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        
+
         /// <summary>
         /// Botón que inserta la lista en la base. 
         /// </summary>

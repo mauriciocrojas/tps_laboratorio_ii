@@ -93,38 +93,10 @@ namespace Entidades
             listaPokemon.Add(Blastoise);
         }
 
-        //public string MostrarJson()
-        //{
-        //    StringBuilder sb = new StringBuilder();
-
-        //    sb.AppendLine($"Nombre: " + nombre);
-        //    sb.AppendLine($"Tipo: " + this.tipo);
-        //    sb.AppendLine($"Id: " + this.id);
-        //    sb.AppendLine($"Ataque: " + this.ataquePrincipal);
-        //    sb.AppendLine($"Daño: " + this.danio);
-
-        //    return sb.ToString();
-
-        //}
-
-        //public static void EscribirJsonUnDato(Pokemon pokemon)
-        //{
-        //    string nombreArchivo = @"/Listado de Pokemon UN DATO en el Centro.JSON";
-        //    string rutaCompleta = rutaEscritorioYCarpeta + nombreArchivo;
-
-        //    if (!Directory.Exists(rutaEscritorioYCarpeta))
-        //    {
-        //        Directory.CreateDirectory(rutaEscritorioYCarpeta);
-        //    }
-
-        //    using (StreamWriter writer = new StreamWriter(rutaCompleta))
-        //    {
-        //        string json = JsonSerializer.Serialize(pokemon);
-        //        writer.WriteLine(json);
-        //    }
-        //    //File.WriteAllText(rutaCompleta, JsonSerializer.Serialize(datos));
-        //}
-
+        /// <summary>
+        /// Guarda un archivo en formato json con la lista de pokemon alojados.
+        /// </summary>
+        /// <param name="datos">La lista que se serializará en formato json</param>
         public static void EscribirJsonLista(List<Pokemon> datos)
         {
             string nombreArchivo = @"/Listado de Pokemon en el Centro.json";
@@ -137,13 +109,35 @@ namespace Entidades
 
             using (StreamWriter writer = new StreamWriter(rutaCompleta))
             {
-                //string json = JsonSerializer.Serialize(datos);
                 JsonSerializerOptions opc = new JsonSerializerOptions();
                 opc.WriteIndented = true;
                 string jsonString = JsonSerializer.Serialize(datos, opc);
                 writer.WriteLine(jsonString);
             }
             //File.WriteAllText(rutaCompleta, JsonSerializer.Serialize(datos));
+        }
+
+        /// <summary>
+        /// Deserializa un archivo json.
+        /// </summary>
+        /// <returns>Retorna lo deserializado en tipo lista</returns>
+        public static List<Pokemon> LeerJson()
+        {
+            string rutaCompleta = rutaEscritorioYCarpeta + @"/Listado de Pokemon en el Centro.json";
+            List<Pokemon> datos;
+
+            if (Directory.Exists(rutaEscritorioYCarpeta))
+            {
+                using (StreamReader sr = new StreamReader(rutaCompleta))
+                {
+
+                    string archivoJson = File.ReadAllText(rutaCompleta);
+                    datos = JsonSerializer.Deserialize<List<Pokemon>>(archivoJson);
+
+                    return datos;
+                }
+            }
+            return null;
         }
 
         /// <summary>
@@ -167,7 +161,7 @@ namespace Entidades
         }
 
         /// <summary>
-        /// Método que leerá el archivo pasado como parámetro, y lo mostrará en el RichTextBox.
+        /// Método que leerá un archivo, y lo mostrará en el RichTextBox.
         /// </summary>
         /// <returns>Retorna una lista pokemon</returns>
         public static List<Pokemon> LeerXml()
