@@ -12,7 +12,7 @@ namespace Test
         {
 
             //Act
-            bool resultado = Pokemon.AgregarPokemonManual("Chikorita", "Planta", 152, "Látigo Cepa", 33);
+            bool resultado = Pokemon.AgregarPokemonManualALaLista("Chikorita", "Planta", 152, "Látigo Cepa", 33);
 
             //Assert
             Assert.IsTrue(resultado);

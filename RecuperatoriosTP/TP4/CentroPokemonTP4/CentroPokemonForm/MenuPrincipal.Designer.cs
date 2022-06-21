@@ -57,7 +57,6 @@
             this.btnDesalojarPokemon = new System.Windows.Forms.Button();
             this.btnCargarCuradosBase = new System.Windows.Forms.Button();
             this.btnGuardarListaEnBase = new System.Windows.Forms.Button();
-            this.btnEliminarPokemon = new System.Windows.Forms.Button();
             this.grpAgregarPokemon.SuspendLayout();
             this.grpGuardarArchivo.SuspendLayout();
             this.grpLeerArchivo.SuspendLayout();
@@ -142,7 +141,7 @@
             this.grpAgregarPokemon.Size = new System.Drawing.Size(538, 74);
             this.grpAgregarPokemon.TabIndex = 29;
             this.grpAgregarPokemon.TabStop = false;
-            this.grpAgregarPokemon.Text = "Agregar Pokemon";
+            this.grpAgregarPokemon.Text = "Agregar Pokemon a la lista:";
             // 
             // txtDanio
             // 
@@ -357,23 +356,12 @@
             this.btnGuardarListaEnBase.UseVisualStyleBackColor = true;
             this.btnGuardarListaEnBase.Click += new System.EventHandler(this.btnGuardarListaEnBase_Click);
             // 
-            // btnEliminarPokemon
-            // 
-            this.btnEliminarPokemon.Location = new System.Drawing.Point(103, 206);
-            this.btnEliminarPokemon.Name = "btnEliminarPokemon";
-            this.btnEliminarPokemon.Size = new System.Drawing.Size(69, 48);
-            this.btnEliminarPokemon.TabIndex = 48;
-            this.btnEliminarPokemon.Text = "Eliminar pokemon";
-            this.btnEliminarPokemon.UseVisualStyleBackColor = true;
-            this.btnEliminarPokemon.Click += new System.EventHandler(this.btnEliminarPokemon_Click);
-            // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.RosyBrown;
             this.ClientSize = new System.Drawing.Size(564, 466);
-            this.Controls.Add(this.btnEliminarPokemon);
             this.Controls.Add(this.btnGuardarListaEnBase);
             this.Controls.Add(this.btnCargarCuradosBase);
             this.Controls.Add(this.btnDesalojarPokemon);
@@ -437,6 +425,5 @@
         private System.Windows.Forms.Button btnDesalojarPokemon;
         private System.Windows.Forms.Button btnCargarCuradosBase;
         private System.Windows.Forms.Button btnGuardarListaEnBase;
-        private System.Windows.Forms.Button btnEliminarPokemon;
     }
 }

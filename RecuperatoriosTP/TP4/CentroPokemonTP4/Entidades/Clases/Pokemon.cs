@@ -271,7 +271,7 @@ namespace Entidades
         /// <param name="ataque">Ataque del pokemon</param>
         /// <param name="danio">Danio del pokemon</param>
         /// <returns>Retorna true en caso de agregar a la lista, false caso contrario</returns>
-        public static bool AgregarPokemonManual(string nombre, string tipo, int id, string ataque, int danio)
+        public static bool AgregarPokemonManualALaLista(string nombre, string tipo, int id, string ataque, int danio)
         {
             foreach (Pokemon itempokemon in listaPokemon)
             {
@@ -285,6 +285,11 @@ namespace Entidades
             return true;
         }
 
+        /// <summary>
+        /// Desalojará a un pokemon de centro, y lo sacará de la lista si el mismo tiene su daño en 0.
+        /// </summary>
+        /// <param name="nombre">Nombre del pokemon a desalojar de centro y sacar de la lista.</param>
+        /// <returns></returns>
         public static bool DesalojarPokemon(string nombre)
         {
             foreach (Pokemon pokemon in Pokemon.ListaPokemon)

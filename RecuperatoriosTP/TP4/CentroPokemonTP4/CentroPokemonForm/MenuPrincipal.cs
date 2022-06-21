@@ -149,7 +149,7 @@ namespace PokedexApp
                 }
                 else
                 {
-                    if (Pokemon.AgregarPokemonManual(this.txtNombrePokemon.Text, this.txtTipoPokemon.Text, int.Parse(this.txtIDPokemon.Text), this.txtAtaquePokemon.Text, int.Parse(this.txtDanio.Text)))
+                    if (Pokemon.AgregarPokemonManualALaLista(this.txtNombrePokemon.Text, this.txtTipoPokemon.Text, int.Parse(this.txtIDPokemon.Text), this.txtAtaquePokemon.Text, int.Parse(this.txtDanio.Text)))
                     {
                         MostrarPokemonEnListaPokemon();
                         MostrarPokemonEnRichTextPokemon();
@@ -236,38 +236,6 @@ namespace PokedexApp
             MessageBox.Show(Entrenador.MostrarDatos(), "Entrenadores registrados", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        /// <summary>
-        /// Función que hace que un pokemon lance un ataque y imprima por pantalla.
-        /// </summary>
-        private void btnCurarPokemon_Click(object sender, EventArgs e)
-        {
-
-            if (this.lstPokemon.SelectedItem is not null)
-            {
-                string pokemonSeleccionado = (string)this.lstPokemon.SelectedItem;
-
-                foreach (Pokemon pokemon in Pokemon.ListaPokemon)
-                {
-                    if (pokemon.nombre == pokemonSeleccionado)
-                    {
-
-                        if (pokemon.danio == 0)
-                        {
-                            MessageBox.Show("El pokemón no presenta daños.", "Elegí un pokemon dañado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        }
-                        else
-                        {
-                            MessageBox.Show(pokemonSeleccionado.CurarPokemon(), "Estado de salud", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                    }
-                }
-            }
-            else
-            {
-                MessageBox.Show("No se seleccionó ningún pokemon.", "Elegí un pokemon a sanar", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
         private void btnGuardarEnArchivoTxt_Click(object sender, EventArgs e)
         {
             try
@@ -351,6 +319,9 @@ namespace PokedexApp
             MessageBox.Show("Soy un botón que aún no funciona :(.", "Estamos trabajando", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        /// <summary>
+        /// Carga los datos de la base de datos en el RichTextBox.
+        /// </summary>
         private void btnCargarDeBaseDatos_Click(object sender, EventArgs e)
         {
             try
@@ -379,14 +350,17 @@ namespace PokedexApp
             }
         }
 
+        /// <summary>
+        /// Botón que desaloja y elimina un pokemon de la lista y de la base si se encontrará.
+        /// </summary>
         private void btnDesalojarPokemon_Click(object sender, EventArgs e)
         {
             if (this.lstPokemon.SelectedItem is not null)
             {
-                string pokemonSeleccionado = (string)this.lstPokemon.SelectedItem;
-                if (desalojarDelCentro(pokemonSeleccionado))
+                string pokemonSeleccionado = (string) this.lstPokemon.SelectedItem;
+                if (PokemonAccesoDatos.EliminarPokemonDeBase(pokemonSeleccionado) && desalojarDelCentro(pokemonSeleccionado))
                 {
-                    MessageBox.Show("Se desalojó al pokemon.", "Desalojo exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show($"Se desalojó a {pokemonSeleccionado}, se quitó de la lista y de la base si se encontraba en ella.", "Desalojo exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     MostrarPokemonEnListaPokemon();
                 }
                 else
@@ -397,6 +371,63 @@ namespace PokedexApp
             else
             {
                 MessageBox.Show("No se seleccionó ningún pokemon.", "Elegí un pokemon a desalojar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        /// <summary>
+        /// Botón que cura un pokemon, tanto en la lista como en la base.
+        /// </summary>
+        private void btnCurarPokemon_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (this.lstPokemon.SelectedItem is not null)
+                {
+                    string pokemonSeleccionado = (string)this.lstPokemon.SelectedItem;
+
+                    foreach (Pokemon pokemon in Pokemon.ListaPokemon)
+                    {
+                        if (pokemon.nombre == pokemonSeleccionado)
+                        {
+
+                            if (pokemon.danio == 0)
+                            {
+                                MessageBox.Show("El pokemón no presenta daños.", "Elegí un pokemon dañado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            }
+                            else
+                            {
+                                MessageBox.Show(pokemonSeleccionado.CurarPokemon(), "Estado de salud", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No se seleccionó ningún pokemon.", "Elegí un pokemon a sanar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error al intentar leer pokemon.", "Elegí un pokemon a sanar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        
+        /// <summary>
+        /// Botón que inserta la lista en la base. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnGuardarListaEnBase_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                PokemonAccesoDatos.GuardarListaEnBase();
+                MessageBox.Show("Listado guardado en la base de datos correctamente.", "Guardado correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("No se guardar la lista en la base de datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -416,7 +447,7 @@ namespace PokedexApp
                 {
                     this.rchPokemon.Text += pokemonAux.MostrarDato() + "\n\n";
                 }
-                MessageBox.Show("Listado de la base de datos cargado en la lista.", "Lectura correcta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Listado de curados en la base de datos cargado en la lista.", "Lectura correcta", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (CamposErroneosException ex)
             {
@@ -425,42 +456,6 @@ namespace PokedexApp
             catch (Exception)
             {
                 MessageBox.Show("No se pudo acceder a la base de datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void btnGuardarListaEnBase_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                PokemonAccesoDatos.GuardarListaEnBase();
-                MessageBox.Show("Listado guardado en la base de datos correctamente.", "Guardado correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("No se guardar la lista en la base de datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void btnEliminarPokemon_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                string pokemonSeleccionado = this.lstPokemon.SelectedItem.ToString();
-                if (PokemonAccesoDatos.EliminarPokemonDeBase(pokemonSeleccionado))
-                {
-                    MostrarPokemonEnListaPokemon();
-                    MessageBox.Show($"Se eliminó correctamente a {pokemonSeleccionado} de la lista y de la base de datos (en caso de estarlo).", "Eliminado correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                }
-                else
-                {
-                    MessageBox.Show("No se pudo eliminar el pokemon, ¿seleccionaste alguno?.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Primero tenés que seleccionar un pokemon.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

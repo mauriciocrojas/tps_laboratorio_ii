@@ -111,7 +111,7 @@ namespace Entidades.Clases
             }
         }
 
-        public static void EliminarPokemon(string nombrePokemon)
+        public static void DeletePokemon(string nombrePokemon)
         {
             try
             {
@@ -130,6 +130,12 @@ namespace Entidades.Clases
             }
         }
 
+        /// <summary>
+        /// Elimina un pokemon de la base de datos si es el mismo tiene su daño en 0.
+        /// </summary>
+        /// <param name="nombrePokemon">Nombre del pokemon a eliminar de la base</param>
+        /// <returns></returns>
+        /// <exception cref="Exception">Si ocurre algún error, se maneja con una excepción</exception>
         public static bool EliminarPokemonDeBase(string nombrePokemon)
         {
             try
@@ -138,10 +144,9 @@ namespace Entidades.Clases
 
                 foreach (var pokemon in auxListPokemon)
                 {
-                    if (pokemon.nombre == nombrePokemon)
+                    if (pokemon.nombre == nombrePokemon && pokemon.danio == 0)
                     {
-                        EliminarPokemon(pokemon.nombre);
-                        Pokemon.ListaPokemon.Remove(pokemon);
+                        DeletePokemon(pokemon.nombre);
                         return true;
                     }
                 }
@@ -151,6 +156,30 @@ namespace Entidades.Clases
                 throw new Exception();
             }
             return false;
+        }
+
+        /// <summary>
+        /// Hará un update en el campo Danio de la base de datos.
+        /// </summary>
+        /// <param name="nombrePokemon">Nombre del pokemon al cual actualizará su daño a 0</param>
+        /// <exception cref="Exception">Si ocurre algún error, se maneja con una excepción</exception>
+        public static void UpdateDanioCurar(string nombrePokemon)
+        {
+            try
+            {
+                connection.Open();
+                command.CommandText = $"UPDATE PokemonAlojados SET danio = 0 WHERE Nombre = '{nombrePokemon}'";
+
+                command.ExecuteNonQuery();
+            }
+            catch
+            {
+                throw new Exception();
+            }
+            finally
+            {
+                connection.Close();
+            }
         }
     }
 }
