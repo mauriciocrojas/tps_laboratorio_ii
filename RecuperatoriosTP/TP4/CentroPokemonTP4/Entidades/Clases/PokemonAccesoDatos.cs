@@ -50,5 +50,37 @@ namespace Entidades.Clases
                 connection.Close();
             }
         }
+
+        public static List<Pokemon> LeerCurados()
+        {
+            List<Pokemon> listaPokemon = new List<Pokemon>();
+
+            try
+            {
+                connection.Open();
+                command.CommandText = "SELECT * FROM PokemonAlojados WHERE danio = 0";
+
+                using (SqlDataReader dataReader = command.ExecuteReader())
+                {
+                    while (dataReader.Read())
+                    {
+                        listaPokemon.Add(new Pokemon(dataReader["Nombre"].ToString(), dataReader["Tipo"].ToString(), Convert.ToInt32(dataReader["IDPokemon"]), dataReader["AtaquePrincipal"].ToString(), Convert.ToInt32(dataReader["Danio"])));
+                    }
+                }
+                return listaPokemon;
+            }
+            catch (NullReferenceException)
+            {
+                throw new NullReferenceException();
+            }
+            catch (Exception)
+            {
+                throw new Exception();
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
     }
 }

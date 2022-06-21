@@ -403,6 +403,29 @@ namespace PokedexApp
                 MessageBox.Show("No se seleccionó ningún pokemon.", "Elegí un pokemon a desalojar", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btnCargarCuradosBase_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                List<Pokemon> auxListaPokemon = PokemonAccesoDatos.LeerCurados();
+                this.rchPokemon.Text = "Leyendo pokemon curados desde base de datos:" + "\n\n";
+
+                foreach (var pokemonAux in auxListaPokemon)
+                {
+                    this.rchPokemon.Text += pokemonAux.MostrarDato() + "\n\n";
+                }
+                MessageBox.Show("Listado de la base de datos cargado en la lista.", "Lectura correcta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (CamposErroneosException ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("No se pudo acceder a la base de datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 
 }
