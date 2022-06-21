@@ -56,10 +56,16 @@ namespace Entidades
             this.danio = danio;
         }
 
+
         /// <summary>
         /// Propiedad para acceder y escribir en la lista.
         /// </summary>
         public static List<Pokemon> ListaPokemon { get => listaPokemon; set => listaPokemon = value; }
+        public string Nombre { get => nombre; set => nombre = value; }
+        public string Tipo { get => tipo; set => tipo = value; }
+        public int Id { get => id; set => id = value; }
+        public string AtaquePrincipal { get => ataquePrincipal; set => ataquePrincipal = value; }
+        public int Danio { get => danio; set => danio = value; }
 
         /// <summary>
         /// Función estática que hardcodea los pokemon.
@@ -87,41 +93,41 @@ namespace Entidades
             listaPokemon.Add(Blastoise);
         }
 
-        public string MostrarJson()
-        {
-            StringBuilder sb = new StringBuilder();
+        //public string MostrarJson()
+        //{
+        //    StringBuilder sb = new StringBuilder();
 
-            sb.AppendLine($"Nombre: " + nombre);
-            sb.AppendLine($"Tipo: " + this.tipo);
-            sb.AppendLine($"Id: " + this.id);
-            sb.AppendLine($"Ataque: " + this.ataquePrincipal);
-            sb.AppendLine($"Daño: " + this.danio);
+        //    sb.AppendLine($"Nombre: " + nombre);
+        //    sb.AppendLine($"Tipo: " + this.tipo);
+        //    sb.AppendLine($"Id: " + this.id);
+        //    sb.AppendLine($"Ataque: " + this.ataquePrincipal);
+        //    sb.AppendLine($"Daño: " + this.danio);
 
-            return sb.ToString();
+        //    return sb.ToString();
 
-        }
+        //}
 
-        public static void EscribirJsonUnDato(string datos)
-        {
-            string nombreArchivo = @"/Listado de Pokemon UN DATO en el Centro.JSON";
-            string rutaCompleta = rutaEscritorioYCarpeta + nombreArchivo;
+        //public static void EscribirJsonUnDato(Pokemon pokemon)
+        //{
+        //    string nombreArchivo = @"/Listado de Pokemon UN DATO en el Centro.JSON";
+        //    string rutaCompleta = rutaEscritorioYCarpeta + nombreArchivo;
 
-            if (!Directory.Exists(rutaEscritorioYCarpeta))
-            {
-                Directory.CreateDirectory(rutaEscritorioYCarpeta);
-            }
+        //    if (!Directory.Exists(rutaEscritorioYCarpeta))
+        //    {
+        //        Directory.CreateDirectory(rutaEscritorioYCarpeta);
+        //    }
 
-            using (StreamWriter writer = new StreamWriter(rutaCompleta))
-            {
-                string json = JsonSerializer.Serialize(datos);
-                writer.WriteLine(json);
-            }
-            //File.WriteAllText(rutaCompleta, JsonSerializer.Serialize(datos));
-        }
+        //    using (StreamWriter writer = new StreamWriter(rutaCompleta))
+        //    {
+        //        string json = JsonSerializer.Serialize(pokemon);
+        //        writer.WriteLine(json);
+        //    }
+        //    //File.WriteAllText(rutaCompleta, JsonSerializer.Serialize(datos));
+        //}
 
         public static void EscribirJsonLista(List<Pokemon> datos)
         {
-            string nombreArchivo = @"/Listado de Pokemon LISTA en el Centro.json";
+            string nombreArchivo = @"/Listado de Pokemon en el Centro.json";
             string rutaCompleta = rutaEscritorioYCarpeta + nombreArchivo;
 
             if (!Directory.Exists(rutaEscritorioYCarpeta))
@@ -131,8 +137,11 @@ namespace Entidades
 
             using (StreamWriter writer = new StreamWriter(rutaCompleta))
             {
-                string json = JsonSerializer.Serialize(datos);
-                writer.WriteLine(json);
+                //string json = JsonSerializer.Serialize(datos);
+                JsonSerializerOptions opc = new JsonSerializerOptions();
+                opc.WriteIndented = true;
+                string jsonString = JsonSerializer.Serialize(datos, opc);
+                writer.WriteLine(jsonString);
             }
             //File.WriteAllText(rutaCompleta, JsonSerializer.Serialize(datos));
         }

@@ -300,18 +300,18 @@ namespace PokedexApp
 
         private void btnGuardarEnArchivoJson_Click(object sender, EventArgs e)
         {
-            //try
-            //{
+            try
+            {
+                //Pokemon pokemon = new Pokemon("Pikachu", "Electrico", 25, "Trueno", 22);
+                //Pokemon.EscribirJsonUnDato(pokemon);
+                Pokemon.EscribirJsonLista(Pokemon.ListaPokemon);
+                MessageBox.Show("Se guardó el archivo json correctamente.", "Guardado exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            Pokemon.EscribirJsonUnDato(Pokemon.ListaPokemon[1].MostrarJson());
-            Pokemon.EscribirJsonLista(Pokemon.ListaPokemon);
-            MessageBox.Show("Funcionamiento del botón en proceso, guarda json pero no visualiza correctamente.", "En proceso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            //}
-            //catch (Exception)
-            //{
-            //    MessageBox.Show("Error al intentar guardar archivo .json", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error al intentar guardar archivo .json", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnLeerDeArchivoJson_Click(object sender, EventArgs e)
