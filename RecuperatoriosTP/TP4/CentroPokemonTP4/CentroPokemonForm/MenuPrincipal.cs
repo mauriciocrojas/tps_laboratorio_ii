@@ -441,6 +441,28 @@ namespace PokedexApp
                 MessageBox.Show("No se guardar la lista en la base de datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btnEliminarPokemon_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string pokemonSeleccionado = this.lstPokemon.SelectedItem.ToString();
+                if (PokemonAccesoDatos.EliminarPokemonDeBase(pokemonSeleccionado))
+                {
+                    MostrarPokemonEnListaPokemon();
+                    MessageBox.Show($"Se eliminó correctamente a {pokemonSeleccionado} de la lista y de la base de datos (en caso de estarlo).", "Eliminado correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo eliminar el pokemon, ¿seleccionaste alguno?.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Primero tenés que seleccionar un pokemon.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 
 }

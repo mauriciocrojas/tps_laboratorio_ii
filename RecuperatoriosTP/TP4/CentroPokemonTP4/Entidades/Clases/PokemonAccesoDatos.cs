@@ -110,5 +110,47 @@ namespace Entidades.Clases
                 GuardarPokemonEnBase(pokemon);
             }
         }
+
+        public static void EliminarPokemon(string nombrePokemon)
+        {
+            try
+            {
+                connection.Open();
+                command.CommandText = $"DELETE FROM PokemonAlojados WHERE Nombre = '{nombrePokemon}'";
+
+                command.ExecuteNonQuery();
+            }
+            catch
+            {
+                throw new Exception();
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
+        public static bool EliminarPokemonDeBase(string nombrePokemon)
+        {
+            try
+            {
+                List<Pokemon> auxListPokemon = Pokemon.ListaPokemon;
+
+                foreach (var pokemon in auxListPokemon)
+                {
+                    if (pokemon.nombre == nombrePokemon)
+                    {
+                        EliminarPokemon(pokemon.nombre);
+                        Pokemon.ListaPokemon.Remove(pokemon);
+                        return true;
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                throw new Exception();
+            }
+            return false;
+        }
     }
 }
