@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "WmXR1sxDbOA3L3aRyn7bHgPlKYuQeK3dmfqEA6BqzMaSS1xeDjNt3thH5OklX5Gl67KYxcw8gxdkz4dut2M3DQ==",
+  "dgSpecHash": "3gztOasA6p2Yd3j6vHrZG8htL7DPu+sXVXnBKrEQUTqqQAbNuwOkKZvj01d4sTXxIDexk5dGiYwIP7o/2eNQHQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\maurojas\\Documents\\Alumni\\TP4\\CentroPokemonTP4 --\\CentroPokemonForm\\CentroPokemonForm.csproj",
+  "projectFilePath": "C:\\Users\\maurojas\\Documents\\Alumni\\TP4\\CentroPokemonTP4\\CentroPokemonForm\\CentroPokemonForm.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\maurojas\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\maurojas\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",

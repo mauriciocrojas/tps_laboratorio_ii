@@ -68,13 +68,13 @@ namespace Entidades
         {
             Pokemon Bulbasaur = new Pokemon("Bulbasaur", "Planta-Veneno", 1, "Hoja afilada", 50);
             Pokemon Ivysaur = new Pokemon("Ivysaur", "Planta-Veneno", 2, "Síntesis", 25);
-            Pokemon Venusaur = new Pokemon("Venusaur", "Planta-Veneno", 3, "Rayo solar", 33);
+            Pokemon Venusaur = new Pokemon("Venusaur", "Planta-Veneno", 3, "Rayo solar", 0);
             Pokemon Charmander = new Pokemon("Charmander", "Fuego", 4, "Lanzallamas", 98);
             Pokemon Charmeleon = new Pokemon("Charmeleon", "Fuego", 5, "Giro fuego", 15);
-            Pokemon Charizard = new Pokemon("Charizard", "Fuego-Volador", 6, "Furia dragón", 73);
+            Pokemon Charizard = new Pokemon("Charizard", "Fuego-Volador", 6, "Furia dragón", 0);
             Pokemon Squirtle = new Pokemon("Squirtle", "Agua", 7, "Pistola de agua", 61);
             Pokemon Wartortle = new Pokemon("Wartortle", "Agua", 8, "Cabezazo", 58);
-            Pokemon Blastoise = new Pokemon("Blastoise", "Agua", 9, "Hidrobomba", 89);
+            Pokemon Blastoise = new Pokemon("Blastoise", "Agua", 9, "Hidrobomba", 0);
 
             listaPokemon.Add(Bulbasaur);
             listaPokemon.Add(Ivysaur);

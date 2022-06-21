@@ -356,21 +356,17 @@ namespace PokedexApp
             try
             {
                 List<Pokemon> auxListaPokemon = PokemonAccesoDatos.Leer();
-                this.rchPokemon.Text = "Leyendo desde base de datos:" + "\n\n";
+                this.rchPokemon.Text = "Leyendo pokemon alojados desde base de datos:" + "\n\n";
 
+                if (auxListaPokemon.Count < 1)
+                {
+                    this.rchPokemon.Text = "Antes de cargar la lista de la base, debe presionar el botón guardar lista en base.";
+                    throw new Exception();
+                }
                 foreach (var pokemonAux in auxListaPokemon)
                 {
-                    foreach (var pokemonList in Pokemon.ListaPokemon)
-                    {
-                        if (pokemonAux.nombre == pokemonList.nombre || pokemonAux.id == pokemonList.id)
-                        {
-                            throw new CamposErroneosException("No se pudo cargar el listado de la base de datos porque hay pokemon que ya se encuentran registrados.");
-                        }
-                    }
                     this.rchPokemon.Text += pokemonAux.MostrarDato() + "\n\n";
-                    Pokemon.ListaPokemon.Add(pokemonAux);
                 }
-                MostrarPokemonEnListaPokemon();
                 MessageBox.Show("Listado de la base de datos cargado en la lista.", "Lectura correcta", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (CamposErroneosException ex)
@@ -411,6 +407,11 @@ namespace PokedexApp
                 List<Pokemon> auxListaPokemon = PokemonAccesoDatos.LeerCurados();
                 this.rchPokemon.Text = "Leyendo pokemon curados desde base de datos:" + "\n\n";
 
+                if (auxListaPokemon.Count < 1)
+                {
+                    this.rchPokemon.Text = "Antes de cargar la lista de curados de la base, debe presionar el botón guardar lista en base.";
+                    throw new Exception();
+                }
                 foreach (var pokemonAux in auxListaPokemon)
                 {
                     this.rchPokemon.Text += pokemonAux.MostrarDato() + "\n\n";
@@ -424,6 +425,20 @@ namespace PokedexApp
             catch (Exception)
             {
                 MessageBox.Show("No se pudo acceder a la base de datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnGuardarListaEnBase_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                PokemonAccesoDatos.GuardarListaEnBase();
+                MessageBox.Show("Listado guardado en la base de datos correctamente.", "Guardado correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("No se guardar la lista en la base de datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

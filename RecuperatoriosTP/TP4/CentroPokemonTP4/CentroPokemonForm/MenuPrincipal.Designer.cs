@@ -56,6 +56,7 @@
             this.btnCargarDeBaseDatos = new System.Windows.Forms.Button();
             this.btnDesalojarPokemon = new System.Windows.Forms.Button();
             this.btnCargarCuradosBase = new System.Windows.Forms.Button();
+            this.btnGuardarListaEnBase = new System.Windows.Forms.Button();
             this.grpAgregarPokemon.SuspendLayout();
             this.grpGuardarArchivo.SuspendLayout();
             this.grpLeerArchivo.SuspendLayout();
@@ -317,11 +318,11 @@
             // 
             // btnCargarDeBaseDatos
             // 
-            this.btnCargarDeBaseDatos.Location = new System.Drawing.Point(187, 151);
+            this.btnCargarDeBaseDatos.Location = new System.Drawing.Point(376, 206);
             this.btnCargarDeBaseDatos.Name = "btnCargarDeBaseDatos";
-            this.btnCargarDeBaseDatos.Size = new System.Drawing.Size(91, 50);
+            this.btnCargarDeBaseDatos.Size = new System.Drawing.Size(86, 48);
             this.btnCargarDeBaseDatos.TabIndex = 44;
-            this.btnCargarDeBaseDatos.Text = "Cargar lista de base de datos";
+            this.btnCargarDeBaseDatos.Text = "Cargar lista desde base";
             this.btnCargarDeBaseDatos.UseVisualStyleBackColor = true;
             this.btnCargarDeBaseDatos.Click += new System.EventHandler(this.btnCargarDeBaseDatos_Click);
             // 
@@ -339,11 +340,21 @@
             // 
             this.btnCargarCuradosBase.Location = new System.Drawing.Point(466, 206);
             this.btnCargarCuradosBase.Name = "btnCargarCuradosBase";
-            this.btnCargarCuradosBase.Size = new System.Drawing.Size(86, 58);
+            this.btnCargarCuradosBase.Size = new System.Drawing.Size(86, 48);
             this.btnCargarCuradosBase.TabIndex = 46;
             this.btnCargarCuradosBase.Text = "Ver curados desde base";
             this.btnCargarCuradosBase.UseVisualStyleBackColor = true;
             this.btnCargarCuradosBase.Click += new System.EventHandler(this.btnCargarCuradosBase_Click);
+            // 
+            // btnGuardarListaEnBase
+            // 
+            this.btnGuardarListaEnBase.Location = new System.Drawing.Point(12, 206);
+            this.btnGuardarListaEnBase.Name = "btnGuardarListaEnBase";
+            this.btnGuardarListaEnBase.Size = new System.Drawing.Size(86, 48);
+            this.btnGuardarListaEnBase.TabIndex = 47;
+            this.btnGuardarListaEnBase.Text = "Guardar lista en base";
+            this.btnGuardarListaEnBase.UseVisualStyleBackColor = true;
+            this.btnGuardarListaEnBase.Click += new System.EventHandler(this.btnGuardarListaEnBase_Click);
             // 
             // MenuPrincipal
             // 
@@ -351,6 +362,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.RosyBrown;
             this.ClientSize = new System.Drawing.Size(564, 466);
+            this.Controls.Add(this.btnGuardarListaEnBase);
             this.Controls.Add(this.btnCargarCuradosBase);
             this.Controls.Add(this.btnDesalojarPokemon);
             this.Controls.Add(this.btnCargarDeBaseDatos);
@@ -412,5 +424,6 @@
         private System.Windows.Forms.Button btnCargarDeBaseDatos;
         private System.Windows.Forms.Button btnDesalojarPokemon;
         private System.Windows.Forms.Button btnCargarCuradosBase;
+        private System.Windows.Forms.Button btnGuardarListaEnBase;
     }
 }

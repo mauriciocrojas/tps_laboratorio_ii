@@ -82,5 +82,33 @@ namespace Entidades.Clases
                 connection.Close();
             }
         }
+
+        public static void GuardarPokemonEnBase(Pokemon pokemon)
+        {
+            try
+            {
+                connection.Open();
+                command.CommandText = $"INSERT INTO PokemonAlojados (IDPokemon, Nombre, Tipo, AtaquePrincipal, Danio)" +
+                    $"VALUES ('{pokemon.id}', '{pokemon.nombre}', '{pokemon.tipo}', '{pokemon.ataquePrincipal}', '{pokemon.danio}')";
+
+                command.ExecuteNonQuery();
+            }
+            catch
+            {
+                throw new Exception();
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
+        public static void GuardarListaEnBase()
+        {
+            foreach (var pokemon in Pokemon.ListaPokemon)
+            {
+                GuardarPokemonEnBase(pokemon);
+            }
+        }
     }
 }
