@@ -89,7 +89,7 @@ namespace Entidades.Clases
             {
                 connection.Open();
                 command.CommandText = $"INSERT INTO PokemonAlojados (IDPokemon, Nombre, Tipo, AtaquePrincipal, Danio)" +
-                    $"VALUES ('{pokemon.id}', '{pokemon.nombre}', '{pokemon.tipo}', '{pokemon.ataquePrincipal}', '{pokemon.danio}')";
+                    $"VALUES ({pokemon.id}, '{pokemon.nombre}', '{pokemon.tipo}', '{pokemon.ataquePrincipal}', {pokemon.danio})";
 
                 command.ExecuteNonQuery();
             }
