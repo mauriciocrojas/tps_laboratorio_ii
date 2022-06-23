@@ -148,3 +148,32 @@ C:\Users\maurojas\Documents\Alumni\TP4\CentroPokemonTP4 --\CentroPokemonForm\obj
 C:\Users\maurojas\Documents\Alumni\TP4\CentroPokemonTP4 --\CentroPokemonForm\obj\Debug\net5.0-windows\CentroPokemonForm.pdb
 C:\Users\maurojas\Documents\Alumni\TP4\CentroPokemonTP4 --\CentroPokemonForm\obj\Debug\net5.0-windows\CentroPokemonForm.genruntimeconfig.cache
 C:\Users\maurojas\Documents\Alumni\TP4\CentroPokemonTP4 --\CentroPokemonForm\obj\Debug\net5.0-windows\ref\CentroPokemonForm.dll
+C:\Users\maurojas\Documents\Alumni\tps_laboratorio_ii\RecuperatoriosTP\TP4\CentroPokemonTP4\CentroPokemonForm\bin\Debug\net5.0-windows\CentroPokemonForm.exe
+C:\Users\maurojas\Documents\Alumni\tps_laboratorio_ii\RecuperatoriosTP\TP4\CentroPokemonTP4\CentroPokemonForm\bin\Debug\net5.0-windows\CentroPokemonForm.deps.json
+C:\Users\maurojas\Documents\Alumni\tps_laboratorio_ii\RecuperatoriosTP\TP4\CentroPokemonTP4\CentroPokemonForm\bin\Debug\net5.0-windows\CentroPokemonForm.runtimeconfig.json
+C:\Users\maurojas\Documents\Alumni\tps_laboratorio_ii\RecuperatoriosTP\TP4\CentroPokemonTP4\CentroPokemonForm\bin\Debug\net5.0-windows\CentroPokemonForm.runtimeconfig.dev.json
+C:\Users\maurojas\Documents\Alumni\tps_laboratorio_ii\RecuperatoriosTP\TP4\CentroPokemonTP4\CentroPokemonForm\bin\Debug\net5.0-windows\CentroPokemonForm.dll
+C:\Users\maurojas\Documents\Alumni\tps_laboratorio_ii\RecuperatoriosTP\TP4\CentroPokemonTP4\CentroPokemonForm\bin\Debug\net5.0-windows\CentroPokemonForm.pdb
+C:\Users\maurojas\Documents\Alumni\tps_laboratorio_ii\RecuperatoriosTP\TP4\CentroPokemonTP4\CentroPokemonForm\bin\Debug\net5.0-windows\System.Data.SqlClient.dll
+C:\Users\maurojas\Documents\Alumni\tps_laboratorio_ii\RecuperatoriosTP\TP4\CentroPokemonTP4\CentroPokemonForm\bin\Debug\net5.0-windows\runtimes\win-arm64\native\sni.dll
+C:\Users\maurojas\Documents\Alumni\tps_laboratorio_ii\RecuperatoriosTP\TP4\CentroPokemonTP4\CentroPokemonForm\bin\Debug\net5.0-windows\runtimes\win-x64\native\sni.dll
+C:\Users\maurojas\Documents\Alumni\tps_laboratorio_ii\RecuperatoriosTP\TP4\CentroPokemonTP4\CentroPokemonForm\bin\Debug\net5.0-windows\runtimes\win-x86\native\sni.dll
+C:\Users\maurojas\Documents\Alumni\tps_laboratorio_ii\RecuperatoriosTP\TP4\CentroPokemonTP4\CentroPokemonForm\bin\Debug\net5.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\maurojas\Documents\Alumni\tps_laboratorio_ii\RecuperatoriosTP\TP4\CentroPokemonTP4\CentroPokemonForm\bin\Debug\net5.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\maurojas\Documents\Alumni\tps_laboratorio_ii\RecuperatoriosTP\TP4\CentroPokemonTP4\CentroPokemonForm\bin\Debug\net5.0-windows\Entidades.dll
+C:\Users\maurojas\Documents\Alumni\tps_laboratorio_ii\RecuperatoriosTP\TP4\CentroPokemonTP4\CentroPokemonForm\bin\Debug\net5.0-windows\Entidades.pdb
+C:\Users\maurojas\Documents\Alumni\tps_laboratorio_ii\RecuperatoriosTP\TP4\CentroPokemonTP4\CentroPokemonForm\obj\Debug\net5.0-windows\CentroPokemonForm.csproj.AssemblyReference.cache
+C:\Users\maurojas\Documents\Alumni\tps_laboratorio_ii\RecuperatoriosTP\TP4\CentroPokemonTP4\CentroPokemonForm\obj\Debug\net5.0-windows\PokedexApp.Login.resources
+C:\Users\maurojas\Documents\Alumni\tps_laboratorio_ii\RecuperatoriosTP\TP4\CentroPokemonTP4\CentroPokemonForm\obj\Debug\net5.0-windows\PokedexApp.MenuPrincipal.resources
+C:\Users\maurojas\Documents\Alumni\tps_laboratorio_ii\RecuperatoriosTP\TP4\CentroPokemonTP4\CentroPokemonForm\obj\Debug\net5.0-windows\CentroPokemonForm.Properties.Resources.resources
+C:\Users\maurojas\Documents\Alumni\tps_laboratorio_ii\RecuperatoriosTP\TP4\CentroPokemonTP4\CentroPokemonForm\obj\Debug\net5.0-windows\CentroPokemonForm.csproj.GenerateResource.cache
+C:\Users\maurojas\Documents\Alumni\tps_laboratorio_ii\RecuperatoriosTP\TP4\CentroPokemonTP4\CentroPokemonForm\obj\Debug\net5.0-windows\CentroPokemonForm.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\maurojas\Documents\Alumni\tps_laboratorio_ii\RecuperatoriosTP\TP4\CentroPokemonTP4\CentroPokemonForm\obj\Debug\net5.0-windows\CentroPokemonForm.AssemblyInfoInputs.cache
+C:\Users\maurojas\Documents\Alumni\tps_laboratorio_ii\RecuperatoriosTP\TP4\CentroPokemonTP4\CentroPokemonForm\obj\Debug\net5.0-windows\CentroPokemonForm.AssemblyInfo.cs
+C:\Users\maurojas\Documents\Alumni\tps_laboratorio_ii\RecuperatoriosTP\TP4\CentroPokemonTP4\CentroPokemonForm\obj\Debug\net5.0-windows\CentroPokemonForm.csproj.CoreCompileInputs.cache
+C:\Users\maurojas\Documents\Alumni\tps_laboratorio_ii\RecuperatoriosTP\TP4\CentroPokemonTP4\CentroPokemonForm\obj\Debug\net5.0-windows\CentroPokemonForm.csproj.CopyComplete
+C:\Users\maurojas\Documents\Alumni\tps_laboratorio_ii\RecuperatoriosTP\TP4\CentroPokemonTP4\CentroPokemonForm\obj\Debug\net5.0-windows\CentroPokemonForm.dll
+C:\Users\maurojas\Documents\Alumni\tps_laboratorio_ii\RecuperatoriosTP\TP4\CentroPokemonTP4\CentroPokemonForm\obj\Debug\net5.0-windows\refint\CentroPokemonForm.dll
+C:\Users\maurojas\Documents\Alumni\tps_laboratorio_ii\RecuperatoriosTP\TP4\CentroPokemonTP4\CentroPokemonForm\obj\Debug\net5.0-windows\CentroPokemonForm.pdb
+C:\Users\maurojas\Documents\Alumni\tps_laboratorio_ii\RecuperatoriosTP\TP4\CentroPokemonTP4\CentroPokemonForm\obj\Debug\net5.0-windows\CentroPokemonForm.genruntimeconfig.cache
+C:\Users\maurojas\Documents\Alumni\tps_laboratorio_ii\RecuperatoriosTP\TP4\CentroPokemonTP4\CentroPokemonForm\obj\Debug\net5.0-windows\ref\CentroPokemonForm.dll
