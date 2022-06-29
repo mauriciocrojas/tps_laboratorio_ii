@@ -305,9 +305,9 @@ namespace PokedexApp
                 Pokemon.EscribirJsonLista(Pokemon.ListaPokemon);
                 MessageBox.Show("Se guardó el archivo json correctamente.", "Guardado exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error al intentar guardar archivo .json", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

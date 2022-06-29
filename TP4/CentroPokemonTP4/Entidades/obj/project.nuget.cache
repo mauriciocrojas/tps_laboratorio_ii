@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "B41cKuYK+/HDe8VvlGAaBbMnvA9JBcXk/7vvcNYq1TRqjfDdJFb0HfT36CBBLVO6snxIff5aN4M0ViM1jy/OtA==",
+  "dgSpecHash": "rssXEC2W55u970u8ZZEg+jmP9G7wZc9aLfMR258iSe5prwL87VqiPh0DSYcICm+qxnU8wTiVGWTqPhM0M9y//w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\maurojas\\Documents\\Alumni\\TP4\\CentroPokemonTP4\\Entidades\\Entidades.csproj",
+  "projectFilePath": "C:\\Users\\maurojas\\Documents\\Alumni\\tps_laboratorio_ii\\TP4\\CentroPokemonTP4\\Entidades\\Entidades.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\maurojas\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\maurojas\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",

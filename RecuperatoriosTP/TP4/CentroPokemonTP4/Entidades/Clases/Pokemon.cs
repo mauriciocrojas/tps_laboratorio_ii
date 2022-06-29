@@ -99,20 +99,29 @@ namespace Entidades
         /// <param name="datos">La lista que se serializará en formato json</param>
         public static void EscribirJsonLista(List<Pokemon> datos)
         {
-            string nombreArchivo = @"/Listado de Pokemon en el Centro.json";
-            string rutaCompleta = rutaEscritorioYCarpeta + nombreArchivo;
-
-            if (!Directory.Exists(rutaEscritorioYCarpeta))
+            try
             {
-                Directory.CreateDirectory(rutaEscritorioYCarpeta);
+
+                string nombreArchivo = @"/Listado de Pokemon en el Centro.json";
+                string rutaCompleta = rutaEscritorioYCarpeta + nombreArchivo;
+
+                if (!Directory.Exists(rutaEscritorioYCarpeta))
+                {
+                    Directory.CreateDirectory(rutaEscritorioYCarpeta);
+                }
+
+                using (StreamWriter writer = new StreamWriter(rutaCompleta))
+                {
+                    JsonSerializerOptions opc = new JsonSerializerOptions();
+                    opc.WriteIndented = true;
+                    string jsonString = JsonSerializer.Serialize(datos, opc);
+                    writer.WriteLine(jsonString);
+                }
+
             }
-
-            using (StreamWriter writer = new StreamWriter(rutaCompleta))
+            catch (Exception ex)
             {
-                JsonSerializerOptions opc = new JsonSerializerOptions();
-                opc.WriteIndented = true;
-                string jsonString = JsonSerializer.Serialize(datos, opc);
-                writer.WriteLine(jsonString);
+                throw new Exception("Error al intentar guardar archivo .json", ex);
             }
             //File.WriteAllText(rutaCompleta, JsonSerializer.Serialize(datos));
         }
