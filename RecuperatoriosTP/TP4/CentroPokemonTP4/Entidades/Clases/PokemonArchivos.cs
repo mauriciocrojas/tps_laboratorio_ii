@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Text.Json;
-using System.Threading.Tasks;
 using System.Xml.Serialization;
 
 namespace Entidades.Clases
@@ -18,7 +15,7 @@ namespace Entidades.Clases
 
         static PokemonArchivos()
         {
-            rutaEscritorio = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            rutaEscritorio = "s" + Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             nombreCarpeta = @"/Listados Pokemon";
             rutaEscritorioYCarpeta = rutaEscritorio + nombreCarpeta;
         }
@@ -31,7 +28,6 @@ namespace Entidades.Clases
         {
             try
             {
-
                 string nombreArchivo = @"/Listado de Pokemon en el Centro.json";
                 string rutaCompleta = rutaEscritorioYCarpeta + nombreArchivo;
 
@@ -53,7 +49,6 @@ namespace Entidades.Clases
             {
                 throw new Exception("Error al intentar guardar archivo .json", ex);
             }
-            //File.WriteAllText(rutaCompleta, JsonSerializer.Serialize(datos));
         }
 
         /// <summary>
@@ -84,18 +79,25 @@ namespace Entidades.Clases
         /// </summary>
         public static void EscribirXml(List<Pokemon> pokemon)
         {
-            string nombreArchivo = @"/Listado de Pokemon en el Centro.xml";
-            string rutaCompleta = rutaEscritorioYCarpeta + nombreArchivo;
-
-            if (!Directory.Exists(rutaEscritorioYCarpeta))
+            try
             {
-                Directory.CreateDirectory(rutaEscritorioYCarpeta);
+                string nombreArchivo = @"/Listado de Pokemon en el Centro.xml";
+                string rutaCompleta = rutaEscritorioYCarpeta + nombreArchivo;
+
+                if (!Directory.Exists(rutaEscritorioYCarpeta))
+                {
+                    Directory.CreateDirectory(rutaEscritorioYCarpeta);
+                }
+
+                using (StreamWriter sw = new StreamWriter(rutaCompleta))
+                {
+                    XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Pokemon>));
+                    xmlSerializer.Serialize(sw, pokemon);
+                }
             }
-
-            using (StreamWriter sw = new StreamWriter(rutaCompleta))
+            catch (Exception ex)
             {
-                XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Pokemon>));
-                xmlSerializer.Serialize(sw, pokemon);
+                throw new Exception("Error al intentar guardar archivo .xml", ex);
             }
         }
 
@@ -126,20 +128,24 @@ namespace Entidades.Clases
         /// </summary>
         public static void EscribirTxt()
         {
-            //string rutaProyecto = AppDomain.CurrentDomain.BaseDirectory;
-            //string nombreArchivo = @"/Listado de Pokemon en el Centro al " + DateTime.Now.ToString("dd_MM_yy HH.mm") + ".txt";
-
-            string nombreArchivo = @"/Listado de Pokemon en el Centro.txt";
-            string rutaCompleta = rutaEscritorioYCarpeta + nombreArchivo;
-
-            if (!Directory.Exists(rutaEscritorioYCarpeta))
+            try
             {
-                Directory.CreateDirectory(rutaEscritorioYCarpeta);
+                string nombreArchivo = @"/Listado de Pokemon en el Centro.txt";
+                string rutaCompleta = rutaEscritorioYCarpeta + nombreArchivo;
+
+                if (!Directory.Exists(rutaEscritorioYCarpeta))
+                {
+                    Directory.CreateDirectory(rutaEscritorioYCarpeta);
+                }
+
+                using (StreamWriter sw = new StreamWriter(rutaCompleta))
+                {
+                    sw.WriteLine(Pokemon.MostrarDatos());
+                }
             }
-
-            using (StreamWriter sw = new StreamWriter(rutaCompleta))
+            catch (Exception ex)
             {
-                sw.WriteLine(Pokemon.MostrarDatos());
+                throw new Exception("Error al intentar guardar archivo .txt.", ex);
             }
         }
 

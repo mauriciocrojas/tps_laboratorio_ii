@@ -243,9 +243,9 @@ namespace PokedexApp
                 PokemonArchivos.EscribirTxt();
                 MessageBox.Show("Se guardó el archivo .txt correctamente.", "Guardado exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error al intentar guardar archivo .txt.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -271,9 +271,9 @@ namespace PokedexApp
                 PokemonArchivos.EscribirXml(Pokemon.ListaPokemon);
                 MessageBox.Show("Se guardó el archivo .xml correctamente.", "Guardado exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error al intentar guardar archivo .xml.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

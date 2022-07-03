@@ -16,8 +16,6 @@ namespace Entidades
         public int danio;
         static List<Pokemon> listaPokemon;
 
-
-
         public delegate bool DesalojarDelCentro(string nombre);
 
         /// <summary>
@@ -50,7 +48,6 @@ namespace Entidades
             this.ataquePrincipal = ataquePrincipal;
             this.danio = danio;
         }
-
 
         /// <summary>
         /// Propiedad para acceder y escribir en la lista.
@@ -87,7 +84,6 @@ namespace Entidades
             listaPokemon.Add(Wartortle);
             listaPokemon.Add(Blastoise);
         }
-
 
         /// <summary>
         /// Función que muestra los datos de un pokemon, e implementa la interfaz IDatos.
@@ -159,6 +155,4 @@ namespace Entidades
             return false;
         }
     }
-
-
 }
