@@ -240,7 +240,7 @@ namespace PokedexApp
         {
             try
             {
-                Pokemon.EscribirTxt();
+                PokemonArchivos.EscribirTxt();
                 MessageBox.Show("Se guardó el archivo .txt correctamente.", "Guardado exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception)
@@ -251,7 +251,7 @@ namespace PokedexApp
 
         private void btnLeerDeArchivoTxt_Click(object sender, EventArgs e)
         {
-            string datosArchivo = Pokemon.LeerTxt("/Listado de Pokemon en el Centro.txt");
+            string datosArchivo = PokemonArchivos.LeerTxt("/Listado de Pokemon en el Centro.txt");
 
             if (datosArchivo != string.Empty)
             {
@@ -268,7 +268,7 @@ namespace PokedexApp
         {
             try
             {
-                Pokemon.EscribirXml(Pokemon.ListaPokemon);
+                PokemonArchivos.EscribirXml(Pokemon.ListaPokemon);
                 MessageBox.Show("Se guardó el archivo .xml correctamente.", "Guardado exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception)
@@ -279,7 +279,7 @@ namespace PokedexApp
 
         private void btnLeerDeArchivoXml_Click(object sender, EventArgs e)
         {
-            List<Pokemon> datosArchivo = Pokemon.LeerXml();
+            List<Pokemon> datosArchivo = PokemonArchivos.LeerXml();
 
             if (datosArchivo is not null)
             {
@@ -302,7 +302,7 @@ namespace PokedexApp
         {
             try
             {
-                Pokemon.EscribirJsonLista(Pokemon.ListaPokemon);
+                PokemonArchivos.EscribirJsonLista(Pokemon.ListaPokemon);
                 MessageBox.Show("Se guardó el archivo json correctamente.", "Guardado exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
@@ -313,7 +313,7 @@ namespace PokedexApp
 
         private void btnLeerDeArchivoJson_Click(object sender, EventArgs e)
         {
-            List<Pokemon> datosArchivo = Pokemon.LeerJson();
+            List<Pokemon> datosArchivo = PokemonArchivos.LeerJson();
 
             if (datosArchivo is not null)
             {
