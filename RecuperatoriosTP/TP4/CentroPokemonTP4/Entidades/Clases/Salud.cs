@@ -17,7 +17,7 @@ namespace Entidades
                 if (strpokemon == pokemon.nombre)
                 {
                     pokemon.danio = 0;
-                    PokemonAccesoDatos.UpdateDanioCurar(strpokemon);
+                    PokemonBaseDatos.UpdateDanioCurar(strpokemon);
                     return $"{pokemon.nombre} ha sido curado y su daño es 0";
                 }
             }

@@ -339,7 +339,7 @@ namespace PokedexApp
         {
             try
             {
-                List<Pokemon> auxListaPokemon = PokemonAccesoDatos.Leer();
+                List<Pokemon> auxListaPokemon = PokemonBaseDatos.Leer();
                 this.rchPokemon.Text = "Leyendo pokemon alojados desde base de datos:" + "\n\n";
 
                 if (auxListaPokemon.Count < 1)
@@ -371,7 +371,7 @@ namespace PokedexApp
             if (this.lstPokemon.SelectedItem is not null)
             {
                 string pokemonSeleccionado = (string)this.lstPokemon.SelectedItem;
-                if (PokemonAccesoDatos.EliminarPokemonDeBase(pokemonSeleccionado) && desalojarDelCentro(pokemonSeleccionado))
+                if (PokemonBaseDatos.EliminarPokemonDeBase(pokemonSeleccionado) && desalojarDelCentro(pokemonSeleccionado))
                 {
                     MessageBox.Show($"Se desalojó a {pokemonSeleccionado}, se quitó de la lista y de la base si se encontraba en ella.", "Desalojo exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     MostrarPokemonEnListaPokemon();
@@ -434,7 +434,7 @@ namespace PokedexApp
         {
             try
             {
-                PokemonAccesoDatos.GuardarListaEnBase();
+                PokemonBaseDatos.GuardarListaEnBase();
                 MessageBox.Show("Listado guardado en la base de datos correctamente.", "Guardado correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
@@ -448,7 +448,7 @@ namespace PokedexApp
         {
             try
             {
-                List<Pokemon> auxListaPokemon = PokemonAccesoDatos.LeerCurados();
+                List<Pokemon> auxListaPokemon = PokemonBaseDatos.LeerCurados();
                 this.rchPokemon.Text = "Leyendo pokemon curados desde base de datos:" + "\n\n";
 
                 if (auxListaPokemon.Count < 1)

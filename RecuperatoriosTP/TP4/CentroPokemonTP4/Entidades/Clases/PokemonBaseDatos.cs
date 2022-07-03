@@ -4,13 +4,13 @@ using System.Data.SqlClient;
 
 namespace Entidades.Clases
 {
-    public static class PokemonAccesoDatos
+    public static class PokemonBaseDatos
     {
         static string connectionString;
         static SqlCommand command;
         static SqlConnection connection;
 
-        static PokemonAccesoDatos()
+        static PokemonBaseDatos()
         {
             connectionString = @"Data Source=.;Initial Catalog=CentroPokemon;Integrated Security=True";
             command = new SqlCommand();
