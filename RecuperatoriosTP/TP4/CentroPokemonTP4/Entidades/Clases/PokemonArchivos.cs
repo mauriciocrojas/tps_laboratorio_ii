@@ -15,7 +15,7 @@ namespace Entidades.Clases
 
         static PokemonArchivos()
         {
-            rutaEscritorio = "s" + Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            rutaEscritorio = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             nombreCarpeta = @"/Listados Pokemon";
             rutaEscritorioYCarpeta = rutaEscritorio + nombreCarpeta;
         }
@@ -47,7 +47,7 @@ namespace Entidades.Clases
             }
             catch (Exception ex)
             {
-                throw new Exception("Error al intentar guardar archivo .json", ex);
+                throw new Exception("Error al intentar guardar archivo json.", ex);
             }
         }
 
@@ -57,21 +57,31 @@ namespace Entidades.Clases
         /// <returns>Retorna lo deserializado en tipo lista</returns>
         public static List<Pokemon> LeerJson()
         {
-            string rutaCompleta = rutaEscritorioYCarpeta + @"/Listado de Pokemon en el Centro.json";
-            List<Pokemon> datos;
-
-            if (Directory.Exists(rutaEscritorioYCarpeta))
+            try
             {
-                using (StreamReader sr = new StreamReader(rutaCompleta))
+                string rutaCompleta = rutaEscritorioYCarpeta + @"/Listado de Pokemon en el Centro.json";
+                List<Pokemon> datos;
+
+                if (Directory.Exists(rutaEscritorioYCarpeta))
                 {
+                    using (StreamReader sr = new StreamReader(rutaCompleta))
+                    {
 
-                    string archivoJson = File.ReadAllText(rutaCompleta);
-                    datos = JsonSerializer.Deserialize<List<Pokemon>>(archivoJson);
+                        string archivoJson = File.ReadAllText(rutaCompleta);
+                        datos = JsonSerializer.Deserialize<List<Pokemon>>(archivoJson);
 
-                    return datos;
+                        return datos;
+                    }
+                }
+                else
+                {
+                    throw new Exception();
                 }
             }
-            return null;
+            catch (Exception ex)
+            {
+                throw new Exception("Error al intentar leer archivo json.", ex);
+            }
         }
 
         /// <summary>
@@ -97,7 +107,7 @@ namespace Entidades.Clases
             }
             catch (Exception ex)
             {
-                throw new Exception("Error al intentar guardar archivo .xml", ex);
+                throw new Exception("Error al intentar guardar archivo xml.", ex);
             }
         }
 
@@ -107,20 +117,30 @@ namespace Entidades.Clases
         /// <returns>Retorna una lista pokemon</returns>
         public static List<Pokemon> LeerXml()
         {
-            string rutaCompleta = rutaEscritorioYCarpeta + @"/Listado de Pokemon en el Centro.xml";
-            List<Pokemon> listaPokemon;
-
-            if (Directory.Exists(rutaEscritorioYCarpeta))
+            try
             {
-                using (StreamReader sr = new StreamReader(rutaCompleta))
-                {
-                    XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Pokemon>));
-                    listaPokemon = (List<Pokemon>)xmlSerializer.Deserialize(sr);
+                string rutaCompleta = rutaEscritorioYCarpeta + @"/Listado de Pokemon en el Centro.xml";
+                List<Pokemon> listaPokemon;
 
-                    return listaPokemon;
+                if (Directory.Exists(rutaEscritorioYCarpeta))
+                {
+                    using (StreamReader sr = new StreamReader(rutaCompleta))
+                    {
+                        XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Pokemon>));
+                        listaPokemon = (List<Pokemon>)xmlSerializer.Deserialize(sr);
+
+                        return listaPokemon;
+                    }
+                }
+                else
+                {
+                    throw new Exception();
                 }
             }
-            return null;
+            catch (Exception ex)
+            {
+                throw new Exception("Error al intentar leer archivo xml.", ex);
+            }
         }
 
         /// <summary>
@@ -145,7 +165,7 @@ namespace Entidades.Clases
             }
             catch (Exception ex)
             {
-                throw new Exception("Error al intentar guardar archivo .txt.", ex);
+                throw new Exception("Error al intentar guardar archivo txt.", ex);
             }
         }
 
@@ -156,6 +176,7 @@ namespace Entidades.Clases
         /// <returns>Retorna el contenido del archivo en formato string</returns>
         public static string LeerTxt(string archivo)
         {
+
             string rutaCompleta = rutaEscritorioYCarpeta + archivo;
             string datos = string.Empty;
 
@@ -171,12 +192,12 @@ namespace Entidades.Clases
                 }
                 else
                 {
-                    return datos;
+                    throw new Exception();
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return datos;
+                throw new Exception("Error al intentar leer archivo txt.", ex);
             }
         }
     }

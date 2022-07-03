@@ -251,16 +251,15 @@ namespace PokedexApp
 
         private void btnLeerDeArchivoTxt_Click(object sender, EventArgs e)
         {
-            string datosArchivo = PokemonArchivos.LeerTxt("/Listado de Pokemon en el Centro.txt");
-
-            if (datosArchivo != string.Empty)
+            try
             {
+                string datosArchivo = PokemonArchivos.LeerTxt("/Listado de Pokemon en el Centro.txt");
                 this.rchPokemon.Text = "Leyendo desde archivo txt:\n\n" + datosArchivo;
                 MessageBox.Show("Datos del archivo .txt cargado en la lista.", "Lectura correcta", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("No se pudo acceder al archivo .txt.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -279,10 +278,11 @@ namespace PokedexApp
 
         private void btnLeerDeArchivoXml_Click(object sender, EventArgs e)
         {
-            List<Pokemon> datosArchivo = PokemonArchivos.LeerXml();
 
-            if (datosArchivo is not null)
+            try
             {
+                List<Pokemon> datosArchivo = PokemonArchivos.LeerXml();
+
                 this.rchPokemon.Text = "Leyendo desde archivo xml:\n\n";
 
                 foreach (var item in datosArchivo)
@@ -292,9 +292,9 @@ namespace PokedexApp
 
                 MessageBox.Show("Datos del archivo .xml cargado en la lista.", "Lectura correcta", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("No se pudo acceder al archivo .xml.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -303,7 +303,7 @@ namespace PokedexApp
             try
             {
                 PokemonArchivos.EscribirJsonLista(Pokemon.ListaPokemon);
-                MessageBox.Show("Se guardó el archivo json correctamente.", "Guardado exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Se guardó el archivo .json correctamente.", "Guardado exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -313,10 +313,10 @@ namespace PokedexApp
 
         private void btnLeerDeArchivoJson_Click(object sender, EventArgs e)
         {
-            List<Pokemon> datosArchivo = PokemonArchivos.LeerJson();
-
-            if (datosArchivo is not null)
+            try
             {
+                List<Pokemon> datosArchivo = PokemonArchivos.LeerJson();
+
                 this.rchPokemon.Text = "Leyendo desde archivo json:\n\n";
 
                 foreach (var item in datosArchivo)
@@ -326,9 +326,9 @@ namespace PokedexApp
 
                 MessageBox.Show("Datos del archivo .json cargado en la lista.", "Lectura correcta", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("No se pudo acceder al archivo .json.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
