@@ -471,6 +471,11 @@ namespace PokedexApp
                 MessageBox.Show("No se pudo acceder a la base de datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btnTask_Click(object sender, EventArgs e)
+        {
+            new FrmProgramacionMultiHilo().ShowDialog();
+        }
     }
 
 }

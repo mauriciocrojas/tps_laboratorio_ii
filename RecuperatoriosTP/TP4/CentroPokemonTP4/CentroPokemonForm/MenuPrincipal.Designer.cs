@@ -57,6 +57,7 @@
             this.btnDesalojarPokemon = new System.Windows.Forms.Button();
             this.btnCargarCuradosBase = new System.Windows.Forms.Button();
             this.btnGuardarListaEnBase = new System.Windows.Forms.Button();
+            this.btnTask = new System.Windows.Forms.Button();
             this.grpAgregarPokemon.SuspendLayout();
             this.grpGuardarArchivo.SuspendLayout();
             this.grpLeerArchivo.SuspendLayout();
@@ -356,12 +357,23 @@
             this.btnGuardarListaEnBase.UseVisualStyleBackColor = true;
             this.btnGuardarListaEnBase.Click += new System.EventHandler(this.btnGuardarListaEnBase_Click);
             // 
+            // btnTask
+            // 
+            this.btnTask.Location = new System.Drawing.Point(440, 350);
+            this.btnTask.Name = "btnTask";
+            this.btnTask.Size = new System.Drawing.Size(110, 45);
+            this.btnTask.TabIndex = 48;
+            this.btnTask.Text = "Task";
+            this.btnTask.UseVisualStyleBackColor = true;
+            this.btnTask.Click += new System.EventHandler(this.btnTask_Click);
+            // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.RosyBrown;
             this.ClientSize = new System.Drawing.Size(564, 466);
+            this.Controls.Add(this.btnTask);
             this.Controls.Add(this.btnGuardarListaEnBase);
             this.Controls.Add(this.btnCargarCuradosBase);
             this.Controls.Add(this.btnDesalojarPokemon);
@@ -425,5 +437,6 @@
         private System.Windows.Forms.Button btnDesalojarPokemon;
         private System.Windows.Forms.Button btnCargarCuradosBase;
         private System.Windows.Forms.Button btnGuardarListaEnBase;
+        private System.Windows.Forms.Button btnTask;
     }
 }
