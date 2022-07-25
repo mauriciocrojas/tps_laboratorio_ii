@@ -32,7 +32,7 @@ namespace Entidades
         private void btnTraerPokemonAleatorio_Click(object sender, EventArgs e)
         {
             dtg_listado.DataSource = null;
-            dtg_listado.DataSource = centroPokemon.AgregarNuevaCarrera();
+            dtg_listado.DataSource = centroPokemon.TraerPokemon();
         }
     }
 }

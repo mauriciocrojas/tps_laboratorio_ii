@@ -19,7 +19,7 @@ namespace Entidades
             auxlistaPokemon = new List<Pokemon>();
         }
 
-        public List<Pokemon> AgregarNuevaCarrera()
+        public List<Pokemon> TraerPokemon()
         {
 
             if (auxlistaPokemon.Count <= capacidad)
