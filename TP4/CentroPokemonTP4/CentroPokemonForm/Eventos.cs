@@ -15,6 +15,10 @@ namespace Entidades
             centroPokemon.cupoLleno += DesactivarForm;
         }
 
+        /// <summary>
+        /// Función que lanzará un messageBox y desactivará el DataGrid si la capacidad de Centro se completa.
+        /// </summary>
+        /// <param name="centroPokemonLleno"></param>
         private void MensajeCupoLleno(bool centroPokemonLleno)
         {
             if (centroPokemonLleno)
@@ -24,11 +28,20 @@ namespace Entidades
             }
         }
 
+        /// <summary>
+        /// Función que desactivará el botón de TraerPokemonAleatorio.
+        /// </summary>
+        /// <param name="estado"></param>
         private void DesactivarForm(bool estado)
         {
             this.btnTraerPokemonAleatorio.Enabled = !estado;
         }
 
+        /// <summary>
+        /// Botón que traerá una lista de pokemon al DataGrid.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnTraerPokemonAleatorio_Click(object sender, EventArgs e)
         {
             dtg_listado.DataSource = null;

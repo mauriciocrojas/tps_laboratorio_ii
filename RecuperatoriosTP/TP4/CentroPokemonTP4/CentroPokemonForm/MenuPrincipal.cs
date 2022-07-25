@@ -444,6 +444,11 @@ namespace PokedexApp
             }
         }
 
+        /// <summary>
+        /// Botón que traerá los pokemon con daño 0 desde la base.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCargarCuradosBase_Click(object sender, EventArgs e)
         {
             try
@@ -472,14 +477,38 @@ namespace PokedexApp
             }
         }
 
+        /// <summary>
+        /// Botón que abrirá el módulo de Task.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnTask_Click(object sender, EventArgs e)
         {
-            new FrmProgramacionMultiHilo().ShowDialog();
+            try
+            {
+                new FrmProgramacionMultiHilo().ShowDialog();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("No se pudo a módulo de Task.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
+        /// <summary>
+        /// Botón que abrirá el módulo de Eventos.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnEventos_Click(object sender, EventArgs e)
         {
-            new FrmEventos().ShowDialog();
+            try
+            {
+                new FrmEventos().ShowDialog();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("No se pudo a módulo de Eventos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 

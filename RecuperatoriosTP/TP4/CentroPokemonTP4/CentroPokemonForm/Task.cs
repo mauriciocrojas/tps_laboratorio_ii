@@ -21,6 +21,9 @@ namespace PokedexApp
             listaPokemon = new List<Pokemon>();
         }
 
+        /// <summary>
+        /// Función que cargará un pokemon aleatorio desde la lista cada dos segundos, en un DataGrid.
+        /// </summary>
         private void ComenzarCarga()
         {
             try
@@ -50,17 +53,41 @@ namespace PokedexApp
             }
         }
 
+        /// <summary>
+        /// Botón que comenzará la carga aleatoria de pokemon.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_comenzarCarga_Click(object sender, EventArgs e)
         {
-            btn_comenzarCarga.Enabled = false;
-            cargaPokemon.Start();
+            try
+            {
+                btn_comenzarCarga.Enabled = false;
+                cargaPokemon.Start();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("No se pudo a comenzar la carga.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
+        /// <summary>
+        /// Botón que cancelará la carga aleatoria de pokemon.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btn_cancelarCarga_Click_1(object sender, EventArgs e)
         {
-            btn_cancelarCarga.Enabled = false;
-            MessageBox.Show("Carga de pokemon cancelada");
-            cts.Cancel();
+            try
+            {
+                btn_cancelarCarga.Enabled = false;
+                MessageBox.Show("Carga de pokemon cancelada");
+                cts.Cancel();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("No se pudo cancelar la carga.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
