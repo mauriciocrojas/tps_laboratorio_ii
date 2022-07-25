@@ -58,6 +58,7 @@
             this.btnCargarCuradosBase = new System.Windows.Forms.Button();
             this.btnGuardarListaEnBase = new System.Windows.Forms.Button();
             this.btnTask = new System.Windows.Forms.Button();
+            this.btnEventos = new System.Windows.Forms.Button();
             this.grpAgregarPokemon.SuspendLayout();
             this.grpGuardarArchivo.SuspendLayout();
             this.grpLeerArchivo.SuspendLayout();
@@ -359,13 +360,23 @@
             // 
             // btnTask
             // 
-            this.btnTask.Location = new System.Drawing.Point(440, 350);
+            this.btnTask.Location = new System.Drawing.Point(468, 350);
             this.btnTask.Name = "btnTask";
-            this.btnTask.Size = new System.Drawing.Size(110, 45);
+            this.btnTask.Size = new System.Drawing.Size(84, 45);
             this.btnTask.TabIndex = 48;
             this.btnTask.Text = "Task";
             this.btnTask.UseVisualStyleBackColor = true;
             this.btnTask.Click += new System.EventHandler(this.btnTask_Click);
+            // 
+            // btnEventos
+            // 
+            this.btnEventos.Location = new System.Drawing.Point(380, 350);
+            this.btnEventos.Name = "btnEventos";
+            this.btnEventos.Size = new System.Drawing.Size(84, 45);
+            this.btnEventos.TabIndex = 49;
+            this.btnEventos.Text = "Eventos";
+            this.btnEventos.UseVisualStyleBackColor = true;
+            this.btnEventos.Click += new System.EventHandler(this.btnEventos_Click);
             // 
             // MenuPrincipal
             // 
@@ -373,6 +384,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.RosyBrown;
             this.ClientSize = new System.Drawing.Size(564, 466);
+            this.Controls.Add(this.btnEventos);
             this.Controls.Add(this.btnTask);
             this.Controls.Add(this.btnGuardarListaEnBase);
             this.Controls.Add(this.btnCargarCuradosBase);
@@ -438,5 +450,6 @@
         private System.Windows.Forms.Button btnCargarCuradosBase;
         private System.Windows.Forms.Button btnGuardarListaEnBase;
         private System.Windows.Forms.Button btnTask;
+        private System.Windows.Forms.Button btnEventos;
     }
 }

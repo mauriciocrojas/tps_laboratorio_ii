@@ -1,10 +1,9 @@
-﻿using BibliotecaDeClases;
+﻿using Entidades;
 using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Entidades;
 
 namespace PokedexApp
 {
@@ -24,24 +23,30 @@ namespace PokedexApp
 
         private void ComenzarCarga()
         {
-
-            while (true)
+            try
             {
-                if (cts.IsCancellationRequested)
-                {
-                    return;
-                }
-                else if (this.dtg_listado.InvokeRequired)
-                {
-                    listaPokemon.Add(GeneradorDeDatos.GetUnPokemon);
 
-                    this.dtg_listado.BeginInvoke((MethodInvoker)delegate ()
+                while (true)
+                {
+                    if (cts.IsCancellationRequested)
                     {
-                        dtg_listado.DataSource = null;
-                        dtg_listado.DataSource = listaPokemon;
-                    });
+                        return;
+                    }
+                    else if (this.dtg_listado.InvokeRequired)
+                    {
+                        listaPokemon.Add(GeneradorDeDatos.GetUnPokemon);
+
+                        this.dtg_listado.BeginInvoke((MethodInvoker)delegate ()
+                        {
+                            dtg_listado.DataSource = null;
+                            dtg_listado.DataSource = listaPokemon;
+                        });
+                    }
+                    Thread.Sleep(2000);
                 }
-                Thread.Sleep(2000);
+            }catch (Exception)
+            {
+                MessageBox.Show("No se pudo realizar la carga de datos");
             }
         }
 

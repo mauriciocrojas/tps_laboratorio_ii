@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace BibliotecaDeClases
+namespace Entidades
 {
     public static class GeneradorDeDatos
     {

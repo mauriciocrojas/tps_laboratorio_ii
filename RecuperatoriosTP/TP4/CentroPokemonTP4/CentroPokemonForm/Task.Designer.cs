@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProgramacionMultiHilo));
             this.lblCargaPokemon = new System.Windows.Forms.Label();
             this.btn_comenzarCarga = new System.Windows.Forms.Button();
             this.dtg_listado = new System.Windows.Forms.DataGridView();
@@ -39,7 +40,7 @@
             // 
             this.lblCargaPokemon.AutoSize = true;
             this.lblCargaPokemon.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblCargaPokemon.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.lblCargaPokemon.ForeColor = System.Drawing.Color.RosyBrown;
             this.lblCargaPokemon.Location = new System.Drawing.Point(197, 27);
             this.lblCargaPokemon.Name = "lblCargaPokemon";
             this.lblCargaPokemon.Size = new System.Drawing.Size(425, 37);
@@ -89,6 +90,7 @@
             this.Controls.Add(this.btn_comenzarCarga);
             this.Controls.Add(this.dtg_listado);
             this.Controls.Add(this.btn_cancelarCarga);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmProgramacionMultiHilo";
             this.Text = "Task";
             ((System.ComponentModel.ISupportInitialize)(this.dtg_listado)).EndInit();

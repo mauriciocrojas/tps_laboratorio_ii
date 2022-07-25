@@ -476,6 +476,11 @@ namespace PokedexApp
         {
             new FrmProgramacionMultiHilo().ShowDialog();
         }
+
+        private void btnEventos_Click(object sender, EventArgs e)
+        {
+            new FrmEventos().ShowDialog();
+        }
     }
 
 }
