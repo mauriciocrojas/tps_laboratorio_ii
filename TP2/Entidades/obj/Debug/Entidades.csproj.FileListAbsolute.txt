@@ -17,3 +17,9 @@ C:\Users\maurojas\Documents\Alumni\Proyectos\TPS\TP-02-Cascara.r2\TP-02\Entidade
 C:\Users\maurojas\Documents\Alumni\Proyectos\TPS\TP-02-Cascara.r2\TP-02\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
 C:\Users\maurojas\Documents\Alumni\Proyectos\TPS\TP-02-Cascara.r2\TP-02\Entidades\obj\Debug\Entidades.dll
 C:\Users\maurojas\Documents\Alumni\Proyectos\TPS\TP-02-Cascara.r2\TP-02\Entidades\obj\Debug\Entidades.pdb
+C:\Users\maurojas\Documents\Alumni\TPS\RecuperatoriosTP\TP2\Entidades\bin\Debug\Entidades.dll
+C:\Users\maurojas\Documents\Alumni\TPS\RecuperatoriosTP\TP2\Entidades\bin\Debug\Entidades.pdb
+C:\Users\maurojas\Documents\Alumni\TPS\RecuperatoriosTP\TP2\Entidades\obj\Debug\Entidades.csproj.AssemblyReference.cache
+C:\Users\maurojas\Documents\Alumni\TPS\RecuperatoriosTP\TP2\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\maurojas\Documents\Alumni\TPS\RecuperatoriosTP\TP2\Entidades\obj\Debug\Entidades.dll
+C:\Users\maurojas\Documents\Alumni\TPS\RecuperatoriosTP\TP2\Entidades\obj\Debug\Entidades.pdb
