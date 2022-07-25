@@ -9,7 +9,7 @@ namespace Entidades
     public interface IDatos
     { 
         /// <summary>
-        /// Función que mostrará un dato
+        /// Función que mostrará los datos de un objeto.
         /// </summary>
         /// <returns>Retornará un string</returns>
         string MostrarDato();

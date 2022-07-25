@@ -55,6 +55,10 @@
             this.grpLeerArchivo = new System.Windows.Forms.GroupBox();
             this.btnCargarDeBaseDatos = new System.Windows.Forms.Button();
             this.btnDesalojarPokemon = new System.Windows.Forms.Button();
+            this.btnCargarCuradosBase = new System.Windows.Forms.Button();
+            this.btnGuardarListaEnBase = new System.Windows.Forms.Button();
+            this.btnTask = new System.Windows.Forms.Button();
+            this.btnEventos = new System.Windows.Forms.Button();
             this.grpAgregarPokemon.SuspendLayout();
             this.grpGuardarArchivo.SuspendLayout();
             this.grpLeerArchivo.SuspendLayout();
@@ -62,9 +66,9 @@
             // 
             // btnVerEntrenadores
             // 
-            this.btnVerEntrenadores.Location = new System.Drawing.Point(12, 400);
+            this.btnVerEntrenadores.Location = new System.Drawing.Point(6, 407);
             this.btnVerEntrenadores.Name = "btnVerEntrenadores";
-            this.btnVerEntrenadores.Size = new System.Drawing.Size(102, 60);
+            this.btnVerEntrenadores.Size = new System.Drawing.Size(92, 53);
             this.btnVerEntrenadores.TabIndex = 23;
             this.btnVerEntrenadores.Text = "Ver entrenadores registrados";
             this.btnVerEntrenadores.UseVisualStyleBackColor = true;
@@ -72,9 +76,9 @@
             // 
             // btnUsuarioLogeado
             // 
-            this.btnUsuarioLogeado.Location = new System.Drawing.Point(134, 400);
+            this.btnUsuarioLogeado.Location = new System.Drawing.Point(104, 407);
             this.btnUsuarioLogeado.Name = "btnUsuarioLogeado";
-            this.btnUsuarioLogeado.Size = new System.Drawing.Size(102, 60);
+            this.btnUsuarioLogeado.Size = new System.Drawing.Size(92, 53);
             this.btnUsuarioLogeado.TabIndex = 24;
             this.btnUsuarioLogeado.Text = "Mostrar usuario logueado";
             this.btnUsuarioLogeado.UseVisualStyleBackColor = true;
@@ -85,9 +89,9 @@
             this.btnSalir.BackColor = System.Drawing.Color.Maroon;
             this.btnSalir.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnSalir.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSalir.Location = new System.Drawing.Point(458, 407);
+            this.btnSalir.Location = new System.Drawing.Point(475, 410);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(91, 50);
+            this.btnSalir.Size = new System.Drawing.Size(77, 50);
             this.btnSalir.TabIndex = 25;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = false;
@@ -98,9 +102,9 @@
             this.btnVolver.BackColor = System.Drawing.Color.Firebrick;
             this.btnVolver.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnVolver.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnVolver.Location = new System.Drawing.Point(362, 407);
+            this.btnVolver.Location = new System.Drawing.Point(392, 410);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(91, 50);
+            this.btnVolver.Size = new System.Drawing.Size(77, 50);
             this.btnVolver.TabIndex = 26;
             this.btnVolver.Text = "Volver Atrás";
             this.btnVolver.UseVisualStyleBackColor = false;
@@ -134,16 +138,16 @@
             this.grpAgregarPokemon.Controls.Add(this.txtIDPokemon);
             this.grpAgregarPokemon.Controls.Add(this.txtTipoPokemon);
             this.grpAgregarPokemon.Controls.Add(this.txtNombrePokemon);
-            this.grpAgregarPokemon.Location = new System.Drawing.Point(21, 212);
+            this.grpAgregarPokemon.Location = new System.Drawing.Point(12, 260);
             this.grpAgregarPokemon.Name = "grpAgregarPokemon";
-            this.grpAgregarPokemon.Size = new System.Drawing.Size(528, 74);
+            this.grpAgregarPokemon.Size = new System.Drawing.Size(538, 74);
             this.grpAgregarPokemon.TabIndex = 29;
             this.grpAgregarPokemon.TabStop = false;
-            this.grpAgregarPokemon.Text = "Agregar Pokemon";
+            this.grpAgregarPokemon.Text = "Agregar Pokemon a la lista:";
             // 
             // txtDanio
             // 
-            this.txtDanio.Location = new System.Drawing.Point(355, 32);
+            this.txtDanio.Location = new System.Drawing.Point(364, 32);
             this.txtDanio.Name = "txtDanio";
             this.txtDanio.PlaceholderText = "Daño %";
             this.txtDanio.Size = new System.Drawing.Size(57, 23);
@@ -152,7 +156,7 @@
             // 
             // btnAgregarPokemon
             // 
-            this.btnAgregarPokemon.Location = new System.Drawing.Point(427, 22);
+            this.btnAgregarPokemon.Location = new System.Drawing.Point(436, 22);
             this.btnAgregarPokemon.Name = "btnAgregarPokemon";
             this.btnAgregarPokemon.Size = new System.Drawing.Size(83, 38);
             this.btnAgregarPokemon.TabIndex = 5;
@@ -162,7 +166,7 @@
             // 
             // txtAtaquePokemon
             // 
-            this.txtAtaquePokemon.Location = new System.Drawing.Point(237, 32);
+            this.txtAtaquePokemon.Location = new System.Drawing.Point(246, 32);
             this.txtAtaquePokemon.Name = "txtAtaquePokemon";
             this.txtAtaquePokemon.PlaceholderText = "Ataque principal";
             this.txtAtaquePokemon.Size = new System.Drawing.Size(113, 23);
@@ -171,7 +175,7 @@
             // 
             // txtIDPokemon
             // 
-            this.txtIDPokemon.Location = new System.Drawing.Point(197, 32);
+            this.txtIDPokemon.Location = new System.Drawing.Point(206, 32);
             this.txtIDPokemon.Name = "txtIDPokemon";
             this.txtIDPokemon.PlaceholderText = "ID";
             this.txtIDPokemon.Size = new System.Drawing.Size(36, 23);
@@ -180,7 +184,7 @@
             // 
             // txtTipoPokemon
             // 
-            this.txtTipoPokemon.Location = new System.Drawing.Point(107, 32);
+            this.txtTipoPokemon.Location = new System.Drawing.Point(116, 32);
             this.txtTipoPokemon.Name = "txtTipoPokemon";
             this.txtTipoPokemon.PlaceholderText = "Tipo";
             this.txtTipoPokemon.Size = new System.Drawing.Size(84, 23);
@@ -189,7 +193,7 @@
             // 
             // txtNombrePokemon
             // 
-            this.txtNombrePokemon.Location = new System.Drawing.Point(12, 32);
+            this.txtNombrePokemon.Location = new System.Drawing.Point(21, 32);
             this.txtNombrePokemon.Name = "txtNombrePokemon";
             this.txtNombrePokemon.PlaceholderText = "Nombre";
             this.txtNombrePokemon.Size = new System.Drawing.Size(84, 23);
@@ -228,7 +232,7 @@
             // 
             // btnLeerDeArchivoXml
             // 
-            this.btnLeerDeArchivoXml.Location = new System.Drawing.Point(78, 20);
+            this.btnLeerDeArchivoXml.Location = new System.Drawing.Point(64, 21);
             this.btnLeerDeArchivoXml.Name = "btnLeerDeArchivoXml";
             this.btnLeerDeArchivoXml.Size = new System.Drawing.Size(42, 26);
             this.btnLeerDeArchivoXml.TabIndex = 37;
@@ -238,7 +242,7 @@
             // 
             // btnGuardarEnArchivoXml
             // 
-            this.btnGuardarEnArchivoXml.Location = new System.Drawing.Point(69, 20);
+            this.btnGuardarEnArchivoXml.Location = new System.Drawing.Point(69, 21);
             this.btnGuardarEnArchivoXml.Name = "btnGuardarEnArchivoXml";
             this.btnGuardarEnArchivoXml.Size = new System.Drawing.Size(42, 26);
             this.btnGuardarEnArchivoXml.TabIndex = 36;
@@ -248,7 +252,7 @@
             // 
             // btnLeerDeArchivoJson
             // 
-            this.btnLeerDeArchivoJson.Location = new System.Drawing.Point(125, 20);
+            this.btnLeerDeArchivoJson.Location = new System.Drawing.Point(111, 21);
             this.btnLeerDeArchivoJson.Name = "btnLeerDeArchivoJson";
             this.btnLeerDeArchivoJson.Size = new System.Drawing.Size(42, 26);
             this.btnLeerDeArchivoJson.TabIndex = 39;
@@ -258,7 +262,7 @@
             // 
             // btnGuardarEnArchivoJson
             // 
-            this.btnGuardarEnArchivoJson.Location = new System.Drawing.Point(116, 20);
+            this.btnGuardarEnArchivoJson.Location = new System.Drawing.Point(116, 21);
             this.btnGuardarEnArchivoJson.Name = "btnGuardarEnArchivoJson";
             this.btnGuardarEnArchivoJson.Size = new System.Drawing.Size(42, 26);
             this.btnGuardarEnArchivoJson.TabIndex = 38;
@@ -268,7 +272,7 @@
             // 
             // btnGuardarEnArchivoTxt
             // 
-            this.btnGuardarEnArchivoTxt.Location = new System.Drawing.Point(22, 20);
+            this.btnGuardarEnArchivoTxt.Location = new System.Drawing.Point(21, 21);
             this.btnGuardarEnArchivoTxt.Name = "btnGuardarEnArchivoTxt";
             this.btnGuardarEnArchivoTxt.Size = new System.Drawing.Size(42, 26);
             this.btnGuardarEnArchivoTxt.TabIndex = 34;
@@ -278,7 +282,7 @@
             // 
             // btnLeerDeArchivoTxt
             // 
-            this.btnLeerDeArchivoTxt.Location = new System.Drawing.Point(31, 20);
+            this.btnLeerDeArchivoTxt.Location = new System.Drawing.Point(17, 21);
             this.btnLeerDeArchivoTxt.Name = "btnLeerDeArchivoTxt";
             this.btnLeerDeArchivoTxt.Size = new System.Drawing.Size(42, 26);
             this.btnLeerDeArchivoTxt.TabIndex = 35;
@@ -291,11 +295,11 @@
             this.grpGuardarArchivo.Controls.Add(this.btnGuardarEnArchivoTxt);
             this.grpGuardarArchivo.Controls.Add(this.btnGuardarEnArchivoXml);
             this.grpGuardarArchivo.Controls.Add(this.btnGuardarEnArchivoJson);
-            this.grpGuardarArchivo.Location = new System.Drawing.Point(18, 292);
+            this.grpGuardarArchivo.Location = new System.Drawing.Point(12, 339);
             this.grpGuardarArchivo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpGuardarArchivo.Name = "grpGuardarArchivo";
             this.grpGuardarArchivo.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grpGuardarArchivo.Size = new System.Drawing.Size(193, 56);
+            this.grpGuardarArchivo.Size = new System.Drawing.Size(176, 56);
             this.grpGuardarArchivo.TabIndex = 42;
             this.grpGuardarArchivo.TabStop = false;
             this.grpGuardarArchivo.Text = "Guardar listado en formato:";
@@ -305,22 +309,22 @@
             this.grpLeerArchivo.Controls.Add(this.btnLeerDeArchivoXml);
             this.grpLeerArchivo.Controls.Add(this.btnLeerDeArchivoTxt);
             this.grpLeerArchivo.Controls.Add(this.btnLeerDeArchivoJson);
-            this.grpLeerArchivo.Location = new System.Drawing.Point(228, 292);
+            this.grpLeerArchivo.Location = new System.Drawing.Point(201, 339);
             this.grpLeerArchivo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.grpLeerArchivo.Name = "grpLeerArchivo";
             this.grpLeerArchivo.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grpLeerArchivo.Size = new System.Drawing.Size(193, 56);
+            this.grpLeerArchivo.Size = new System.Drawing.Size(170, 56);
             this.grpLeerArchivo.TabIndex = 43;
             this.grpLeerArchivo.TabStop = false;
             this.grpLeerArchivo.Text = "Leer listado en formato:";
             // 
             // btnCargarDeBaseDatos
             // 
-            this.btnCargarDeBaseDatos.Location = new System.Drawing.Point(187, 151);
+            this.btnCargarDeBaseDatos.Location = new System.Drawing.Point(376, 206);
             this.btnCargarDeBaseDatos.Name = "btnCargarDeBaseDatos";
-            this.btnCargarDeBaseDatos.Size = new System.Drawing.Size(91, 50);
+            this.btnCargarDeBaseDatos.Size = new System.Drawing.Size(86, 48);
             this.btnCargarDeBaseDatos.TabIndex = 44;
-            this.btnCargarDeBaseDatos.Text = "Cargar lista de base de datos";
+            this.btnCargarDeBaseDatos.Text = "Cargar lista desde base";
             this.btnCargarDeBaseDatos.UseVisualStyleBackColor = true;
             this.btnCargarDeBaseDatos.Click += new System.EventHandler(this.btnCargarDeBaseDatos_Click);
             // 
@@ -334,12 +338,56 @@
             this.btnDesalojarPokemon.UseVisualStyleBackColor = true;
             this.btnDesalojarPokemon.Click += new System.EventHandler(this.btnDesalojarPokemon_Click);
             // 
+            // btnCargarCuradosBase
+            // 
+            this.btnCargarCuradosBase.Location = new System.Drawing.Point(466, 206);
+            this.btnCargarCuradosBase.Name = "btnCargarCuradosBase";
+            this.btnCargarCuradosBase.Size = new System.Drawing.Size(86, 48);
+            this.btnCargarCuradosBase.TabIndex = 46;
+            this.btnCargarCuradosBase.Text = "Ver curados desde base";
+            this.btnCargarCuradosBase.UseVisualStyleBackColor = true;
+            this.btnCargarCuradosBase.Click += new System.EventHandler(this.btnCargarCuradosBase_Click);
+            // 
+            // btnGuardarListaEnBase
+            // 
+            this.btnGuardarListaEnBase.Location = new System.Drawing.Point(12, 206);
+            this.btnGuardarListaEnBase.Name = "btnGuardarListaEnBase";
+            this.btnGuardarListaEnBase.Size = new System.Drawing.Size(83, 48);
+            this.btnGuardarListaEnBase.TabIndex = 47;
+            this.btnGuardarListaEnBase.Text = "Guardar lista en base";
+            this.btnGuardarListaEnBase.UseVisualStyleBackColor = true;
+            this.btnGuardarListaEnBase.Click += new System.EventHandler(this.btnGuardarListaEnBase_Click);
+            // 
+            // btnTask
+            // 
+            this.btnTask.Location = new System.Drawing.Point(468, 350);
+            this.btnTask.Name = "btnTask";
+            this.btnTask.Size = new System.Drawing.Size(84, 45);
+            this.btnTask.TabIndex = 48;
+            this.btnTask.Text = "Task";
+            this.btnTask.UseVisualStyleBackColor = true;
+            this.btnTask.Click += new System.EventHandler(this.btnTask_Click);
+            // 
+            // btnEventos
+            // 
+            this.btnEventos.Location = new System.Drawing.Point(380, 350);
+            this.btnEventos.Name = "btnEventos";
+            this.btnEventos.Size = new System.Drawing.Size(84, 45);
+            this.btnEventos.TabIndex = 49;
+            this.btnEventos.Text = "Eventos";
+            this.btnEventos.UseVisualStyleBackColor = true;
+            this.btnEventos.Click += new System.EventHandler(this.btnEventos_Click);
+            // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.RosyBrown;
             this.ClientSize = new System.Drawing.Size(564, 466);
+            this.Controls.Add(this.btnEventos);
+            this.Controls.Add(this.btnTask);
+            this.Controls.Add(this.btnGuardarListaEnBase);
+            this.Controls.Add(this.btnCargarCuradosBase);
             this.Controls.Add(this.btnDesalojarPokemon);
             this.Controls.Add(this.btnCargarDeBaseDatos);
             this.Controls.Add(this.grpLeerArchivo);
@@ -399,5 +447,9 @@
         private System.Windows.Forms.GroupBox grpLeerArchivo;
         private System.Windows.Forms.Button btnCargarDeBaseDatos;
         private System.Windows.Forms.Button btnDesalojarPokemon;
+        private System.Windows.Forms.Button btnCargarCuradosBase;
+        private System.Windows.Forms.Button btnGuardarListaEnBase;
+        private System.Windows.Forms.Button btnTask;
+        private System.Windows.Forms.Button btnEventos;
     }
 }

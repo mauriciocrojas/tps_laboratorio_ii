@@ -149,7 +149,7 @@ namespace PokedexApp
                 }
                 else
                 {
-                    if (Pokemon.AgregarPokemonManual(this.txtNombrePokemon.Text, this.txtTipoPokemon.Text, int.Parse(this.txtIDPokemon.Text), this.txtAtaquePokemon.Text, int.Parse(this.txtDanio.Text)))
+                    if (Pokemon.AgregarPokemonManualALaLista(this.txtNombrePokemon.Text, this.txtTipoPokemon.Text, int.Parse(this.txtIDPokemon.Text), this.txtAtaquePokemon.Text, int.Parse(this.txtDanio.Text)))
                     {
                         MostrarPokemonEnListaPokemon();
                         MostrarPokemonEnRichTextPokemon();
@@ -236,63 +236,30 @@ namespace PokedexApp
             MessageBox.Show(Entrenador.MostrarDatos(), "Entrenadores registrados", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        /// <summary>
-        /// Función que hace que un pokemon lance un ataque y imprima por pantalla.
-        /// </summary>
-        private void btnCurarPokemon_Click(object sender, EventArgs e)
-        {
-
-            if (this.lstPokemon.SelectedItem is not null)
-            {
-                string pokemonSeleccionado = (string)this.lstPokemon.SelectedItem;
-
-                foreach (Pokemon pokemon in Pokemon.ListaPokemon)
-                {
-                    if (pokemon.nombre == pokemonSeleccionado)
-                    {
-
-                        if (pokemon.danio == 0)
-                        {
-                            MessageBox.Show("El pokemón no presenta daños.", "Elegí un pokemon dañado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        }
-                        else
-                        {
-                            MessageBox.Show(pokemonSeleccionado.CurarPokemon(), "Estado de salud", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                    }
-                }
-            }
-            else
-            {
-                MessageBox.Show("No se seleccionó ningún pokemon.", "Elegí un pokemon a sanar", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
         private void btnGuardarEnArchivoTxt_Click(object sender, EventArgs e)
         {
             try
             {
-                Pokemon.EscribirTxt();
+                PokemonArchivos.EscribirTxt();
                 MessageBox.Show("Se guardó el archivo .txt correctamente.", "Guardado exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error al intentar guardar archivo .txt.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void btnLeerDeArchivoTxt_Click(object sender, EventArgs e)
         {
-            string datosArchivo = Pokemon.LeerTxt("/Listado de Pokemon en el Centro.txt");
-
-            if (datosArchivo != string.Empty)
+            try
             {
+                string datosArchivo = PokemonArchivos.LeerTxt("/Listado de Pokemon en el Centro.txt");
                 this.rchPokemon.Text = "Leyendo desde archivo txt:\n\n" + datosArchivo;
                 MessageBox.Show("Datos del archivo .txt cargado en la lista.", "Lectura correcta", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("No se pudo acceder al archivo .txt.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -300,21 +267,22 @@ namespace PokedexApp
         {
             try
             {
-                Pokemon.EscribirXml(Pokemon.ListaPokemon);
+                PokemonArchivos.EscribirXml(Pokemon.ListaPokemon);
                 MessageBox.Show("Se guardó el archivo .xml correctamente.", "Guardado exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Error al intentar guardar archivo .xml.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void btnLeerDeArchivoXml_Click(object sender, EventArgs e)
         {
-            List<Pokemon> datosArchivo = Pokemon.LeerXml();
 
-            if (datosArchivo is not null)
+            try
             {
+                List<Pokemon> datosArchivo = PokemonArchivos.LeerXml();
+
                 this.rchPokemon.Text = "Leyendo desde archivo xml:\n\n";
 
                 foreach (var item in datosArchivo)
@@ -324,53 +292,65 @@ namespace PokedexApp
 
                 MessageBox.Show("Datos del archivo .xml cargado en la lista.", "Lectura correcta", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("No se pudo acceder al archivo .xml.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void btnGuardarEnArchivoJson_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-
-            Pokemon.EscribirJsonUnDato(Pokemon.ListaPokemon[1].MostrarJson());
-            Pokemon.EscribirJsonLista(Pokemon.ListaPokemon);
-            MessageBox.Show("Funcionamiento del botón en proceso, guarda json pero no visualiza correctamente.", "En proceso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            //}
-            //catch (Exception)
-            //{
-            //    MessageBox.Show("Error al intentar guardar archivo .json", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
+            try
+            {
+                PokemonArchivos.EscribirJsonLista(Pokemon.ListaPokemon);
+                MessageBox.Show("Se guardó el archivo .json correctamente.", "Guardado exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnLeerDeArchivoJson_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Soy un botón que aún no funciona :(.", "Estamos trabajando", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            try
+            {
+                List<Pokemon> datosArchivo = PokemonArchivos.LeerJson();
+
+                this.rchPokemon.Text = "Leyendo desde archivo json:\n\n";
+
+                foreach (var item in datosArchivo)
+                {
+                    this.rchPokemon.Text += item.MostrarDato() + "\n\n";
+                }
+
+                MessageBox.Show("Datos del archivo .json cargado en la lista.", "Lectura correcta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
+        /// <summary>
+        /// Carga los datos de la base de datos en el RichTextBox.
+        /// </summary>
         private void btnCargarDeBaseDatos_Click(object sender, EventArgs e)
         {
             try
             {
-                List<Pokemon> auxListaPokemon = PokemonAccesoDatos.Leer();
-                this.rchPokemon.Text = "Leyendo desde base de datos:" + "\n\n";
+                List<Pokemon> auxListaPokemon = PokemonBaseDatos.Leer();
+                this.rchPokemon.Text = "Leyendo pokemon alojados desde base de datos:" + "\n\n";
 
+                if (auxListaPokemon.Count < 1)
+                {
+                    this.rchPokemon.Text = "Antes de cargar la lista de la base, debe presionar el botón guardar lista en base.";
+                    throw new Exception();
+                }
                 foreach (var pokemonAux in auxListaPokemon)
                 {
-                    foreach (var pokemonList in Pokemon.ListaPokemon)
-                    {
-                        if (pokemonAux.nombre == pokemonList.nombre || pokemonAux.id == pokemonList.id)
-                        {
-                            throw new CamposErroneosException("No se pudo cargar el listado de la base de datos porque hay pokemon que ya se encuentran registrados.");
-                        }
-                    }
                     this.rchPokemon.Text += pokemonAux.MostrarDato() + "\n\n";
-                    Pokemon.ListaPokemon.Add(pokemonAux);
                 }
-                MostrarPokemonEnListaPokemon();
                 MessageBox.Show("Listado de la base de datos cargado en la lista.", "Lectura correcta", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (CamposErroneosException ex)
@@ -383,14 +363,17 @@ namespace PokedexApp
             }
         }
 
+        /// <summary>
+        /// Botón que desaloja y elimina un pokemon de la lista y de la base si se encontrará.
+        /// </summary>
         private void btnDesalojarPokemon_Click(object sender, EventArgs e)
         {
             if (this.lstPokemon.SelectedItem is not null)
             {
                 string pokemonSeleccionado = (string)this.lstPokemon.SelectedItem;
-                if (desalojarDelCentro(pokemonSeleccionado))
+                if (PokemonBaseDatos.EliminarPokemonDeBase(pokemonSeleccionado) && desalojarDelCentro(pokemonSeleccionado))
                 {
-                    MessageBox.Show("Se desalojó al pokemon.", "Desalojo exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show($"Se desalojó a {pokemonSeleccionado}, se quitó de la lista y de la base si se encontraba en ella.", "Desalojo exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     MostrarPokemonEnListaPokemon();
                 }
                 else
@@ -402,6 +385,101 @@ namespace PokedexApp
             {
                 MessageBox.Show("No se seleccionó ningún pokemon.", "Elegí un pokemon a desalojar", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        /// <summary>
+        /// Botón que cura un pokemon, tanto en la lista como en la base.
+        /// </summary>
+        private void btnCurarPokemon_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (this.lstPokemon.SelectedItem is not null)
+                {
+                    string pokemonSeleccionado = (string)this.lstPokemon.SelectedItem;
+
+                    foreach (Pokemon pokemon in Pokemon.ListaPokemon)
+                    {
+                        if (pokemon.nombre == pokemonSeleccionado)
+                        {
+
+                            if (pokemon.danio == 0)
+                            {
+                                MessageBox.Show("El pokemón no presenta daños.", "Elegí un pokemon dañado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            }
+                            else
+                            {
+                                MessageBox.Show(pokemonSeleccionado.CurarPokemon(), "Estado de salud", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No se seleccionó ningún pokemon.", "Elegí un pokemon a sanar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error al intentar leer pokemon.", "Elegí un pokemon a sanar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        /// <summary>
+        /// Botón que inserta la lista en la base. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnGuardarListaEnBase_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                PokemonBaseDatos.GuardarListaEnBase();
+                MessageBox.Show("Listado guardado en la base de datos correctamente.", "Guardado correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("No se guardar la lista en la base de datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnCargarCuradosBase_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                List<Pokemon> auxListaPokemon = PokemonBaseDatos.LeerCurados();
+                this.rchPokemon.Text = "Leyendo pokemon curados desde base de datos:" + "\n\n";
+
+                if (auxListaPokemon.Count < 1)
+                {
+                    this.rchPokemon.Text = "Antes de cargar la lista de curados de la base, debe presionar el botón guardar lista en base.";
+                    throw new Exception();
+                }
+                foreach (var pokemonAux in auxListaPokemon)
+                {
+                    this.rchPokemon.Text += pokemonAux.MostrarDato() + "\n\n";
+                }
+                MessageBox.Show("Listado de curados en la base de datos cargado en la lista.", "Lectura correcta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (CamposErroneosException ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("No se pudo acceder a la base de datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnTask_Click(object sender, EventArgs e)
+        {
+            new FrmProgramacionMultiHilo().ShowDialog();
+        }
+
+        private void btnEventos_Click(object sender, EventArgs e)
+        {
+            new FrmEventos().ShowDialog();
         }
     }
 

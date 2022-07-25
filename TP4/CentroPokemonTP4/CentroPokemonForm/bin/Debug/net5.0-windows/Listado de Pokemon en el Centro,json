@@ -1,0 +1,65 @@
+[
+  {
+    "Nombre": "Bulbasaur",
+    "Tipo": "Planta-Veneno",
+    "Id": 1,
+    "AtaquePrincipal": "Hoja afilada",
+    "Danio": 50
+  },
+  {
+    "Nombre": "Ivysaur",
+    "Tipo": "Planta-Veneno",
+    "Id": 2,
+    "AtaquePrincipal": "S\u00EDntesis",
+    "Danio": 25
+  },
+  {
+    "Nombre": "Venusaur",
+    "Tipo": "Planta-Veneno",
+    "Id": 3,
+    "AtaquePrincipal": "Rayo solar",
+    "Danio": 0
+  },
+  {
+    "Nombre": "Charmander",
+    "Tipo": "Fuego",
+    "Id": 4,
+    "AtaquePrincipal": "Lanzallamas",
+    "Danio": 98
+  },
+  {
+    "Nombre": "Charmeleon",
+    "Tipo": "Fuego",
+    "Id": 5,
+    "AtaquePrincipal": "Giro fuego",
+    "Danio": 15
+  },
+  {
+    "Nombre": "Charizard",
+    "Tipo": "Fuego-Volador",
+    "Id": 6,
+    "AtaquePrincipal": "Furia drag\u00F3n",
+    "Danio": 0
+  },
+  {
+    "Nombre": "Squirtle",
+    "Tipo": "Agua",
+    "Id": 7,
+    "AtaquePrincipal": "Pistola de agua",
+    "Danio": 61
+  },
+  {
+    "Nombre": "Wartortle",
+    "Tipo": "Agua",
+    "Id": 8,
+    "AtaquePrincipal": "Cabezazo",
+    "Danio": 58
+  },
+  {
+    "Nombre": "Blastoise",
+    "Tipo": "Agua",
+    "Id": 9,
+    "AtaquePrincipal": "Hidrobomba",
+    "Danio": 0
+  }
+]
