@@ -364,7 +364,7 @@
             this.btnTask.Name = "btnTask";
             this.btnTask.Size = new System.Drawing.Size(84, 45);
             this.btnTask.TabIndex = 48;
-            this.btnTask.Text = "Task";
+            this.btnTask.Text = "Task y Eventos";
             this.btnTask.UseVisualStyleBackColor = true;
             this.btnTask.Click += new System.EventHandler(this.btnTask_Click);
             // 
