@@ -1,6 +1,6 @@
 ﻿namespace PokedexApp
 {
-    partial class FrmProgramacionMultiHilo
+    partial class FrmProgramacionMultiHiloYEventos
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProgramacionMultiHilo));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProgramacionMultiHiloYEventos));
             this.lblCargaPokemon = new System.Windows.Forms.Label();
             this.btn_comenzarCarga = new System.Windows.Forms.Button();
             this.dtg_listado = new System.Windows.Forms.DataGridView();
@@ -41,19 +41,19 @@
             this.lblCargaPokemon.AutoSize = true;
             this.lblCargaPokemon.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lblCargaPokemon.ForeColor = System.Drawing.Color.RosyBrown;
-            this.lblCargaPokemon.Location = new System.Drawing.Point(197, 27);
+            this.lblCargaPokemon.Location = new System.Drawing.Point(123, 9);
             this.lblCargaPokemon.Name = "lblCargaPokemon";
-            this.lblCargaPokemon.Size = new System.Drawing.Size(425, 37);
+            this.lblCargaPokemon.Size = new System.Drawing.Size(544, 37);
             this.lblCargaPokemon.TabIndex = 9;
-            this.lblCargaPokemon.Text = "Carga aleatoria de Pokemon (Task)";
+            this.lblCargaPokemon.Text = "Carga aleatoria de Pokemon (Task y Eventos)";
             // 
             // btn_comenzarCarga
             // 
-            this.btn_comenzarCarga.Location = new System.Drawing.Point(67, 444);
+            this.btn_comenzarCarga.Location = new System.Drawing.Point(67, 600);
             this.btn_comenzarCarga.Name = "btn_comenzarCarga";
-            this.btn_comenzarCarga.Size = new System.Drawing.Size(274, 63);
+            this.btn_comenzarCarga.Size = new System.Drawing.Size(274, 48);
             this.btn_comenzarCarga.TabIndex = 8;
-            this.btn_comenzarCarga.Text = "Comenzar carga Pokemon";
+            this.btn_comenzarCarga.Text = "Cargar 20 pokemon";
             this.btn_comenzarCarga.UseVisualStyleBackColor = true;
             this.btn_comenzarCarga.Click += new System.EventHandler(this.btn_comenzarCarga_Click);
             // 
@@ -64,18 +64,18 @@
             this.dtg_listado.AllowUserToResizeColumns = false;
             this.dtg_listado.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtg_listado.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtg_listado.Location = new System.Drawing.Point(67, 82);
+            this.dtg_listado.Location = new System.Drawing.Point(67, 49);
             this.dtg_listado.Name = "dtg_listado";
             this.dtg_listado.RowHeadersVisible = false;
             this.dtg_listado.RowTemplate.Height = 25;
-            this.dtg_listado.Size = new System.Drawing.Size(653, 322);
+            this.dtg_listado.Size = new System.Drawing.Size(653, 545);
             this.dtg_listado.TabIndex = 7;
             // 
             // btn_cancelarCarga
             // 
-            this.btn_cancelarCarga.Location = new System.Drawing.Point(443, 444);
+            this.btn_cancelarCarga.Location = new System.Drawing.Point(443, 600);
             this.btn_cancelarCarga.Name = "btn_cancelarCarga";
-            this.btn_cancelarCarga.Size = new System.Drawing.Size(277, 63);
+            this.btn_cancelarCarga.Size = new System.Drawing.Size(277, 48);
             this.btn_cancelarCarga.TabIndex = 6;
             this.btn_cancelarCarga.Text = "Cancelar Carga Pokemon";
             this.btn_cancelarCarga.UseVisualStyleBackColor = true;
@@ -85,14 +85,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 529);
+            this.ClientSize = new System.Drawing.Size(800, 660);
             this.Controls.Add(this.lblCargaPokemon);
             this.Controls.Add(this.btn_comenzarCarga);
             this.Controls.Add(this.dtg_listado);
             this.Controls.Add(this.btn_cancelarCarga);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmProgramacionMultiHilo";
-            this.Text = "Task";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Task y Eventos";
             ((System.ComponentModel.ISupportInitialize)(this.dtg_listado)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

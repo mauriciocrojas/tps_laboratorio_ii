@@ -10,7 +10,7 @@ namespace Entidades
         public FrmEventos()
         {
             InitializeComponent();
-            centroPokemon = new CentroPokemon(GeneradorDeDatos.Rnd.Next(10, 33));
+            centroPokemon = new CentroPokemon(20);
             centroPokemon.cupoLleno += MensajeCupoLleno;
             centroPokemon.cupoLleno += DesactivarForm;
         }
@@ -23,7 +23,7 @@ namespace Entidades
         {
             if (centroPokemonLleno)
             {
-                MessageBox.Show("El Centro Pokemon se encuentra completo. Vuelva pronto.\nLos esperamos");
+                MessageBox.Show("El Centro Pokemon completó sus 20 lugares. Vuelva pronto.\nLos esperamos");
                 this.dtg_listado.Enabled = !centroPokemonLleno;
             }
         }

@@ -148,5 +148,5 @@ C:\Users\maurojas\Documents\Alumni\TP4\CentroPokemonTP4 --\CentroPokemonForm\obj
 C:\Users\maurojas\Documents\Alumni\TP4\CentroPokemonTP4 --\CentroPokemonForm\obj\Debug\net5.0-windows\CentroPokemonForm.pdb
 C:\Users\maurojas\Documents\Alumni\TP4\CentroPokemonTP4 --\CentroPokemonForm\obj\Debug\net5.0-windows\CentroPokemonForm.genruntimeconfig.cache
 C:\Users\maurojas\Documents\Alumni\TP4\CentroPokemonTP4 --\CentroPokemonForm\obj\Debug\net5.0-windows\ref\CentroPokemonForm.dll
-C:\Users\maurojas\Documents\Alumni\TP4\CentroPokemonTP4\CentroPokemonForm\obj\Debug\net5.0-windows\PokedexApp.FrmProgramacionMultiHilo.resources
 C:\Users\maurojas\Documents\Alumni\TP4\CentroPokemonTP4\CentroPokemonForm\obj\Debug\net5.0-windows\Entidades.FrmEventos.resources
+C:\Users\maurojas\Documents\Alumni\TP4\CentroPokemonTP4\CentroPokemonForm\obj\Debug\net5.0-windows\PokedexApp.FrmProgramacionMultiHiloYEventos.resources

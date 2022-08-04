@@ -5,15 +5,16 @@ namespace Entidades
 {
     public class CentroPokemon
     {
-        static List<Pokemon> auxlistaPokemon;
-        int capacidad;
+        public static List<Pokemon> auxlistaPokemon;
+        public int cupo;
         static Random rnd;
 
         public event Action<bool> cupoLleno;
+        public event Action<bool> capacidadCompleta;
 
         public CentroPokemon(int cupo)
         {
-            this.capacidad = cupo;
+            this.cupo = cupo;
             rnd = new Random();
             auxlistaPokemon = new List<Pokemon>();
         }
@@ -27,7 +28,7 @@ namespace Entidades
         public List<Pokemon> TraerPokemon()
         {
 
-            if (auxlistaPokemon.Count <= capacidad)
+            if (auxlistaPokemon.Count < cupo)
             {
                 auxlistaPokemon.Add(Pokemon.ListaPokemon[rnd.Next(0, Pokemon.ListaPokemon.Count)]);
             }

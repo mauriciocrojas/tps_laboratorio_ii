@@ -486,7 +486,7 @@ namespace PokedexApp
         {
             try
             {
-                new FrmProgramacionMultiHilo().ShowDialog();
+                new FrmProgramacionMultiHiloYEventos().ShowDialog();
             }
             catch (Exception)
             {

@@ -1,24 +1,33 @@
 ﻿using Entidades;
 using System;
-using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PokedexApp
 {
-    public partial class FrmProgramacionMultiHilo : Form
+    public partial class FrmProgramacionMultiHiloYEventos : Form
     {
         Task cargaPokemon;
         CancellationTokenSource cts;
-        List<Pokemon> listaPokemon;
+        int cupoCentro;
 
-        public FrmProgramacionMultiHilo()
+        CentroPokemon centroPokemon;
+
+        bool hayLugar;
+
+        public FrmProgramacionMultiHiloYEventos()
         {
             InitializeComponent();
             cts = new CancellationTokenSource();
             cargaPokemon = new Task(ComenzarCarga);
-            listaPokemon = new List<Pokemon>();
+
+            centroPokemon = new CentroPokemon(20);
+            cupoCentro = centroPokemon.cupo;
+            centroPokemon.cupoLleno += MensajeCupoLleno;
+            centroPokemon.cupoLleno += DesactivarForm;
+
+            hayLugar = true;
         }
 
         /// <summary>
@@ -29,7 +38,7 @@ namespace PokedexApp
             try
             {
 
-                while (true)
+                while (hayLugar)
                 {
                     if (cts.IsCancellationRequested)
                     {
@@ -37,20 +46,46 @@ namespace PokedexApp
                     }
                     else if (this.dtg_listado.InvokeRequired)
                     {
-                        listaPokemon.Add(GeneradorDeDatos.GetUnPokemon);
 
                         this.dtg_listado.BeginInvoke((MethodInvoker)delegate ()
                         {
                             dtg_listado.DataSource = null;
-                            dtg_listado.DataSource = listaPokemon;
+                            dtg_listado.DataSource = centroPokemon.TraerPokemon();
                         });
                     }
-                    Thread.Sleep(2000);
+                    Thread.Sleep(100);
+
+                    cupoCentro--;
                 }
-            }catch (Exception)
+            }
+            catch (Exception)
             {
                 MessageBox.Show("No se pudo realizar la carga de datos");
             }
+        }
+
+        /// <summary>
+        /// Función que lanzará un messageBox y desactivará el DataGrid si la capacidad de Centro se completa.
+        /// </summary>
+        /// <param name="centroPokemonLleno"></param>
+        private void MensajeCupoLleno(bool centroPokemonLleno)
+        {
+            if (centroPokemonLleno)
+            {
+                hayLugar = !centroPokemonLleno;
+                MessageBox.Show("El Centro Pokemon completó sus 20 lugares. Vuelva pronto.\nLos esperamos");
+                this.dtg_listado.Enabled = !centroPokemonLleno;
+            }
+        }
+
+        /// <summary>
+        /// Función que desactivará el botón de TraerPokemonAleatorio.
+        /// </summary>
+        /// <param name="estado"></param>
+        private void DesactivarForm(bool estado)
+        {
+            this.btn_comenzarCarga.Enabled = !estado;
+            this.btn_cancelarCarga.Enabled = !estado;
         }
 
         /// <summary>
@@ -67,7 +102,7 @@ namespace PokedexApp
             }
             catch (Exception)
             {
-                MessageBox.Show("No se pudo a comenzar la carga.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No se pudo comenzar la carga.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -89,5 +124,6 @@ namespace PokedexApp
                 MessageBox.Show("No se pudo cancelar la carga.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
     }
 }
