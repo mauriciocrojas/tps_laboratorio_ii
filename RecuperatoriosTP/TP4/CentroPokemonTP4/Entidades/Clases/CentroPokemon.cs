@@ -5,18 +5,17 @@ namespace Entidades
 {
     public class CentroPokemon
     {
-        public static List<Pokemon> auxlistaPokemon;
+        public static List<Pokemon> auxListaPokemon;
         public int cupo;
         static Random rnd;
 
         public event Action<bool> cupoLleno;
-        public event Action<bool> capacidadCompleta;
 
         public CentroPokemon(int cupo)
         {
             this.cupo = cupo;
             rnd = new Random();
-            auxlistaPokemon = new List<Pokemon>();
+            auxListaPokemon = new List<Pokemon>();
         }
 
         /// <summary>
@@ -28,16 +27,16 @@ namespace Entidades
         public List<Pokemon> TraerPokemon()
         {
 
-            if (auxlistaPokemon.Count < cupo)
+            if (auxListaPokemon.Count < cupo)
             {
-                auxlistaPokemon.Add(Pokemon.ListaPokemon[rnd.Next(0, Pokemon.ListaPokemon.Count)]);
+                auxListaPokemon.Add(Pokemon.ListaPokemon[rnd.Next(0, Pokemon.ListaPokemon.Count)]);
             }
             else
             {
                 cupoLleno.Invoke(true);
             }
 
-            return auxlistaPokemon;
+            return auxListaPokemon;
         }
 
     }
